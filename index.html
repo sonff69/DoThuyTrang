@@ -15,10 +15,10 @@
             --box-blue: #b8cbd8; /* Xanh dương nhạt Pastel cho viền box và nút khám phá */
             --warm-cream: #eef4f8; /* Trắng xanh kem nhạt cho văn bản mô tả */
             --dark-mocha: #131b22; /* Chữ sẫm màu slate khi cần độ tương phản cao */
-            --glass-bg: rgba(28, 36, 43, 0.85); /* Kính mờ màu tối huyền ảo như đêm đông */
+            --glass-bg: rgba(15, 22, 28, 0.15); /* Kính mờ siêu trong suốt để lộ rõ nền tinh tú */
             --glass-border: rgba(184, 203, 216, 0.45); /* Viền mờ Xanh dương nhạt Pastel */
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(184, 203, 216, 0.15);
-            --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(184, 203, 216, 0.15);
+            --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.05);
         }
 
         /* --- THIẾT LẬP CHUNG --- */
@@ -54,7 +54,7 @@
             position: relative;
         }
 
-        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁT SÁNG --- */
+        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁS SÁNG --- */
         #bubbles-container {
             position: fixed;
             top: 0;
@@ -69,7 +69,7 @@
         .bubble {
             position: absolute;
             bottom: -100px;
-            background: rgba(184, 203, 216, 0.15);
+            background: rgba(184, 203, 216, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 50%;
             box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(184, 203, 216, 0.2);
@@ -141,9 +141,9 @@
         }
 
         nav {
-            background: rgba(20, 28, 36, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(20, 28, 36, 0.3); /* Cực kỳ trong suốt */
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
             padding: 12px 30px;
             border-radius: 50px;
@@ -239,8 +239,8 @@
             width: 90%;
             max-width: 1100px;
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
             border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 40px;
             padding: 50px;
@@ -395,8 +395,8 @@
 
         .skill-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
             border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 25px;
             padding: 25px;
@@ -446,8 +446,8 @@
         .driver-box {
             background: var(--glass-bg);
             border: 2px dashed var(--box-blue); /* Viền màu xanh dương nhạt pastel */
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
             border-radius: 25px;
             padding: 30px;
             width: 100%;
@@ -534,8 +534,8 @@
 
         .project-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(25px) !important;
+            -webkit-backdrop-filter: blur(25px) !important;
             border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 30px;
             padding: 30px;
@@ -649,7 +649,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(16, 22, 28, 0.65);
+            background: rgba(16, 22, 28, 0.45); /* Phông nền mờ ảo trong suốt hơn */
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 200;
@@ -667,7 +667,9 @@
         }
 
         .modal-wrapper {
-            background: #182026; /* Tối xanh đá phiến thẫm */
+            background: rgba(24, 32, 38, 0.55); /* Kính mờ siêu trong suốt sang trọng */
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
             width: 95%;
             max-width: 1000px;
             height: 90vh;
@@ -677,7 +679,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            border: 8px solid rgba(184, 203, 216, 0.95); /* Viền màu xanh dương nhạt pastel */
+            border: 8px solid rgba(184, 203, 216, 0.6); /* Viền màu xanh dương nhạt pastel dày dặn */
         }
 
         .modal-header {
@@ -1340,7 +1342,7 @@
                 <div class="objectives-box">
                     <h4>✨ Mục Tiêu Portfolio Sâu Sắc Của Trang</h4>
                     <ul>
-                        <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lai tự học nghiêm túc của bản thân qua mỗi tuần.</li>
+                        <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lũy tự học nghiêm túc của bản thân qua mỗi tuần.</li>
                         <li><b>Thực hành kỹ năng số hóa ngôn ngữ ứng dụng:</b> Kết hợp nhịp nhàng giữa lý thuyết ngôn ngữ Nga và các phương pháp công nghệ tương tác, biến các cấu trúc ngữ pháp khô khan thành các trò chơi lật thẻ, bộ phân tích ngữ pháp trực quan và sơ đồ phân cấp tệp tin khoa học.</li>
                         <li><b>Cam kết liêm chính số và tư duy phản biện vững vàng:</b> Thiết lập các ranh giới đạo đức số rõ ràng, định nghĩa rạch ròi giữa việc tham khảo thông minh và lạm dụng thụ động để bảo tồn giá trị trung thực và liêm chính trong học thuật.</li>
                     </ul>
@@ -1962,7 +1964,7 @@
                                     <div class="term-card" onclick="alert('Билет (bilét): Vé')">Билет</div>
                                     <div class="term-card" onclick="alert('Самолёт (samolyót): Máy bay')">Самолёт</div>
                                     <div class="term-card" onclick="alert('Поезд (póyezd): Tàu hỏa')">Поезд</div>
-                                    <div class="term-card" onclick="alert('Автобус (avtóbus): Xe buýt')">Автобус</div>
+                                    <div class="term-card" onclick="alert('Автоbus (avtóbus): Xe buýt')">Автобус</div>
                                     <div class="term-card" onclick="alert('Вокзал (vakzál): Nhà ga')">Вокзал</div>
                                 </div>
                                 
@@ -2154,7 +2156,7 @@
                 item.className = `paper-item ${paper.rating}`;
                 item.innerHTML = `
                     <h5>${paper.title}</h5>
-                    <div class="paper-meta">✍️ Tạp chí: ${paper.journal} | Tác giả: ${paper.author}</div>
+                    <div class="paper-meta">✍️ Tác giả: ${paper.author} | Tạp chí: ${paper.journal}</div>
                     <div class="paper-details-text">${paper.detail}</div>
                 `;
                 listContainer.appendChild(item);
@@ -2174,10 +2176,13 @@
             });
         }
 
+        // Sửa lỗi tham số event của bộ lọc bài báo khoa học cho mượt mà
         function filterByClass(cls) {
             const badges = document.querySelectorAll('.filter-badge');
             badges.forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
+            if(window.event) {
+                window.event.target.classList.add('active');
+            }
 
             const items = document.querySelectorAll('.paper-item');
             items.forEach(item => {
@@ -2195,7 +2200,9 @@
         function switchPrompt(level) {
             const btns = document.querySelectorAll('.tab-btn');
             btns.forEach(b => b.classList.remove('active'));
-            event?.target.classList.add('active');
+            if(window.event) {
+                window.event.target.classList.add('active');
+            }
 
             const data = promptLevels[level];
             const display = document.getElementById('promptDisplay');
@@ -2203,7 +2210,7 @@
                 display.innerHTML = `
                     <h5>📝 Nội dung câu lệnh Trang gửi AI:</h5>
                     <div class="prompt-box">${data.box}</div>
-                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--primary-pink); font-weight:700;">${data.score}</span></p>
+                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--sub-pink); font-weight:700;">${data.score}</span></p>
                     <p style="font-size:13px; color:#cce3f0; margin-top:5px;"><i>${data.desc}</i></p>
                     <hr style="margin:12px 0; border:0; border-top:1px dashed rgba(162, 186, 203, 0.3);">
                     <h5>📊 Phân tích hiệu quả:</h5>
@@ -2216,7 +2223,9 @@
         function showInfoSec(sec) {
             const btns = document.querySelectorAll('.info-sec-btn');
             btns.forEach(b => b.classList.remove('active'));
-            event?.target.classList.add('active');
+            if(window.event) {
+                window.event.target.classList.add('active');
+            }
 
             const text = campaignSecs[sec];
             const display = document.getElementById('infoSecDesc');
