@@ -264,27 +264,30 @@
             background: rgba(255, 255, 255, 0.5);
             border-left: 5px solid var(--accent-coral);
             border-radius: 0 15px 15px 0;
-            padding: 15px;
+            padding: 20px;
             margin-top: 20px;
         }
 
         .objectives-box h4 {
-            font-size: 16px;
+            font-size: 17px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: var(--accent-coral);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .objectives-box ul {
             list-style: none;
-            font-size: 14px;
-            line-height: 1.5;
+            font-size: 14.5px;
+            line-height: 1.6;
         }
 
         .objectives-box ul li {
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             position: relative;
-            padding-left: 18px;
+            padding-left: 20px;
         }
 
         .objectives-box ul li::before {
@@ -292,6 +295,60 @@
             position: absolute;
             left: 0;
             font-size: 12px;
+            top: 2px;
+        }
+
+        /* --- SECTION 2: KỸ NĂNG ĐẠT ĐƯỢC (SIÊU DETAILED) --- */
+        .skills-section {
+            padding: 60px 0;
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .skill-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent-coral);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(243, 190, 161, 0.35);
+        }
+
+        .skill-card h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark-mocha);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-card h4 i {
+            color: var(--accent-coral);
+            font-size: 18px;
+        }
+
+        .skill-card p {
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: #554443;
         }
 
         /* --- DRIVER CTA SECTION --- */
@@ -353,7 +410,7 @@
 
         /* --- PROJECTS SECTION --- */
         .projects-section {
-            padding: 80px 0;
+            padding: 60px 0 80px 0;
             width: 90%;
             max-width: 1100px;
             margin: 0 auto;
@@ -998,7 +1055,7 @@
             font-weight: normal;
         }
 
-        /* --- TRANG TỔNG KẾT (REFLECTION) --- */
+        /* --- TRANG TỔNG KẾT (DETAILED) --- */
         .reflection-section {
             padding: 80px 0 120px 0;
             width: 90%;
@@ -1136,8 +1193,9 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#about">Về Mình</a></li>
+                <li><a href="#skills">Năng Lực Số</a></li>
                 <li><a href="#projects">Nhật Ký Bài Tập</a></li>
-                <li><a href="#reflection">Suy Tư</a></li>
+                <li><a href="#reflection">Tổng Kết</a></li>
                 <li><a class="drive-btn" href="https://drive.google.com/drive/folders/1elZ-aLKX6UBsezLIDHyO6bCOzenpipei?usp=drive_link" target="_blank"><i class="fa-brands fa-google-drive"></i> Kho Bài Tập</a></li>
             </ul>
         </nav>
@@ -1165,13 +1223,53 @@
                 </p>
 
                 <div class="objectives-box">
-                    <h4>✨ Mục Tiêu Của Trang Portfolio Này</h4>
+                    <h4>✨ Mục Tiêu Portfolio Sâu Sắc Của Trang</h4>
                     <ul>
-                        <li><b>Hệ thống hóa kiến thức:</b> Tổng hợp khoa học 6 bài tập rèn luyện kỹ năng số, biến tri thức thành sản phẩm có giá trị sử dụng lâu dài.</li>
-                        <li><b>Phát triển năng lực số:</b> Trực tiếp xây dựng giao diện tương tác, rèn luyện tư duy logic qua lập trình web mộc mạc.</li>
-                        <li><b>Kết nối & Chia sẻ:</b> Tạo không gian lưu trữ mở, tạo cơ hội cho mọi người cùng khám phá cách học tiếng Nga đầy thú vị cùng AI.</li>
+                        <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lũy tự học nghiêm túc của bản thân qua mỗi tuần [9].</li>
+                        <li><b>Thực hành kỹ năng số hóa ngôn ngữ ứng dụng:</b> Kết hợp nhịp nhàng giữa lý thuyết ngôn ngữ Nga và các phương pháp công nghệ tương tác, biến các cấu trúc ngữ pháp khô khan thành các trò chơi lật thẻ, bộ phân tích ngữ pháp trực quan và sơ đồ phân cấp tệp tin khoa học [9].</li>
+                        <li><b>Cam kết liêm chính số và tư duy phản biện vững vàng:</b> Thiết lập các ranh giới đạo đức số rõ ràng, định nghĩa rạch ròi giữa việc tham khảo thông minh và lạm dụng thụ động để bảo tồn giá trị trung thực và liêm chính trong học thuật [9].</li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: KỸ NĂNG ĐẠT ĐƯỢC (SIÊU DETAILED) -->
+    <section class="skills-section" id="skills">
+        <div class="section-header">
+            <h2>Năng Lực Số Đạt Được</h2>
+            <p>Những cột mốc kỹ năng thực tế mình đã bồi đắp và làm chủ trong học kỳ qua [9]</p>
+        </div>
+        <div class="skills-grid">
+            <!-- SKILL 1 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-folder-tree"></i> Quản Trị Hệ Thống Dữ Liệu</h4>
+                <p>Nắm vững phương pháp thiết lập cây thư mục phân cấp logic, thành thạo các phím tắt quản lý tệp tin nâng cao của Windows giúp tối ưu hóa không gian lưu trữ và tăng tốc độ tìm kiếm tài liệu học tập lên gấp đôi [9].</p>
+            </div>
+            <!-- SKILL 2 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-chart-line"></i> Khai Thác Dữ Liệu Học Thuật</h4>
+                <p>Thực hành thuần thục các kỹ thuật truy vấn nâng cao (AND, OR, NOT, lọc dấu ngoặc kép) trên các cơ sở dữ liệu học thuật quốc tế danh tiếng (Scopus, Web of Science, Google Scholar) để trích xuất 10 bài viết uy tín [9].</p>
+            </div>
+            <!-- SKILL 3 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-wand-magic"></i> Kỹ Nghệ Prompt Engineering</h4>
+                <p>Làm chủ phương pháp giao tiếp chuyên nghiệp với mô hình ngôn ngữ lớn (Role-playing, Context-setting, Chain-of-Thought) để điều phối AI phục vụ đắc lực cho các tác vụ tóm tắt bài giảng và biên tập ngữ pháp [9].</p>
+            </div>
+            <!-- SKILL 4 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-share-nodes"></i> Cộng Tác Số & Quản Trị Dự Án</h4>
+                <p>Làm chủ hệ sinh thái Google Workspace đám mây, ứng dụng mô hình Kanban trực quan và sơ đồ tiến trình phân chia đầu việc của nhóm để điều phối, hợp tác làm việc từ xa trơn tru, đúng tiến độ [9].</p>
+            </div>
+            <!-- SKILL 5 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-pen-nib"></i> Trực Quan Hóa Dữ Liệu Sáng Tạo</h4>
+                <p>Có năng lực phối hợp nhịp nhàng giữa Canva và các AI tạo sinh (ChatGPT, Gemini, DeepSeek) để phân tích, chuyển hóa những con số thống kê môi trường khô khan thành các bản thiết kế Infographic lôi cuốn sinh động [9].</p>
+            </div>
+            <!-- SKILL 6 -->
+            <div class="skill-card">
+                <h4><i class="fa-solid fa-user-shield"></i> Liêm Chính Số & Sửa Lỗi Ngôn Ngữ</h4>
+                <p>Thực thi nghiêm túc các quy chuẩn liêm chính học thuật VNU, ứng dụng AI như một trợ lý gia sư bản xứ hỗ trợ rà soát, phát hiện và sửa các lỗi biến cách, lỗi chia giới từ tiếng Nga theo thời gian thực [9].</p>
             </div>
         </div>
     </section>
@@ -1294,43 +1392,43 @@
         </div>
     </section>
 
-    <!-- REFLECTION SECTION (Advantages, Difficulties & Lessons) -->
+    <!-- REFLECTION SECTION (DETAILED TỔNG KẾT) -->
     <section class="reflection-section" id="reflection">
         <div class="section-header">
-            <h2>Hành Trình Chiêm Nghiệm ✨</h2>
-            <p>Những nốt thăng, trầm và bài học kinh nghiệm sâu sắc đọng lại sau môn học</p>
+            <h2>Tổng Kết & Chiêm Nghiệm ✨</h2>
+            <p>Phân tích sâu sắc thuận lợi, khó khăn và bài học thực tiễn rút ra từ toàn bộ quá trình học tập số [9]</p>
         </div>
         <div class="reflection-card">
             <p class="reflection-text">
-                Tạo nên trang <b>Digital Portfolio</b> mộc mạc này chính là khoảnh khắc mình được lật giở từng trang nhật ký của bản thân suốt một kỳ học qua. Từ những buổi tối loay hoay sắp xếp dữ liệu, đến sự hào hứng khi nhìn ngắm AI phát hiện lỗi sai tiếng Nga của mình. Nhìn lại hành trình, mình gom góp được những điều ý nghĩa sau:
+                Xây dựng trang <b>Digital Portfolio</b> mộc mạc này chính là cơ hội quý báu để mình tự đánh giá lại năng lực học tập số của bản thân. Đi dọc 6 bài tập lớn nhỏ, vượt qua những bỡ ngỡ ban đầu của một sinh viên chuyên ngành Ngôn ngữ và Văn hóa Nga, mình đã đúc kết được những trải nghiệm vô giá sau:
             </p>
             
             <div class="reflection-grid">
                 <!-- THUẬN LỢI -->
                 <div class="reflection-col">
-                    <h4><i class="fa-solid fa-sun"></i> Thuận Lợi</h4>
+                    <h4><i class="fa-solid fa-sun"></i> Thuận Lợi Khách Quan</h4>
                     <ul>
-                        <li>Được thầy cô hướng dẫn bài bản với hệ thống tài liệu minh họa sinh động, rõ ràng.</li>
-                        <li>Trí tuệ nhân tạo (Generative AI) phát triển vượt bậc, hỗ trợ giải đáp 24/7 siêu tốc.</li>
-                        <li>Có nhiều tài liệu tham khảo và hệ thống công cụ hỗ trợ liên kết mạnh mẽ.</li>
+                        <li><b>Sự đồng hành tận tụy:</b> Giảng viên bộ môn <i>Nhập môn công nghệ số và ứng dụng AI</i> tại ULIS - ĐHQGHN đã thiết lập lộ trình giảng dạy cực kỳ khoa học, sinh động, từng bước tháo gỡ nỗi sợ công nghệ ban đầu của mình [9].</li>
+                        <li><b>Công nghệ AI bùng nổ vượt bậc:</b> Hệ sinh thái AI năm 2026 cực kỳ phát triển, các mô hình ngôn ngữ lớn (LLMs) phản hồi siêu tốc, đóng vai trò như một người bạn gia sư bản xứ kiên nhẫn sửa lỗi 24/7 [9].</li>
+                        <li><b>Đặc thù ngành ngôn ngữ:</b> Mang lại kho ngữ liệu dịch thuật và kịch bản thực tế phong phú giúp mình dễ dàng đưa ra các bài toán thực hành cụ thể cho AI xử lý [9].</li>
                     </ul>
                 </div>
                 <!-- KHÓ KHĂN -->
                 <div class="reflection-col">
-                    <h4><i class="fa-solid fa-cloud-showers-heavy"></i> Khó Khăn</h4>
+                    <h4><i class="fa-solid fa-cloud-showers-heavy"></i> Khó Khăn Đối Mặt</h4>
                     <ul>
-                        <li>Những bước đầu tiếp cận với việc sàng lọc tài liệu học thuật quốc tế và thiết lập Prompt nâng cao khá bỡ ngỡ.</li>
-                        <li>Tiếng Nga có cấu trúc ngữ pháp phức tạp và biến cách, cần kiểm chứng chéo thật kỹ.</li>
-                        <li>Phải liên tục cập nhật công cụ và chọn lọc nguồn thông tin chính xác, tin cậy.</li>
+                        <li><b>Rào cản học thuật và ngôn từ Nga:</b> Tiếng Nga với hệ thống 6 biến cách và động từ chuyển động vô cùng phức tạp là thử thách lớn đối với AI. AI thường đưa ra thông tin bị "ảo giác" (hallucination) hoặc dịch sai sắc thái văn hóa đặc thù [9].</li>
+                        <li><b>Tinh chỉnh kỹ nghệ Prompt:</b> Cần rất nhiều nỗ lực và thời gian thử nghiệm thực tế mới tìm ra cấu trúc prompt tối ưu nhất giúp AI phản hồi chuẩn xác theo giáo trình chính thống của ULIS [9].</li>
+                        <li><b>Duy trì kỷ luật liêm chính số:</b> Áp lực kiểm chứng chéo thông tin từ AI với sách giáo khoa học thuật để tránh việc sao chép thụ động, phụ thuộc hoàn toàn vào công cụ [9].</li>
                     </ul>
                 </div>
                 <!-- BÀI HỌC KINH NGHIỆM -->
                 <div class="reflection-col">
-                    <h4><i class="fa-solid fa-book-open"></i> Bài Học</h4>
+                    <h4><i class="fa-solid fa-book-open"></i> Bài Học Kinh Nghiệm</h4>
                     <ul>
-                        <li><b>Kiểm chứng thông tin:</b> Luôn chủ động rà soát thông tin từ AI bằng tri thức và tài liệu khoa học đáng tin cậy.</li>
-                        <li>Tư duy sáng tạo của con người mới là trung tâm, AI chỉ đóng vai trò hỗ trợ đắc lực.</li>
-                        <li>Sử dụng AI có trách nhiệm và thấu đáo sẽ mở ra không gian nghiên cứu vô tận.</li>
+                        <li><b>Tư duy "Trust but Verify" (Tin tưởng nhưng phải kiểm chứng):</b> Tuyệt đối không coi câu trả lời của AI là chân lý tối cao. Phải luôn đối chiếu thông tin với các công trình nghiên cứu trên Google Scholar và sách giáo khoa chính quy [9].</li>
+                        <li><b>Con người luôn giữ quyền kiểm soát:</b> AI chỉ phát huy 100% hiệu suất khi được điều khiển bởi một bộ óc có tri thức và tư duy phản biện. AI có thể viết đoạn văn trong 3 giây, nhưng chính người học mới là người phát hiện và sửa lỗi chia Cách ngữ pháp [9].</li>
+                        <li><b>Thích ứng thông minh:</b> Kỷ nguyên số không đào thải người học ngôn ngữ, nó chỉ đào thải những ai không chịu học cách cộng tác thông minh, văn minh và liêm chính với công nghệ [9].</li>
                     </ul>
                 </div>
             </div>
@@ -1707,7 +1805,7 @@
                                 <div class="corrector-demo">
                                     <p style="font-size:14px; margin-bottom:10px; font-weight:700;">Đoạn văn tự viết ban đầu của Trang:</p>
                                     <p style="font-size:15px; line-height:1.8; background:#fafafa; padding:10px; border-radius:10px;">
-                                        Я очень люблю путешествовать. Моё любимое chuyến đi <span class="error-word" data-tip="Lỗi thiếu động từ liên kết / thì quá khứ. ChatGPT sửa: thêm từ 'было' (đã là) để thể hiện chuyến đi diễn ra trong quá khứ.">был</span> прошлым летом, когда я ездил в Нячанг <span class="error-word" data-tip="Lỗi dùng sai giới từ / cách chia danh từ. ChatGPT sửa: chuyển thành 'с моей семьёй' (với gia đình của tôi) sử dụng Cách 5 (Danh từ công cụ).">с моя семья</span>. Мы ехали туда <span class="error-word" data-tip="Lỗi dùng sai phương tiện di chuyển. ChatGPT sửa: chuyển thành 'на самолёте' (bằng máy bay) sử dụng Cách 6 (Giới từ) thay vì viết 'на самолёт'.">на самолёт</span>. Нячанг — <span class="error-word" data-tip="Lỗi viết sai chính tả và thiếu tính từ giống đực. ChatGPT sửa: bổ sung 'очень красивый город' (một thành phố rất đẹp).">очень красивый город</span>. Мы жили <span class="error-word" data-tip="Lỗi chia Cách giới từ. ChatGPT sửa: 'в гостинице' (trong khách sạn) và 'không xa biển' chuyển thành 'недалеко от моря' (Cách 2 - Sinh cách).">в гостиница недалеко от море</span>. Mỗi ngày chúng tôi tắm biển và ăn <span class="error-word" data-tip="Lỗi chia cách bổ ngữ trực tiếp (Cách 4). ChatGPT sửa: chuyển thành 'вкусную еду' (món ăn ngon) thay vì viết 'вкусный еда'.">вкусный еда</span>.
+                                        Я очень люблю путешествовать. Моё любимое chuyến đi <span class="error-word" data-tip="Lỗi thiếu động từ liên kết / thì quá khứ. ChatGPT sửa: thêm từ 'было' (đã là) để thể hiện chuyến đi diễn ra trong quá khứ.">был</span> прошлым летом, khi tôi đi Nha Trang <span class="error-word" data-tip="Lỗi dùng sai giới từ / cách chia danh từ. ChatGPT sửa: chuyển thành 'с моей семьёй' (với gia đình của tôi) sử dụng Cách 5 (Danh từ công cụ).">с моя семья</span>. Chúng tôi đi đến đó <span class="error-word" data-tip="Lỗi dùng sai phương tiện di chuyển. ChatGPT sửa: chuyển thành 'на самолёте' (bằng máy bay) sử dụng Cách 6 (Giới từ) thay vì viết 'на самолёт'.">на самолёт</span>. Nha Trang là <span class="error-word" data-tip="Lỗi viết sai chính tả và thiếu tính từ giống đực. ChatGPT sửa: bổ sung 'очень красивый город' (một thành phố rất đẹp).">очень красивый город</span>. Chúng tôi sống <span class="error-word" data-tip="Lỗi chia Cách giới từ. ChatGPT sửa: 'в гостинице' (trong khách sạn) và 'không xa biển' chuyển thành 'недалеко от моря' (Cách 2 - Sinh cách).">в гостиница недалеко от море</span>. Mỗi ngày chúng tôi tắm biển và ăn <span class="error-word" data-tip="Lỗi chia cách bổ ngữ trực tiếp (Cách 4). ChatGPT sửa: chuyển thành 'вкусную еду' (món ăn ngon) thay vì viết 'вкусный еда'.">вкусный еда</span>.
                                     </p>
                                 </div>
                             </div>
