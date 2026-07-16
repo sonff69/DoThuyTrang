@@ -1,3 +1,20 @@
+Dưới đây là mã nguồn toàn diện của tệp index.html đã được phối màu lại một cách
+tỉ mỉ theo đúng yêu cầu chi tiết của bạn.
+
+Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
+
+  - Tiêu đề chính (Main Titles): Được chuyển sang màu Trắng tinh khiết
+    (#ffffff), đảm bảo độ hiển thị nổi bật, rõ nét trên nền tối tinh tú.
+  - Tiêu đề phụ/Tiêu đề bài phụ (Subtitles & Minor Headers): Được đổi sang màu
+    Hồng nhạt Pastel ngọt ngào (#ffccd5) (áp dụng cho các mục tiêu đề thẻ kỹ
+    năng, tiêu đề phụ trong modal, số thứ tự thẻ và badge chào mừng) [9].
+  - Viền của các hộp (Box Borders): Được thiết lập bằng màu Xanh dương nhạt
+    Pastel mờ ảo (rgba(184, 203, 216, 0.45)) để tạo hiệu ứng các khung băng kính
+    mờ mộng mơ [9].
+  - Nút "Khám phá" & các hành động bài tập: Toàn bộ nút "Khám phá", "Xem PDF
+    trực tiếp" và nút chuyển tab trong modal được chuyển sang màu Xanh dương
+    nhạt Pastel (#b8cbd8), tương tác phát sáng nhẹ khi rê chuột [9].
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -9,16 +26,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Gam màu Xanh Kem Pastel từ ảnh) --- */
+        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Chủ đề Cổ Tích Mùa Đông) --- */
         :root {
-            --primary-pink: #a2bacb; /* Xanh kem pastel ngọt ngào làm chủ đạo */
-            --pastel-orange: #cce3f0; /* Xanh kem tuyết nhạt */
-            --warm-cream: #eef4f8; /* Trắng xanh kem nhạt dễ đọc */
-            --dark-mocha: #1c242d; /* Chữ tối slate sẫm */
-            --accent-coral: #7b94a8; /* Xanh đá phiến trầm */
-            --glass-bg: rgba(32, 40, 48, 0.85); /* Kính mờ màu slate sẫm của đêm đông */
-            --glass-border: rgba(162, 186, 203, 0.35); /* Viền phát sáng mờ màu xanh kem */
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(162, 186, 203, 0.15);
+            --sub-pink: #ffccd5; /* Hồng nhạt Pastel cho tiêu đề bài phụ */
+            --box-blue: #b8cbd8; /* Xanh dương nhạt Pastel cho viền box và nút khám phá */
+            --warm-cream: #eef4f8; /* Trắng xanh kem nhạt cho văn bản mô tả */
+            --dark-mocha: #131b22; /* Chữ sẫm màu slate khi cần độ tương phản cao */
+            --glass-bg: rgba(28, 36, 43, 0.85); /* Kính mờ màu tối huyền ảo như đêm đông */
+            --glass-border: rgba(184, 203, 216, 0.45); /* Viền mờ Xanh dương nhạt Pastel */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(184, 203, 216, 0.15);
             --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
         }
 
@@ -31,20 +47,20 @@
             scroll-behavior: smooth;
         }
 
-        /* Tinh chỉnh thanh cuộn siêu dễ thương màu xanh tuyết */
+        /* Tinh chỉnh thanh cuộn siêu dễ thương màu xanh tuyết pastel */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #182026;
+            background: #131b22;
         }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, var(--primary-pink), var(--accent-coral));
+            background: linear-gradient(180deg, var(--box-blue), var(--sub-pink));
             border-radius: 10px;
-            border: 2px solid #182026;
+            border: 2px solid #131b22;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-coral);
+            background: var(--box-blue);
         }
 
         body {
@@ -55,7 +71,7 @@
             position: relative;
         }
 
-        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁT SÁNG XANH KEM --- */
+        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁT SÁNG --- */
         #bubbles-container {
             position: fixed;
             top: 0;
@@ -70,10 +86,10 @@
         .bubble {
             position: absolute;
             bottom: -100px;
-            background: rgba(162, 186, 203, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(184, 203, 216, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 50%;
-            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(162, 186, 203, 0.2);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(184, 203, 216, 0.2);
             pointer-events: none;
             animation: floatUp 15s linear infinite;
         }
@@ -142,10 +158,10 @@
         }
 
         nav {
-            background: rgba(24, 32, 38, 0.85);
+            background: rgba(20, 28, 36, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(162, 186, 203, 0.3);
+            border: 1px solid var(--glass-border);
             padding: 12px 30px;
             border-radius: 50px;
             display: flex;
@@ -157,10 +173,14 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
-            color: var(--primary-pink);
+            color: #ffffff; /* Tiêu đề chính chữ trắng */
             display: flex;
             align-items: center;
             gap: 8px;
+        }
+
+        .logo i {
+            color: var(--box-blue); /* Biểu tượng xanh dương nhạt pastel */
         }
 
         .nav-links {
@@ -186,7 +206,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background-color: var(--primary-pink);
+            background-color: var(--box-blue);
             border-radius: 2px;
             transition: width 0.3s;
         }
@@ -196,23 +216,23 @@
         }
 
         .nav-links a:hover {
-            color: var(--primary-pink);
+            color: var(--box-blue);
         }
 
         .drive-btn {
-            background: linear-gradient(135deg, var(--primary-pink), var(--pastel-orange));
+            background: linear-gradient(135deg, var(--box-blue), var(--pastel-orange));
             border: 1px solid var(--glass-border);
             padding: 10px 20px;
             border-radius: 25px;
             color: var(--dark-mocha) !important;
             font-weight: 700 !important;
-            box-shadow: 0 4px 15px rgba(162, 186, 203, 0.4);
+            box-shadow: 0 4px 15px rgba(184, 203, 216, 0.4);
             transition: transform 0.3s, box-shadow 0.3s !important;
         }
 
         .drive-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(162, 186, 203, 0.6);
+            box-shadow: 0 6px 20px rgba(184, 203, 216, 0.6);
         }
 
         .drive-btn::after {
@@ -236,7 +256,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 40px;
             padding: 50px;
             box-shadow: var(--card-shadow);
@@ -257,7 +277,7 @@
             height: 250px;
             object-fit: cover;
             border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-            border: 6px solid rgba(162, 186, 203, 0.5);
+            border: 6px solid rgba(184, 203, 216, 0.5);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             animation: cloudFloat 6s ease-in-out infinite;
         }
@@ -273,8 +293,8 @@
         }
 
         .badge {
-            background: rgba(162, 186, 203, 0.15);
-            color: var(--primary-pink);
+            background: rgba(255, 204, 213, 0.15);
+            color: var(--sub-pink); /* Tiêu đề bài phụ hồng nhạt pastel */
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 13px;
@@ -283,7 +303,7 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(255, 204, 213, 0.2);
         }
 
         .hero-title {
@@ -291,13 +311,11 @@
             font-weight: 700;
             margin-bottom: 15px;
             line-height: 1.2;
-            background: linear-gradient(135deg, var(--warm-cream), var(--primary-pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff !important; /* Tiêu đề chính chữ trắng */
         }
 
         .hero-title span {
-            color: var(--primary-pink);
+            color: #ffffff !important; /* Tiêu đề chính chữ trắng */
         }
 
         .student-info-grid {
@@ -320,20 +338,19 @@
         }
 
         .info-tag i {
-            color: var(--primary-pink);
-            font-size: 16px;
+            color: var(--box-blue); /* Icon màu xanh dương nhạt pastel */
         }
 
         .hero-desc {
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 15px;
-            color: #b5cbd8; /* Màu xanh tuyết trầm nhẹ nhàng */
+            color: #b5cbd8;
         }
 
         .objectives-box {
             background: rgba(255, 255, 255, 0.03);
-            border-left: 5px solid var(--primary-pink);
+            border-left: 5px solid var(--box-blue); /* Viền màu xanh dương nhạt pastel */
             border-radius: 0 15px 15px 0;
             padding: 20px;
             margin-top: 20px;
@@ -346,7 +363,7 @@
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--primary-pink);
+            color: var(--sub-pink); /* Tiêu đề phụ hồng nhạt pastel */
             display: flex;
             align-items: center;
             gap: 8px;
@@ -371,6 +388,7 @@
             left: 0;
             font-size: 12px;
             top: 2px;
+            color: var(--box-blue);
         }
 
         /* --- SECTION 2: KỸ NĂNG ĐẠT ĐƯỢC --- */
@@ -394,24 +412,24 @@
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 25px;
             padding: 25px;
             box-shadow: var(--card-shadow);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-left: 5px solid var(--primary-pink);
+            border-left: 5px solid var(--box-blue); /* Viền màu xanh dương nhạt pastel */
         }
 
         .skill-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 25px rgba(162, 186, 203, 0.2);
-            border-color: var(--primary-pink);
+            box-shadow: 0 12px 25px rgba(184, 203, 216, 0.2);
+            border-color: var(--box-blue);
         }
 
         .skill-card h4 {
             font-size: 16px;
             font-weight: 700;
-            color: var(--warm-cream);
+            color: var(--sub-pink); /* Tiêu đề bài phụ hồng nhạt pastel */
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -419,8 +437,7 @@
         }
 
         .skill-card h4 i {
-            color: var(--primary-pink);
-            font-size: 18px;
+            color: var(--box-blue); /* Icon màu xanh dương nhạt pastel */
         }
 
         .skill-card p {
@@ -443,7 +460,7 @@
 
         .driver-box {
             background: var(--glass-bg);
-            border: 2px dashed var(--primary-pink);
+            border: 2px dashed var(--box-blue); /* Viền màu xanh dương nhạt pastel */
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-radius: 25px;
@@ -469,7 +486,7 @@
         }
 
         .big-drive-btn {
-            background: linear-gradient(135deg, var(--accent-coral), var(--primary-pink));
+            background: linear-gradient(135deg, var(--accent-coral), var(--box-blue));
             color: #fff;
             padding: 15px 35px;
             border-radius: 30px;
@@ -507,13 +524,13 @@
         .section-header h2 {
             font-size: 32px;
             font-weight: 700;
-            color: var(--warm-cream);
+            color: #ffffff; /* Tiêu đề chính chữ trắng */
             display: inline-block;
             position: relative;
         }
 
-        .section-header h2::before { content: '❄️'; position: absolute; left: -40px; top: -2px; font-size: 24px; }
-        .section-header h2::after { content: '✨'; position: absolute; right: -40px; top: -2px; font-size: 24px; }
+        .section-header h2::before { content: '❄️'; position: absolute; left: -40px; top: -2px; font-size: 24px; color: var(--box-blue); }
+        .section-header h2::after { content: '✨'; position: absolute; right: -40px; top: -2px; font-size: 24px; color: var(--box-blue); }
 
         .section-header p {
             font-size: 16px;
@@ -531,7 +548,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 30px;
             padding: 30px;
             box-shadow: var(--card-shadow);
@@ -546,8 +563,8 @@
 
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(162, 186, 203, 0.2);
-            border-color: var(--primary-pink);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(184, 203, 216, 0.25);
+            border-color: var(--box-blue);
         }
 
         .project-card-num {
@@ -556,7 +573,7 @@
             right: 25px;
             font-size: 60px;
             font-weight: 900;
-            color: rgba(162, 186, 203, 0.1);
+            color: rgba(255, 204, 213, 0.1); /* Số thứ tự hồng nhạt pastel */
             pointer-events: none;
             user-select: none;
         }
@@ -571,7 +588,7 @@
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: var(--primary-pink);
+            color: var(--box-blue); /* Icon màu xanh dương nhạt pastel */
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
@@ -580,7 +597,7 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--warm-cream);
+            color: #ffffff; /* Tiêu đề chính chữ trắng */
             line-height: 1.3;
         }
 
@@ -599,13 +616,13 @@
         }
 
         .pdf-card-btn {
-            background: rgba(162, 186, 203, 0.1);
-            border: 1px solid var(--primary-pink);
+            background: rgba(184, 203, 216, 0.1);
+            border: 1px solid var(--box-blue); /* Viền màu xanh dương nhạt pastel */
             padding: 8px 16px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 700;
-            color: var(--primary-pink);
+            color: var(--box-blue); /* Nút màu xanh dương nhạt pastel */
             display: flex;
             align-items: center;
             gap: 5px;
@@ -614,15 +631,15 @@
         }
 
         .pdf-card-btn:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
-            box-shadow: 0 0 15px rgba(162, 186, 203, 0.4);
+            box-shadow: 0 0 15px rgba(184, 203, 216, 0.4);
         }
 
         .learn-more-btn {
             background: none;
             border: none;
-            color: var(--primary-pink);
+            color: var(--box-blue); /* Nút màu xanh dương nhạt pastel */
             font-weight: 700;
             font-size: 14px;
             display: flex;
@@ -672,12 +689,12 @@
             position: relative;
             display: flex;
             flex-direction: column;
-            border: 8px solid rgba(32, 40, 48, 0.95);
+            border: 8px solid rgba(184, 203, 216, 0.95); /* Viền màu xanh dương nhạt pastel */
         }
 
         .modal-header {
             margin-bottom: 20px;
-            border-bottom: 2px dashed rgba(162, 186, 203, 0.2);
+            border-bottom: 2px dashed rgba(184, 203, 216, 0.2);
             padding-bottom: 15px;
             flex-shrink: 0;
         }
@@ -685,7 +702,7 @@
         .modal-title {
             font-size: 24px;
             font-weight: 700;
-            color: var(--warm-cream);
+            color: #ffffff; /* Tiêu đề chính chữ trắng */
             margin-top: 5px;
         }
 
@@ -699,7 +716,7 @@
 
         .m-view-btn {
             background: rgba(255, 255, 255, 0.03);
-            border: 1.5px solid rgba(162, 186, 203, 0.3);
+            border: 1.5px solid rgba(184, 203, 216, 0.3);
             padding: 10px 20px;
             border-radius: 15px;
             font-weight: 700;
@@ -713,10 +730,10 @@
         }
 
         .m-view-btn.active, .m-view-btn:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
-            border-color: var(--primary-pink);
-            box-shadow: 0 4px 12px rgba(162, 186, 203, 0.3);
+            border-color: var(--box-blue);
+            box-shadow: 0 4px 12px rgba(184, 203, 216, 0.3);
         }
 
         .modal-body-scroll {
@@ -737,7 +754,7 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            border: 1px solid var(--primary-pink);
+            border: 1px solid var(--box-blue);
             font-size: 18px;
             color: var(--warm-cream);
             transition: all 0.3s;
@@ -745,7 +762,7 @@
         }
 
         .close-modal:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
             transform: rotate(90deg);
         }
@@ -764,14 +781,14 @@
             width: 100%;
             height: 520px;
             border-radius: 20px;
-            border: 2.5px solid var(--primary-pink);
+            border: 2.5px solid var(--box-blue);
             background: #fff;
             box-shadow: var(--inner-shadow);
         }
 
         .pdf-fallback-alert {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
             border-radius: 15px;
             padding: 12px 20px;
             font-size: 13px;
@@ -782,13 +799,13 @@
         }
 
         .pdf-fallback-alert a {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
             padding: 6px 15px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 0 10px rgba(162, 186, 203, 0.3);
+            box-shadow: 0 0 10px rgba(184, 203, 216, 0.3);
         }
 
         .modal-section {
@@ -799,11 +816,11 @@
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--primary-pink);
+            color: var(--sub-pink); /* Tiêu đề phụ hồng nhạt pastel */
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 1px solid rgba(162, 186, 203, 0.2);
+            border-bottom: 1px solid rgba(184, 203, 216, 0.2);
             padding-bottom: 5px;
         }
 
@@ -815,7 +832,7 @@
         /* --- STYLE CHO CÁC MỤC TƯƠNG TÁC (INTERACTIVE WIDGETS) --- */
         .interactive-container {
             background: rgba(255, 255, 255, 0.03);
-            border: 2px solid rgba(162, 186, 203, 0.3);
+            border: 2px solid rgba(184, 203, 216, 0.3);
             border-radius: 20px;
             padding: 20px;
             margin: 20px 0;
@@ -832,7 +849,7 @@
 
         .sim-step-btn {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
             color: var(--warm-cream);
             padding: 6px 12px;
             border-radius: 12px;
@@ -843,14 +860,14 @@
         }
 
         .sim-step-btn.active, .sim-step-btn:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
-            border-color: var(--primary-pink);
+            border-color: var(--box-blue);
         }
 
         .sim-display {
             background: #0f151c;
-            color: #cce3f0;
+            color: #ffd29d;
             border-radius: 15px;
             padding: 20px;
             font-family: 'Courier New', Courier, monospace;
@@ -881,7 +898,7 @@
             width: 100%;
             padding: 10px 15px;
             border-radius: 15px;
-            border: 1.5px solid rgba(162, 186, 203, 0.3);
+            border: 1.5px solid rgba(184, 203, 216, 0.3);
             background: rgba(255, 255, 255, 0.03);
             color: var(--warm-cream);
             margin-bottom: 15px;
@@ -898,7 +915,7 @@
 
         .filter-badge {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
             color: var(--warm-cream);
             padding: 5px 12px;
             border-radius: 12px;
@@ -909,9 +926,9 @@
         }
 
         .filter-badge.active, .filter-badge:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
-            border-color: var(--primary-pink);
+            border-color: var(--box-blue);
         }
 
         .paper-list {
@@ -928,7 +945,7 @@
             border: 1px solid rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             padding: 15px;
-            border-left: 5px solid var(--primary-pink);
+            border-left: 5px solid var(--box-blue);
             box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
@@ -942,7 +959,7 @@
 
         .paper-meta {
             font-size: 12px;
-            color: var(--primary-pink);
+            color: var(--box-blue);
             font-weight: 600;
             margin-bottom: 8px;
         }
@@ -964,7 +981,7 @@
             flex: 1;
             padding: 12px;
             border-radius: 15px;
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
             background: rgba(255, 255, 255, 0.03);
             color: var(--warm-cream);
             font-weight: 700;
@@ -974,16 +991,16 @@
         }
 
         .tab-btn.active, .tab-btn:hover {
-            background: var(--primary-pink);
+            background: var(--box-blue);
             color: var(--dark-mocha);
-            border-color: var(--primary-pink);
+            border-color: var(--box-blue);
         }
 
         .prompt-content {
             background: rgba(255, 255, 255, 0.02);
             border-radius: 15px;
             padding: 20px;
-            border: 1px dashed rgba(162, 186, 203, 0.3);
+            border: 1px dashed rgba(184, 203, 216, 0.3);
         }
 
         .prompt-box {
@@ -993,7 +1010,7 @@
             font-family: monospace;
             font-size: 13px;
             margin: 10px 0;
-            border-left: 4px solid var(--primary-pink);
+            border-left: 4px solid var(--box-blue);
             color: #cce3f0;
         }
 
@@ -1009,13 +1026,13 @@
             border-radius: 15px;
             padding: 12px;
             min-height: 200px;
-            border: 1px dashed rgba(162, 186, 203, 0.2);
+            border: 1px dashed rgba(184, 203, 216, 0.2);
         }
 
         .kanban-col h5 {
             text-align: center;
             margin-bottom: 12px;
-            color: var(--primary-pink);
+            color: var(--box-blue);
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
@@ -1030,7 +1047,7 @@
             font-size: 12px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.2s;
-            border-left: 3px solid var(--primary-pink);
+            border-left: 3px solid var(--box-blue);
             color: var(--warm-cream);
         }
 
@@ -1041,7 +1058,7 @@
         .kanban-card b {
             display: block;
             margin-bottom: 4px;
-            color: var(--primary-pink);
+            color: var(--box-blue);
         }
 
         /* Bài 5 Infographic Preview */
@@ -1053,7 +1070,7 @@
 
         .info-sec-btn {
             background: rgba(255, 255, 255, 0.02);
-            border: 1.5px solid rgba(162, 186, 203, 0.2);
+            border: 1.5px solid rgba(184, 203, 216, 0.2);
             color: var(--warm-cream);
             border-radius: 15px;
             padding: 15px;
@@ -1063,8 +1080,8 @@
         }
 
         .info-sec-btn:hover, .info-sec-btn.active {
-            border-color: var(--primary-pink);
-            background: rgba(162, 186, 203, 0.1);
+            border-color: var(--box-blue);
+            background: rgba(184, 203, 216, 0.1);
             transform: translateY(-2px);
         }
 
@@ -1072,7 +1089,7 @@
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--primary-pink);
+            color: var(--box-blue);
         }
 
         .info-sec-desc {
@@ -1080,7 +1097,7 @@
             color: #b5cbd8;
             border-radius: 15px;
             padding: 20px;
-            border: 1.5px solid rgba(162, 186, 203, 0.2);
+            border: 1.5px solid rgba(184, 203, 216, 0.2);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1106,7 +1123,7 @@
             border-radius: 10px;
             padding: 10px;
             text-align: center;
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
             cursor: pointer;
             transition: transform 0.2s;
             font-size: 13px;
@@ -1122,7 +1139,7 @@
             background: rgba(255, 255, 255, 0.01);
             border-radius: 15px;
             padding: 20px;
-            border: 1px solid rgba(162, 186, 203, 0.2);
+            border: 1px solid rgba(184, 203, 216, 0.2);
         }
 
         .error-word {
@@ -1169,7 +1186,7 @@
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel */
             border-radius: 35px;
             padding: 45px;
             box-shadow: var(--card-shadow);
@@ -1193,13 +1210,13 @@
 
         .reflection-col:hover {
             transform: translateY(-5px);
-            border-color: rgba(162, 186, 203, 0.2);
+            border-color: rgba(184, 203, 216, 0.2);
         }
 
         .reflection-col h4 {
             font-size: 17px;
             font-weight: 700;
-            color: var(--primary-pink);
+            color: var(--sub-pink); /* Tiêu đề hồng nhạt pastel */
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -1225,6 +1242,7 @@
             left: 0;
             font-size: 10px;
             top: 2px;
+            color: var(--box-blue);
         }
 
         /* --- FOOTER --- */
@@ -1336,7 +1354,7 @@
                     <ul>
                         <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lũy tự học nghiêm túc của bản thân qua mỗi tuần.</li>
                         <li><b>Thực hành kỹ năng số hóa ngôn ngữ ứng dụng:</b> Kết hợp nhịp nhàng giữa lý thuyết ngôn ngữ Nga và các phương pháp công nghệ tương tác, biến các cấu trúc ngữ pháp khô khan thành các trò chơi lật thẻ, bộ phân tích ngữ pháp trực quan và sơ đồ phân cấp tệp tin khoa học.</li>
-                        <li><b>Cam kết liêm chính số và tư duy phản biện vững vàng:</b> Thiết lập các ranhới đạo đức số rõ ràng, định nghĩa rạch ròi giữa việc tham khảo thông minh và lạm dụng thụ động để bảo tồn giá trị trung thực và liêm chính trong học thuật.</li>
+                        <li><b>Cam kết liêm chính số và tư duy phản biện vững vàng:</b> Thiết lập các ranh giới đạo đức số rõ ràng, định nghĩa rạch ròi giữa việc tham khảo thông minh và lạm dụng thụ động để bảo tồn giá trị trung thực và liêm chính trong học thuật.</li>
                     </ul>
                 </div>
             </div>
@@ -1411,6 +1429,7 @@
                     <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học.</p>
                 </div>
                 <div class="card-actions">
+                    <!-- Tương tác xịn: Nhấp trực tiếp nút PDF trên card sẽ gọi thẳng Modal tab PDF, không sang tab mới -->
                     <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(1, 'pdf');">
                         <i class="fa-solid fa-file-pdf"></i> Xem 1.pdf trực tiếp
                     </button>
@@ -1561,7 +1580,7 @@
                 </div>
             </div>
 
-            <!-- CÁC TAB CHUYỂN ĐỔI CHẾ ĐỘ XEM TRONG MODAL -->
+            <!-- CÁC TAB CHUYỂY ĐỔI CHẾ ĐỘ XEM TRONG MODAL -->
             <div class="modal-view-tabs">
                 <button class="m-view-btn active" id="modalTabDiary" onclick="switchModalTab('diary')">
                     <i class="fa-solid fa-book-open"></i> 1. Nhật ký & Tương tác
@@ -1593,7 +1612,7 @@
     <script>
         /* --- Sparkling Mouse Trail Effect --- */
         const sparklesContainer = document.getElementById('sparkles-container');
-        const colors = ['#a2bacb', '#cce3f0', '#ffffff', '#7b94a8', '#90aabf'];
+        const colors = ['#ffccd5', '#b8cbd8', '#ffffff', '#7b94a8', '#90aabf'];
         const shapes = ['★', '❄️', '✨', '✦', '✧'];
 
         document.addEventListener('mousemove', function(e) {
@@ -2148,7 +2167,7 @@
                 item.className = `paper-item ${paper.rating}`;
                 item.innerHTML = `
                     <h5>${paper.title}</h5>
-                    <div class="paper-meta">✍️ Tạp chí: ${paper.journal} | Tác giả: ${paper.author}</div>
+                    <div class="paper-meta">✍️ Tác giả: ${paper.author} | Tạp chí: ${paper.journal}</div>
                     <div class="paper-details-text">${paper.detail}</div>
                 `;
                 listContainer.appendChild(item);
