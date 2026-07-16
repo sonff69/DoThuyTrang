@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đỗ Thùy Trang Portfolio</title>
+    <title>Trang's Digital Portfolio ✨</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Tone ấm ngọt ngào như mây đào) --- */
+        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Chủ đề Đêm Sao Mộng Mơ) --- */
         :root {
             --primary-pink: #ffb79e;
             --pastel-orange: #ffd29d;
             --warm-cream: #fdf6ee;
-            --dark-mocha: #4a3e3d;
+            --dark-mocha: #2d1e1e;
             --accent-coral: #ff8b71;
-            --glass-bg: rgba(255, 255, 255, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.8);
-            --card-shadow: 0 10px 30px rgba(243, 190, 161, 0.25);
-            --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.5);
+            --glass-bg: rgba(45, 34, 34, 0.75); /* Kính mờ tối màu Cocoa siêu sang trọng */
+            --glass-border: rgba(255, 183, 158, 0.35); /* Viền phát sáng mờ hồng đào */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 183, 158, 0.1);
+            --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.1);
         }
 
         /* --- THIẾT LẬP CHUNG --- */
@@ -31,31 +31,31 @@
             scroll-behavior: smooth;
         }
 
-        /* Tinh chỉnh thanh cuộn siêu dễ thương (Cute Scrollbar) */
+        /* Tinh chỉnh thanh cuộn đám mây hồng mơ mộng */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: var(--warm-cream);
+            background: #231a1a;
         }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--primary-pink), var(--accent-coral));
             border-radius: 10px;
-            border: 2px solid var(--warm-cream);
+            border: 2px solid #231a1a;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-coral);
         }
 
         body {
-            color: var(--dark-mocha);
+            color: var(--warm-cream); /* Chữ sáng trên nền tối */
             background: url('back.jpg') no-repeat center center fixed;
             background-size: cover;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG (Floating Bubbles) --- */
+        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁT SÁNG --- */
         #bubbles-container {
             position: fixed;
             top: 0;
@@ -70,10 +70,10 @@
         .bubble {
             position: absolute;
             bottom: -100px;
-            background: rgba(255, 255, 255, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 183, 158, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.5), 0 5px 15px rgba(243, 190, 161, 0.15);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 183, 158, 0.2);
             pointer-events: none;
             animation: floatUp 15s linear infinite;
         }
@@ -95,7 +95,7 @@
             }
         }
 
-        /* --- HIỆU ỨNG VẾT CHUỘT LẤP LÁNH (Sparkling Mouse Trail) --- */
+        /* --- HIỆU ỨNG VẾT CHUỘT LẤP LÁNH --- */
         #sparkles-container {
             position: fixed;
             top: 0;
@@ -142,10 +142,10 @@
         }
 
         nav {
-            background: var(--glass-bg);
+            background: rgba(35, 26, 26, 0.8);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255, 183, 158, 0.3);
             padding: 12px 30px;
             border-radius: 50px;
             display: flex;
@@ -157,7 +157,7 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -172,7 +172,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             font-weight: 600;
             font-size: 15px;
             transition: color 0.3s;
@@ -186,7 +186,7 @@
             left: 0;
             width: 0;
             height: 3px;
-            background-color: var(--accent-coral);
+            background-color: var(--primary-pink);
             border-radius: 2px;
             transition: width 0.3s;
         }
@@ -196,7 +196,7 @@
         }
 
         .nav-links a:hover {
-            color: var(--accent-coral);
+            color: var(--primary-pink);
         }
 
         .drive-btn {
@@ -257,8 +257,8 @@
             height: 250px;
             object-fit: cover;
             border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-            border: 6px solid #fff;
-            box-shadow: 0 10px 25px rgba(243, 190, 161, 0.4);
+            border: 6px solid rgba(255, 183, 158, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
             animation: cloudFloat 6s ease-in-out infinite;
         }
 
@@ -273,8 +273,8 @@
         }
 
         .badge {
-            background: rgba(255, 139, 113, 0.15);
-            color: var(--accent-coral);
+            background: rgba(255, 183, 158, 0.15);
+            color: var(--primary-pink);
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 13px;
@@ -283,6 +283,7 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
+            border: 1px solid rgba(255, 183, 158, 0.2);
         }
 
         .hero-title {
@@ -290,13 +291,13 @@
             font-weight: 700;
             margin-bottom: 15px;
             line-height: 1.2;
-            background: linear-gradient(135deg, var(--dark-mocha), var(--accent-coral));
+            background: linear-gradient(135deg, var(--warm-cream), var(--primary-pink));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero-title span {
-            color: var(--accent-coral);
+            color: var(--primary-pink);
         }
 
         .student-info-grid {
@@ -307,18 +308,19 @@
         }
 
         .info-tag {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.08);
             padding: 10px 15px;
             border-radius: 15px;
             font-size: 14px;
             display: flex;
             align-items: center;
             gap: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: var(--warm-cream);
         }
 
         .info-tag i {
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             font-size: 16px;
         }
 
@@ -326,21 +328,25 @@
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 15px;
+            color: #d2b2b0; /* Rose Gold trầm */
         }
 
         .objectives-box {
-            background: rgba(255, 255, 255, 0.5);
-            border-left: 5px solid var(--accent-coral);
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 5px solid var(--primary-pink);
             border-radius: 0 15px 15px 0;
             padding: 20px;
             margin-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-right: 1px solid rgba(255,255,255,0.05);
         }
 
         .objectives-box h4 {
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             display: flex;
             align-items: center;
             gap: 8px;
@@ -350,6 +356,7 @@
             list-style: none;
             font-size: 14.5px;
             line-height: 1.6;
+            color: #d2b2b0;
         }
 
         .objectives-box ul li {
@@ -392,18 +399,19 @@
             padding: 25px;
             box-shadow: var(--card-shadow);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border-left: 5px solid var(--accent-coral);
+            border-left: 5px solid var(--primary-pink);
         }
 
         .skill-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 25px rgba(243, 190, 161, 0.35);
+            box-shadow: 0 12px 25px rgba(255, 183, 158, 0.2);
+            border-color: var(--primary-pink);
         }
 
         .skill-card h4 {
             font-size: 16px;
             font-weight: 700;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             margin-bottom: 10px;
             display: flex;
             align-items: center;
@@ -411,14 +419,14 @@
         }
 
         .skill-card h4 i {
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             font-size: 18px;
         }
 
         .skill-card p {
             font-size: 13.5px;
             line-height: 1.6;
-            color: #554443;
+            color: #d2b2b0;
         }
 
         /* --- DRIVER CTA SECTION --- */
@@ -456,7 +464,7 @@
 
         .driver-box h3 {
             font-size: 20px;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             font-weight: 700;
         }
 
@@ -499,7 +507,7 @@
         .section-header h2 {
             font-size: 32px;
             font-weight: 700;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             display: inline-block;
             position: relative;
         }
@@ -509,7 +517,7 @@
 
         .section-header p {
             font-size: 16px;
-            color: #6d5b5a;
+            color: #d2b2b0;
             margin-top: 10px;
         }
 
@@ -538,7 +546,7 @@
 
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(243, 190, 161, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 183, 158, 0.2);
             border-color: var(--primary-pink);
         }
 
@@ -548,7 +556,7 @@
             right: 25px;
             font-size: 60px;
             font-weight: 900;
-            color: rgba(255, 183, 158, 0.15);
+            color: rgba(255, 183, 158, 0.1);
             pointer-events: none;
             user-select: none;
         }
@@ -556,14 +564,15 @@
         .project-icon {
             width: 55px;
             height: 55px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            color: var(--accent-coral);
-            box-shadow: 0 6px 15px rgba(243, 190, 161, 0.2);
+            color: var(--primary-pink);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
             margin-bottom: 20px;
         }
 
@@ -571,14 +580,14 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             line-height: 1.3;
         }
 
         .project-desc {
             font-size: 14px;
             line-height: 1.6;
-            color: #665453;
+            color: #d2b2b0;
             margin-bottom: 20px;
         }
 
@@ -590,30 +599,30 @@
         }
 
         .pdf-card-btn {
-            background: rgba(255, 139, 113, 0.1);
-            border: 1px solid var(--accent-coral);
+            background: rgba(255, 183, 158, 0.1);
+            border: 1px solid var(--primary-pink);
             padding: 8px 16px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 700;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             display: flex;
             align-items: center;
             gap: 5px;
             cursor: pointer;
             transition: all 0.3s;
-            border-style: solid;
         }
 
         .pdf-card-btn:hover {
-            background: var(--accent-coral);
-            color: #fff;
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
+            box-shadow: 0 0 15px rgba(255, 183, 158, 0.4);
         }
 
         .learn-more-btn {
             background: none;
             border: none;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             font-weight: 700;
             font-size: 14px;
             display: flex;
@@ -635,7 +644,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(74, 62, 61, 0.45);
+            background: rgba(24, 16, 16, 0.6);
             backdrop-filter: blur(8px);
             -webkit-backdrop-filter: blur(8px);
             z-index: 200;
@@ -653,22 +662,22 @@
         }
 
         .modal-wrapper {
-            background: var(--warm-cream);
+            background: #231a1a; /* Tối ấm Cocoa */
             width: 95%;
             max-width: 1000px;
             height: 90vh;
             border-radius: 35px;
             padding: 35px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
             position: relative;
             display: flex;
             flex-direction: column;
-            border: 8px solid rgba(255, 255, 255, 0.95);
+            border: 8px solid rgba(45, 34, 34, 0.95);
         }
 
         .modal-header {
             margin-bottom: 20px;
-            border-bottom: 2px dashed rgba(255, 183, 158, 0.4);
+            border-bottom: 2px dashed rgba(255, 183, 158, 0.2);
             padding-bottom: 15px;
             flex-shrink: 0;
         }
@@ -676,7 +685,7 @@
         .modal-title {
             font-size: 24px;
             font-weight: 700;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             margin-top: 5px;
         }
 
@@ -689,13 +698,13 @@
         }
 
         .m-view-btn {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1.5px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1.5px solid rgba(255, 183, 158, 0.3);
             padding: 10px 20px;
             border-radius: 15px;
             font-weight: 700;
             font-size: 14px;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
@@ -704,10 +713,10 @@
         }
 
         .m-view-btn.active, .m-view-btn:hover {
-            background: var(--accent-coral);
-            color: #fff;
-            border-color: var(--accent-coral);
-            box-shadow: 0 4px 12px rgba(255, 139, 113, 0.2);
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
+            border-color: var(--primary-pink);
+            box-shadow: 0 4px 12px rgba(255, 183, 158, 0.3);
         }
 
         .modal-body-scroll {
@@ -722,7 +731,7 @@
             right: 25px;
             width: 40px;
             height: 40px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(45, 34, 34, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -730,14 +739,14 @@
             cursor: pointer;
             border: 1px solid var(--primary-pink);
             font-size: 18px;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
             transition: all 0.3s;
             z-index: 10;
         }
 
         .close-modal:hover {
-            background: var(--accent-coral);
-            color: #fff;
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
             transform: rotate(90deg);
         }
 
@@ -761,23 +770,25 @@
         }
 
         .pdf-fallback-alert {
-            background: #fff5f3;
-            border: 1px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 183, 158, 0.2);
             border-radius: 15px;
             padding: 12px 20px;
             font-size: 13px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            color: var(--warm-cream);
         }
 
         .pdf-fallback-alert a {
-            background: var(--accent-coral);
-            color: #fff;
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
             padding: 6px 15px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
+            box-shadow: 0 0 10px rgba(255, 183, 158, 0.3);
         }
 
         .modal-section {
@@ -788,22 +799,23 @@
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             display: flex;
             align-items: center;
             gap: 8px;
-            border-bottom: 1px solid rgba(255, 139, 113, 0.15);
+            border-bottom: 1px solid rgba(255, 183, 158, 0.2);
             padding-bottom: 5px;
         }
 
         .modal-section p {
             margin-bottom: 10px;
+            color: #d2b2b0;
         }
 
         /* --- STYLE CHO CÁC MỤC TƯƠNG TÁC (INTERACTIVE WIDGETS) --- */
         .interactive-container {
-            background: rgba(255, 255, 255, 0.7);
-            border: 2px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 183, 158, 0.3);
             border-radius: 20px;
             padding: 20px;
             margin: 20px 0;
@@ -819,8 +831,9 @@
         }
 
         .sim-step-btn {
-            background: #fff;
-            border: 1px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 183, 158, 0.2);
+            color: var(--warm-cream);
             padding: 6px 12px;
             border-radius: 12px;
             font-size: 12px;
@@ -830,14 +843,14 @@
         }
 
         .sim-step-btn.active, .sim-step-btn:hover {
-            background: var(--accent-coral);
-            color: #fff;
-            border-color: var(--accent-coral);
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
+            border-color: var(--primary-pink);
         }
 
         .sim-display {
-            background: #23272a;
-            color: #fff;
+            background: #171111;
+            color: #ffd29d;
             border-radius: 15px;
             padding: 20px;
             font-family: 'Courier New', Courier, monospace;
@@ -846,11 +859,12 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: inset 0 3px 10px rgba(0,0,0,0.3);
+            box-shadow: inset 0 3px 10px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .sim-meta {
-            color: #99aab5;
+            color: #8c7271;
             font-size: 11px;
             border-bottom: 1px dashed rgba(255,255,255,0.1);
             padding-bottom: 8px;
@@ -867,7 +881,9 @@
             width: 100%;
             padding: 10px 15px;
             border-radius: 15px;
-            border: 1.5px solid var(--primary-pink);
+            border: 1.5px solid rgba(255, 183, 158, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--warm-cream);
             margin-bottom: 15px;
             font-size: 14px;
             outline: none;
@@ -881,8 +897,9 @@
         }
 
         .filter-badge {
-            background: #fff;
-            border: 1px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 183, 158, 0.2);
+            color: var(--warm-cream);
             padding: 5px 12px;
             border-radius: 12px;
             font-size: 12px;
@@ -892,9 +909,9 @@
         }
 
         .filter-badge.active, .filter-badge:hover {
-            background: var(--accent-coral);
-            color: #fff;
-            border-color: var(--accent-coral);
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
+            border-color: var(--primary-pink);
         }
 
         .paper-list {
@@ -907,11 +924,12 @@
         }
 
         .paper-item {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 15px;
             padding: 15px;
-            border-left: 5px solid var(--accent-coral);
-            box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+            border-left: 5px solid var(--primary-pink);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
             transition: transform 0.2s;
         }
 
@@ -919,19 +937,19 @@
             font-size: 15px;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--dark-mocha);
+            color: var(--warm-cream);
         }
 
         .paper-meta {
             font-size: 12px;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             font-weight: 600;
             margin-bottom: 8px;
         }
 
         .paper-details-text {
             font-size: 13px;
-            color: #665453;
+            color: #d2b2b0;
             line-height: 1.5;
         }
 
@@ -946,35 +964,37 @@
             flex: 1;
             padding: 12px;
             border-radius: 15px;
-            border: 1px solid var(--primary-pink);
-            background: #fff;
+            border: 1px solid rgba(255, 183, 158, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--warm-cream);
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s;
             font-size: 13px;
         }
 
-        .tab-btn.active {
-            background: var(--accent-coral);
-            color: #fff;
-            border-color: var(--accent-coral);
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--primary-pink);
+            color: var(--dark-mocha);
+            border-color: var(--primary-pink);
         }
 
         .prompt-content {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 15px;
             padding: 20px;
-            border: 1px dashed var(--primary-pink);
+            border: 1px dashed rgba(255, 183, 158, 0.3);
         }
 
         .prompt-box {
-            background: #f7ede2;
-            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 15px;
             border-radius: 10px;
             font-family: monospace;
             font-size: 13px;
             margin: 10px 0;
-            border-left: 4px solid var(--accent-coral);
+            border-left: 4px solid var(--primary-pink);
+            color: #ffd29d;
         }
 
         /* Bài 4 Kanban Board */
@@ -985,31 +1005,33 @@
         }
 
         .kanban-col {
-            background: rgba(255,255,255,0.6);
+            background: rgba(255,255,255,0.02);
             border-radius: 15px;
             padding: 12px;
             min-height: 200px;
-            border: 1px dashed var(--primary-pink);
+            border: 1px dashed rgba(255, 183, 158, 0.2);
         }
 
         .kanban-col h5 {
             text-align: center;
             margin-bottom: 12px;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             font-weight: 700;
             font-size: 14px;
             text-transform: uppercase;
         }
 
         .kanban-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             padding: 12px;
             margin-bottom: 8px;
             font-size: 12px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.2s;
             border-left: 3px solid var(--primary-pink);
+            color: var(--warm-cream);
         }
 
         .kanban-card:hover {
@@ -1019,7 +1041,7 @@
         .kanban-card b {
             display: block;
             margin-bottom: 4px;
-            color: var(--dark-mocha);
+            color: var(--primary-pink);
         }
 
         /* Bài 5 Infographic Preview */
@@ -1030,8 +1052,9 @@
         }
 
         .info-sec-btn {
-            background: #fff;
-            border: 1.5px solid var(--primary-pink);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1.5px solid rgba(255, 183, 158, 0.2);
+            color: var(--warm-cream);
             border-radius: 15px;
             padding: 15px;
             cursor: pointer;
@@ -1040,8 +1063,8 @@
         }
 
         .info-sec-btn:hover, .info-sec-btn.active {
-            border-color: var(--accent-coral);
-            background: rgba(255, 139, 113, 0.08);
+            border-color: var(--primary-pink);
+            background: rgba(255, 183, 158, 0.1);
             transform: translateY(-2px);
         }
 
@@ -1049,14 +1072,15 @@
             font-size: 14px;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
         }
 
         .info-sec-desc {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            color: #d2b2b0;
             border-radius: 15px;
             padding: 20px;
-            border: 1.5px solid var(--primary-pink);
+            border: 1.5px solid rgba(255, 183, 158, 0.2);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1077,11 +1101,12 @@
         }
 
         .term-card {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--warm-cream);
             border-radius: 10px;
             padding: 10px;
             text-align: center;
-            border: 1px solid var(--primary-pink);
+            border: 1px solid rgba(255, 183, 158, 0.2);
             cursor: pointer;
             transition: transform 0.2s;
             font-size: 13px;
@@ -1090,19 +1115,20 @@
         .term-card:hover {
             transform: scale(1.05);
             background: var(--pastel-orange);
+            color: var(--dark-mocha);
         }
 
         .corrector-demo {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 15px;
             padding: 20px;
-            border: 1px solid var(--primary-pink);
+            border: 1px solid rgba(255, 183, 158, 0.2);
         }
 
         .error-word {
-            background: #ffebeb;
-            color: #d9534f;
-            border-bottom: 2px dashed #d9534f;
+            background: rgba(217, 83, 79, 0.15);
+            color: #ff8b71;
+            border-bottom: 2px dashed #ff8b71;
             padding: 0 4px;
             cursor: pointer;
             border-radius: 4px;
@@ -1116,7 +1142,7 @@
             bottom: 125%;
             left: 50%;
             transform: translateX(-50%);
-            background: #4a3e3d;
+            background: #2d1e1e;
             color: #fff;
             padding: 8px 12px;
             border-radius: 8px;
@@ -1124,7 +1150,7 @@
             white-space: pre-wrap;
             z-index: 10;
             width: 250px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
             font-family: 'Quicksand', sans-serif;
             font-weight: normal;
         }
@@ -1158,21 +1184,22 @@
         }
 
         .reflection-col {
-            background: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.02);
             border-radius: 20px;
             padding: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s;
         }
 
         .reflection-col:hover {
             transform: translateY(-5px);
+            border-color: rgba(255, 183, 158, 0.2);
         }
 
         .reflection-col h4 {
             font-size: 17px;
             font-weight: 700;
-            color: var(--accent-coral);
+            color: var(--primary-pink);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
@@ -1183,6 +1210,7 @@
             list-style: none;
             font-size: 14px;
             line-height: 1.6;
+            color: #d2b2b0;
         }
 
         .reflection-col ul li {
@@ -1201,7 +1229,7 @@
 
         /* --- FOOTER --- */
         footer {
-            background: rgba(74, 62, 61, 0.95);
+            background: rgba(35, 26, 26, 0.95);
             color: var(--warm-cream);
             padding: 40px 20px;
             text-align: center;
@@ -1383,6 +1411,7 @@
                     <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học.</p>
                 </div>
                 <div class="card-actions">
+                    <!-- Tương tác xịn: Nhấp trực tiếp nút PDF trên card sẽ gọi thẳng Modal tab PDF, không sang tab mới -->
                     <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(1, 'pdf');">
                         <i class="fa-solid fa-file-pdf"></i> Xem 1.pdf trực tiếp
                     </button>
@@ -2000,7 +2029,7 @@
             { title: "GPT-4 Technical Report", author: "OpenAI (2024)", journal: "OpenAI Research", rating: "cao", detail: "Báo cáo khoa học chính thức về sự phát triển của GPT-4. Điểm mạnh: Nền tảng công nghệ nguồn gốc vững vàng. Điểm yếu: Nghiêng nặng về yếu tố kỹ thuật công nghệ thay vì định hướng giáo dục." },
             { title: "ChatGPT for Language Teaching and Learning", author: "Kohnke, L., Moorhouse, B. & Zou, D. (2023)", journal: "RELC Journal, 54(2)", rating: "ratcao", detail: "Đánh giá ứng dụng thực hành ChatGPT trong giảng dạy ngôn ngữ. Điểm mạnh: Đăng tải trên tạp chí Scopus Q1 uy tín. Điểm yếu: Chưa có các số liệu khảo sát lâu dài." },
             { title: "Ethics of AI in Education", author: "Holmes, W. et al. (2022)", journal: "UNESCO Publishing", rating: "cao", detail: "Sách chuyên khảo phân tích thấu đáo các vấn đề đạo đức khi đưa AI vào giảng dạy học thuật. Điểm mạnh: Khách quan, quy chuẩn UNESCO. Điểm yếu: Thiếu các ví dụ cụ thể cho tiếng Nga." },
-            { title: "Systematic Review of Research on Artificial Intelligence Applications in Higher Education", author: "Zawacki-Richter, O. et al. (2019)", journal: "IJETHE, 16(39)", rating: "ratcao", detail: "Phân tích hệ thống tổng hợp 146 công trình nghiên cứu nền tảng về AI trong giáo dục đại học. Điểm mạnh: Cơ sở lý thuyết cực kỳ vững chắc. Điểm yếu: Chưa cập nhật sự bùng nổ của ChatGPT sau năm 2022." }
+            { title: "Systematic Review of Research on Artificial Intelligence Applications in Higher Education", author: "Zawacki-Richter, O. et al. (2019)", journal: "IJETHE, 16(39)", rating: "ratcao", detail: "Phân tích hệ thống tổng hợp 146 công trình nghiên cứu nền tảng về AI trong giáo dục đại học. Điểm mạnh: Phân tích hệ thống vững chắc. Điểm yếu: Chưa cập nhật sự bùng nổ của ChatGPT sau năm 2022." }
         ];
 
         /* --- Global infographic sections for Bài 5 Campaign Simulator --- */
@@ -2169,11 +2198,11 @@
                 display.innerHTML = `
                     <h5>📝 Nội dung câu lệnh Trang gửi AI:</h5>
                     <div class="prompt-box">${data.box}</div>
-                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--accent-coral); font-weight:700;">${data.score}</span></p>
-                    <p style="font-size:13px; color:#6d5b5a; margin-top:5px;"><i>${data.desc}</i></p>
-                    <hr style="margin:12px 0; border:0; border-top:1px dashed var(--primary-pink);">
+                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--primary-pink); font-weight:700;">${data.score}</span></p>
+                    <p style="font-size:13px; color:#ffd29d; margin-top:5px;"><i>${data.desc}</i></p>
+                    <hr style="margin:12px 0; border:0; border-top:1px dashed rgba(255, 183, 158, 0.3);">
                     <h5>📊 Phân tích hiệu quả:</h5>
-                    <p style="font-size:14px; line-height:1.6;">${data.analysis}</p>
+                    <p style="font-size:14px; line-height:1.6; color:#d2b2b0;">${data.analysis}</p>
                 `;
             }
         }
