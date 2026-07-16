@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang's Digital Portfolio ✨</title>
     <!-- Google Fonts & FontAwesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Tone ấm ngọt ngào như mây đào) --- */
+        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Tone đào kem mộng mơ) --- */
         :root {
             --primary-pink: #ffb79e;
             --pastel-orange: #ffd29d;
@@ -17,8 +17,8 @@
             --dark-mocha: #4a3e3d;
             --accent-coral: #ff8b71;
             --glass-bg: rgba(255, 255, 255, 0.65);
-            --glass-border: rgba(255, 255, 255, 0.8);
-            --card-shadow: 0 10px 30px rgba(243, 190, 161, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.85);
+            --card-shadow: 0 10px 30px rgba(243, 190, 161, 0.3);
             --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.5);
         }
 
@@ -27,7 +27,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Quicksand', sans-serif;
+            font-family: 'Quicksand', 'Nunito', sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -70,9 +70,8 @@
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 1100px;
+            max-width: 1200px;
             z-index: 100;
-            transition: all 0.3s ease;
         }
 
         nav {
@@ -215,7 +214,7 @@
 
         .hero-title {
             font-size: 38px;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 15px;
             line-height: 1.2;
             background: linear-gradient(135deg, var(--dark-mocha), var(--accent-coral));
@@ -580,9 +579,31 @@
             margin-bottom: 10px;
         }
 
+        /* --- NÚT LIÊN KẾT ĐẾN BẢN DOCS RIÊNG --- */
+        .individual-doc-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #4285f4, #34a853);
+            color: #fff;
+            padding: 10px 18px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(66, 133, 244, 0.3);
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .individual-doc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(66, 133, 244, 0.45);
+        }
+
         /* --- STYLE CHO CÁC MỤC TƯƠNG TÁC (INTERACTIVE WIDGETS) --- */
         .interactive-container {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.75);
             border: 2px solid var(--primary-pink);
             border-radius: 20px;
             padding: 20px;
@@ -592,8 +613,8 @@
 
         /* Bài 1 Simulator */
         .sim-step-list {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 8px;
             margin-bottom: 15px;
         }
@@ -601,10 +622,12 @@
         .sim-step-btn {
             background: #fff;
             border: 1px solid var(--primary-pink);
-            padding: 5px 10px;
+            padding: 6px;
             border-radius: 12px;
-            font-size: 12px;
+            font-size: 11px;
+            font-weight: 600;
             cursor: pointer;
+            text-align: center;
             transition: all 0.3s;
         }
 
@@ -615,16 +638,23 @@
         }
 
         .sim-display {
-            background: #2d3238;
-            color: #fff;
+            background: #25282c;
+            color: #a8ffb2;
             border-radius: 12px;
             padding: 15px;
-            font-family: monospace;
-            font-size: 13px;
-            min-height: 150px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 12px;
+            min-height: 180px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
+            overflow-y: auto;
+            border: 2px solid #3e444d;
+        }
+
+        .sim-display-line {
+            margin-bottom: 5px;
+            line-height: 1.4;
         }
 
         /* Bài 2 Search Engine */
@@ -641,6 +671,7 @@
             display: flex;
             gap: 10px;
             margin-bottom: 15px;
+            flex-wrap: wrap;
         }
 
         .filter-badge {
@@ -739,12 +770,7 @@
             margin-bottom: 8px;
             font-size: 12px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            cursor: grab;
             transition: transform 0.2s;
-        }
-
-        .kanban-card:hover {
-            transform: rotate(1deg) scale(1.02);
         }
 
         /* Bài 5 Infographic Preview */
@@ -789,7 +815,7 @@
 
         .travel-term-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
             gap: 8px;
         }
 
@@ -840,34 +866,6 @@
             z-index: 10;
             width: 220px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        }
-
-        /* Nút liên kết Google Docs riêng cho từng bài tập */
-        .doc-link-container {
-            display: flex;
-            justify-content: center;
-            margin-top: 35px;
-            border-top: 2px dashed rgba(255, 183, 158, 0.4);
-            padding-top: 25px;
-        }
-
-        .doc-link-btn {
-            background: linear-gradient(135deg, var(--accent-coral), var(--primary-pink));
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 700;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 6px 20px rgba(255, 139, 113, 0.3);
-            transition: all 0.3s;
-        }
-
-        .doc-link-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(255, 139, 113, 0.5);
         }
 
         /* --- TRANG TỔNG KẾT (REFLECTION) --- */
@@ -992,6 +990,10 @@
             .nav-links {
                 display: none;
             }
+
+            .sim-step-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
     </style>
 </head>
@@ -1022,7 +1024,7 @@
                 <img src="Hình 1.jpg" alt="Đỗ Thuỳ Trang" class="avatar-img">
             </div>
             <div class="hero-content">
-                <span class="badge">Xin chào các bạn! 🌸</span>
+                <span class="badge">Xin chào mọi người! 🌸</span>
                 <h1 class="hero-title">Mình là <span>Đỗ Thuỳ Trang</span></h1>
                 
                 <div class="student-info-grid">
@@ -1033,15 +1035,15 @@
                 </div>
 
                 <p class="hero-desc">
-                    Trước đây, một cô gái chuyên ngành ngôn ngữ như mình luôn nhìn nhận thế giới kỹ thuật số và trí tuệ nhân tạo (AI) là một điều gì đó khô khan, đầy rào cản. Thế nhưng, cuộc hành trình với môn học <i>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</i> đã vẽ nên một bức tranh hoàn toàn khác - nơi công nghệ trở thành chất xúc tác kỳ diệu giúp nâng bước đam mê ngôn ngữ.
+                    Mình là một sinh viên chuyên ngành ngoại ngữ, người từng xem công nghệ thông tin là một mảng xa vời đầy bỡ ngỡ. Tuy vậy, trong quá trình tham gia lớp học <i>Nhập môn công nghệ số và ứng dụng trí tuệ nhân tạo</i>, mình đã tự tay khám phá ra sự hòa hợp kỳ diệu giữa công nghệ số và ngôn ngữ học. Nó không chỉ đơn thuần là việc soạn thảo hay gõ văn bản, mà là cách chúng ta tối ưu hóa tư duy, biến AI thành một người gia sư mẫn cán đồng hành trên hành trình tự học tiếng Nga.
                 </p>
 
                 <div class="objectives-box">
                     <h4>✨ Mục Tiêu Của Trang Portfolio Này</h4>
                     <ul>
-                        <li><b>Hệ thống hóa kiến thức:</b> Tổng hợp khoa học 6 bài tập rèn luyện kỹ năng số, biến tri thức thành sản phẩm có giá trị sử dụng lâu dài.</li>
-                        <li><b>Phát triển năng lực số:</b> Trực tiếp xây dựng giao diện tương tác, rèn luyện tư duy logic qua lập trình web mộc mạc.</li>
-                        <li><b>Kết nối & Chia sẻ:</b> Tạo không gian lưu trữ mở, tạo cơ hội cho mọi người cùng khám phá cách học tiếng Nga đầy thú vị cùng AI.</li>
+                        <li><b>Hệ thống hóa kiến thức:</b> Ghi lại một cách chi tiết, có hệ thống 6 bài tập rèn luyện kỹ năng số, thể hiện rõ quá trình tiến bộ của bản thân.</li>
+                        <li><b>Trải nghiệm tương tác sống động:</b> Thiết kế các công cụ giả lập bằng code web để người đọc có thể dễ dàng hiểu được các bài thực hành của mình.</li>
+                        <li><b>Chia sẻ & Truyền cảm hứng:</b> Tạo ra nguồn tài liệu tham khảo đáng yêu cho các bạn sinh viên ngoại ngữ đang muốn chinh phục công nghệ.</li>
                     </ul>
                 </div>
             </div>
@@ -1073,7 +1075,7 @@
                 <div>
                     <div class="project-icon"><i class="fa-solid fa-folder-open"></i></div>
                     <h3 class="project-title">Thao Tác Tệp & Thư Mục</h3>
-                    <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học.</p>
+                    <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học trên máy tính.</p>
                 </div>
                 <button class="learn-more-btn">Xem chi tiết & Mô phỏng <i class="fa-solid fa-arrow-right"></i></button>
             </div>
@@ -1135,7 +1137,7 @@
         </div>
     </section>
 
-    <!-- REFLECTION SECTION (Advantages, Difficulties & Lessons) -->
+    <!-- REFLECTION SECTION -->
     <section class="reflection-section" id="reflection">
         <div class="section-header">
             <h2>Hành Trình Chiêm Nghiệm ✨</h2>
@@ -1143,7 +1145,7 @@
         </div>
         <div class="reflection-card">
             <p class="reflection-text">
-                Tạo nên trang <b>Digital Portfolio</b> mộc mạc này chính là khoảnh khắc mình được lật giở từng trang nhật ký của bản thân suốt một kỳ học qua. Từ những buổi tối loay hoay sắp xếp dữ liệu, đến sự hào hứng khi nhìn ngắm AI phát hiện lỗi sai tiếng Nga của mình. Nhìn lại hành trình, mình gom góp được những điều ý nghĩa sau:
+                Xây dựng trang <b>Digital Portfolio</b> này chính là lúc mình được ngồi lại, xâu chuỗi mọi trải nghiệm đáng quý suốt kỳ học qua. Từ những bước chân bỡ ngỡ ban đầu cho tới việc làm chủ một hệ thống kiến thức số nền tảng, mình nhận ra công nghệ không hề khô khan mà cực kỳ thú vị nếu chúng mình biết đặt tư duy đúng chỗ.
             </p>
             
             <div class="reflection-grid">
@@ -1151,27 +1153,27 @@
                 <div class="reflection-col">
                     <h4><i class="fa-solid fa-sun"></i> Thuận Lợi</h4>
                     <ul>
-                        <li>Được thầy cô hướng dẫn bài bản với hệ thống tài liệu minh họa sinh động, rõ ràng.</li>
-                        <li>Trí tuệ nhân tạo (Generative AI) ngày nay phát triển mạnh mẽ, phản hồi nhanh và đóng vai trò như một người gia sư kiên nhẫn 24/7.</li>
-                        <li>Lĩnh vực ngôn ngữ có nhiều dư địa để kết hợp công nghệ giúp cá nhân hóa việc tự học.</li>
+                        <li>Chương trình học thiết kế tinh giản, kết hợp lý thuyết và thực hành rõ ràng.</li>
+                        <li>Trí tuệ nhân tạo (AI) ngày nay phản hồi rất nhanh, đóng vai trò như một người trợ giảng thân thiện 24/7.</li>
+                        <li>Sự chủ động nghiên cứu giúp mình tự tích hợp được công nghệ vào ngành học cốt lõi (tiếng Nga).</li>
                     </ul>
                 </div>
                 <!-- KHÓ KHĂN -->
                 <div class="reflection-col">
                     <h4><i class="fa-solid fa-cloud-showers-heavy"></i> Khó Khăn</h4>
                     <ul>
-                        <li>Những bước đầu tiếp cận với việc sàng lọc tài liệu học thuật quốc tế và thiết lập Prompt nâng cao khá bỡ ngỡ.</li>
-                        <li>Tiếng Nga có ngữ pháp biến cách rất phức tạp, đôi khi AI phản hồi chưa hoàn toàn chính xác hoặc bị lặp từ.</li>
-                        <li>Đòi hỏi sự kiên nhẫn cao độ để đối chiếu chéo thông tin với giáo trình chính thống.</li>
+                        <li>Bước đầu tiếp cận các cơ sở dữ liệu học thuật quốc tế lớn (Scopus, Springer) còn nhiều thuật ngữ lạ lẫm.</li>
+                        <li>Tiếng Nga có cấu trúc ngữ pháp biến cách phức tạp, đôi khi AI phản hồi bị lỗi ngữ cảnh hoặc "ảo giác" thông tin.</li>
+                        <li>Việc rà soát, kiểm chứng chéo đòi hỏi rất nhiều sự kiên nhẫn.</li>
                     </ul>
                 </div>
                 <!-- BÀI HỌC KINH NGHIỆM -->
                 <div class="reflection-col">
                     <h4><i class="fa-solid fa-book-open"></i> Bài Học</h4>
                     <ul>
-                        <li><b>Trust but Verify (Tin tưởng nhưng phải kiểm chứng):</b> Luôn chủ động rà soát thông tin từ AI bằng tri thức và tài liệu khoa học đáng tin cậy.</li>
-                        <li>Tư duy của con người là trung tâm, AI chỉ là công cụ bổ trợ nâng cao hiệu suất sáng tạo.</li>
-                        <li>Học kỹ nghệ prompt giúp chúng ta hiểu cách giao tiếp logic và giải quyết vấn đề hiệu quả hơn.</li>
+                        <li><b>Kiểm chứng là chìa khóa:</b> AI là một người đồng hành tuyệt vời nhưng con người phải luôn là người kiểm duyệt thông tin cuối cùng.</li>
+                        <li><b>Tư duy Prompt chuyên nghiệp:</b> Biết cách đặt câu hỏi logic giúp khai phá tối đa tiềm năng của mô hình AI.</li>
+                        <li><b>Liêm chính học thuật:</b> Sử dụng AI có trách nhiệm, trung thực để rèn luyện kỹ năng cốt lõi cho bản thân.</li>
                     </ul>
                 </div>
             </div>
@@ -1201,7 +1203,7 @@
     <!-- --- INTERACTIVE WIDGET GENERATION & POPUP LOGIC --- -->
     <script>
         /* --- Sparkles particles emitting around cursor --- */
-        const container = document.getElementById('sparkles-container');
+        const sparkleContainer = document.getElementById('sparkles-container');
         document.addEventListener('mousemove', function(e) {
             if (Math.random() > 0.85) {
                 const sparkle = document.createElement('div');
@@ -1213,7 +1215,7 @@
                 sparkle.style.top = e.clientY + 'px';
                 const colors = ['#ffb79e', '#ffd29d', '#ffffff', '#ff8b71'];
                 sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]} 0%, rgba(255,255,255,0) 70%)`;
-                container.appendChild(sparkle);
+                sparkleContainer.appendChild(sparkle);
                 setTimeout(() => { sparkle.remove(); }, 2500);
             }
         });
@@ -1222,523 +1224,485 @@
         const assignmentData = {
             1: {
                 subtitle: "Bài 1 - Thao tác cơ bản với tệp tin và thư mục",
-                title: "Vũ Điệu Quản Lý Tệp Tin Trên Hệ Điều Hành 📁",
+                title: "Vũ Điệu Dọn Dẹp Nhà Cửa Kỹ Thuật Số 📁",
                 content: `
+                    <a href="https://docs.google.com/document/d/1jrf3H0qSa4tTAqU7TuehqodwSQBk-lH4/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 1)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Nắm vững kỹ năng thao tác cơ bản trên hệ điều hành Windows, thiết lập tư duy tổ chức cây thư mục chuẩn chỉ và quản lý dữ liệu an toàn.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Nắm vững cấu trúc tổ chức dữ liệu của hệ điều hành, rèn luyện thói quen lưu trữ thông tin có cấu trúc khoa học và thực hiện chuẩn xác 12 thao tác xử lý tệp tin nền tảng trên máy tính cá nhân.</p>
                     </div>
+                    
                     <div class="modal-section">
-                        <div class="modal-section-title">✍️ Nhật ký thực hiện 12 bước chi tiết</div>
-                        <p>Dưới đây là hành trình từng bước nhỏ mình tự tay thao tác dọn dẹp không gian số:</p>
-                        <ol style="margin-left: 20px; line-height: 1.8;">
-                            <li><b>Bước 1:</b> Nhấn tổ hợp phím <code>Windows + E</code> hoặc click vào thư mục màu vàng trên thanh tác vụ để mở <b>File Explorer</b>.</li>
-                            <li><b>Bước 2:</b> Quan sát cột bên trái, click chọn <b>This PC</b> và nhấp đúp vào ổ đĩa phụ <code>Data (D:)</code> hoặc <code>New Volume (F:)</code>. (Nếu chỉ có duy nhất ổ C, mình sẽ chọn mục <i>Documents</i>).</li>
-                            <li><b>Bước 3:</b> Click chuột phải vào khoảng trống bất kỳ -> chọn <b>New</b> -> <b>Folder</b>. Đặt tên thư mục gốc là <code>ThucHanh_DoThuyTrang</code> rồi ấn Enter.</li>
-                            <li><b>Bước 4:</b> Nhấp đúp chuột để tiến vào thư mục <code>ThucHanh_DoThuyTrang</code> vừa khởi tạo.</li>
-                            <li><b>Bước 5:</b> Click chuột phải -> chọn <b>New</b> -> chọn <b>Text Document</b> để tạo tệp tin văn bản trắng.</li>
-                            <li><b>Bước 6:</b> Đặt tên ban đầu cho tệp tin này là <code>GhiChu.txt</code> và nhấn Enter.</li>
-                            <li><b>Bước 7:</b> Để đổi tên tệp, mình click chuột phải vào <code>GhiChu.txt</code> -> chọn biểu tượng hoặc mục <b>Rename</b>. Đổi tên thành <code>GhiChuQuanTrong.txt</code> và ấn Enter.</li>
-                            <li><b>Bước 8:</b> Tiếp tục click chuột phải -> chọn <b>New</b> -> <b>Folder</b> để tạo một thư mục con nằm bên trong mang tên <code>TaiLieu</code>.</li>
-                            <li><b>Bước 9:</b> Click chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn <b>Copy</b> (hoặc ấn tổ hợp phím huyền thoại <code>Ctrl + C</code>).</li>
-                            <li><b>Bước 10:</b> Tiến vào thư mục con <code>TaiLieu</code>, click chuột phải -> chọn <b>Paste</b> (hoặc nhấn <code>Ctrl + V</code>) để dán bản sao tệp vào đây.</li>
-                            <li><b>Bước 11:</b> Quay ngược lại thư mục <code>ThucHanh_DoThuyTrang</code>, click tạo mới tệp tin <code>DiChuyen.txt</code>. Click chuột phải chọn <b>Cut</b> (<code>Ctrl + X</code>), truy cập vào thư mục <code>TaiLieu</code> và dán <b>Paste</b> tệp vào đó.</li>
-                            <li><b>Bước 12:</b> Màn dọn dẹp cuối cùng: Tại thư mục <code>TaiLieu</code>, mình click chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn <b>Delete</b> để đưa tệp vào Thùng rác. Còn với tệp <code>DiChuyen.txt</code>, mình chọn tệp rồi ấn giữ <code>Shift + Delete</code> để xóa vĩnh viễn không qua thùng rác. Cuối cùng, mình ra ngoài màn hình Desktop, nhấp đúp mở <b>Recycle Bin</b>, click chuột phải vào <code>GhiChuQuanTrong.txt</code> và chọn <b>Restore</b> để khôi phục tệp về lại thư mục <code>TaiLieu</code>.</li>
-                        </ol>
+                        <div class="modal-section-title">📝 Quy trình thực hiện chi tiết (12 Bước thực hành)</div>
+                        <p><b>Bước 1:</b> Mở File Explorer bằng tổ hợp phím <code>Windows + E</code> hoặc nhấn vào biểu tượng thư mục màu vàng trên thanh tác vụ.</p>
+                        <p><b>Bước 2:</b> Truy cập ổ đĩa dữ liệu bằng cách nhấp chọn <i>This PC</i> ở cột trái, rồi nhấp đúp vào một ổ đĩa không phải ổ hệ thống (ví dụ: ổ D: hoặc E:). Trường hợp máy chỉ có một ổ C:, tiến hành truy cập thư mục <i>Documents</i>.</p>
+                        <p><b>Bước 3:</b> Tạo thư mục gốc bằng cách nhấn chuột phải vào khoảng trống -> chọn <i>New -> Folder</i>. Đặt tên thư mục là <code>ThucHanh_DoThuyTrang</code> và nhấn Enter.</p>
+                        <p><b>Bước 4:</b> Nhấp đúp chuột vào thư mục <code>ThucHanh_DoThuyTrang</code> mới tạo để truy cập vào bên trong.</p>
+                        <p><b>Bước 5:</b> Tạo tệp tin văn bản mới bằng cách chuột phải vào khoảng trống -> chọn <i>New -> Text Document</i>. Đặt tên tệp tin ban đầu là <code>GhiChu.txt</code> và nhấn Enter.</p>
+                        <p><b>Bước 6:</b> Thực hiện đổi tên tệp tin: Nhấp chuột phải vào tệp <code>GhiChu.txt</code> -> chọn biểu tượng hoặc mục <i>Rename</i>. Đổi tên thành <code>GhiChuQuanTrong.txt</code> và nhấn Enter.</p>
+                        <p><b>Bước 7:</b> Tạo một thư mục con bằng cách nhấp chuột phải vào khoảng trống -> chọn <i>New -> Folder</i>. Đặt tên thư mục này là <code>TaiLieu</code> và nhấn Enter.</p>
+                        <p><b>Bước 8:</b> Thực hiện thao tác sao chép (Copy & Paste): Nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn <i>Copy</i> (hoặc chọn tệp rồi nhấn tổ hợp <code>Ctrl + C</code>). Nhấp đúp vào thư mục con <code>TaiLieu</code>, nhấp chuột phải vào khoảng trống bên trong thư mục này -> chọn <i>Paste</i> (hoặc nhấn <code>Ctrl + V</code>) để dán tệp tin.</p>
+                        <p><b>Bước 9:</b> Quay lại thư mục gốc <code>ThucHanh_DoThuyTrang</code>. Tạo một tệp mới tên là <code>DiChuyen.txt</code>. Nhấp chuột phải vào tệp này -> chọn <i>Cut</i> (hoặc chọn tệp rồi nhấn <code>Ctrl + X</code>). Truy cập lại vào thư mục con <code>TaiLieu</code>, chuột phải vào khoảng trống -> chọn <i>Paste</i> (hoặc nhấn <code>Ctrl + V</code>) để di chuyển tệp tin.</p>
+                        <p><b>Bước 10:</b> Thực hiện thao tác xóa tệp: Trong thư mục <code>TaiLieu</code>, nhấp chuột phải vào tệp <code>GhiChuQuanTrong.txt</code> -> chọn <i>Delete</i> để chuyển tệp vào Thùng rác (Recycle Bin).</p>
+                        <p><b>Bước 11:</b> Thực hiện thao tác xóa vĩnh viễn: Chọn tệp <code>DiChuyen.txt</code>, nhấn giữ phím <code>Shift</code> và nhấn phím <code>Delete</code>. Một hộp thoại cảnh báo hiện ra, chọn <i>Yes</i> để tệp bị xóa vĩnh viễn mà không qua Thùng rác.</p>
+                        <p><b>Bước 12:</b> Thực hiện khôi phục tệp: Quay lại màn hình nền (Desktop), nhấp đúp để mở biểu tượng <i>Recycle Bin</i>. Tìm tệp <code>GhiChuQuanTrong.txt</code> đã bị xóa trước đó, nhấp chuột phải vào tệp và chọn <i>Restore</i> để đưa tệp quay lại vị trí ban đầu trong thư mục <code>TaiLieu</code>.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">💻 Trình mô phỏng cây thư mục (Interactive Sandbox)</div>
-                        <p>Nhấp vào nút bên dưới để mô phỏng lại 12 bước hành động trên máy tính của mình nhé:</p>
+                        <div class="modal-section-title">💻 Giả lập mô phỏng trực quan</div>
+                        <p>Hãy click vào từng nút dưới đây để xem sự thay đổi trạng thái của hệ thống thư mục ảo bên dưới nhé!</p>
                         <div class="interactive-container">
                             <div class="sim-step-list">
-                                <button class="sim-step-btn" onclick="runSimStep(1)">B1-2: Vào Ổ F</button>
-                                <button class="sim-step-btn" onclick="runSimStep(3)">B3-4: Tạo Thư Mục Trang</button>
-                                <button class="sim-step-btn" onclick="runSimStep(5)">B5-6: Tạo GhiChu.txt</button>
-                                <button class="sim-step-btn" onclick="runSimStep(7)">B7: Đổi tên thành QuanTrong</button>
-                                <button class="sim-step-btn" onclick="runSimStep(8)">B8: Tạo Folder TaiLieu</button>
-                                <button class="sim-step-btn" onclick="runSimStep(9)">B9-10: Copy Paste sang TaiLieu</button>
-                                <button class="sim-step-btn" onclick="runSimStep(11)">B11: Di chuyển DiChuyen.txt</button>
-                                <button class="sim-step-btn" onclick="runSimStep(12)">B12: Delete & Shift-Delete</button>
+                                <button class="sim-step-btn" onclick="runSim1(3)">Bước 3: Tạo TM</button>
+                                <button class="sim-step-btn" onclick="runSim1(5)">Bước 5: Tạo File</button>
+                                <button class="sim-step-btn" onclick="runSim1(6)">Bước 6: Đổi tên</button>
+                                <button class="sim-step-btn" onclick="runSim1(7)">Bước 7: Tạo TM con</button>
+                                <button class="sim-step-btn" onclick="runSim1(8)">Bước 8: Copy</button>
+                                <button class="sim-step-btn" onclick="runSim1(9)">Bước 9: Di chuyển</button>
+                                <button class="sim-step-btn" onclick="runSim1(10)">Bước 10: Xóa tệp</button>
+                                <button class="sim-step-btn" onclick="runSim1(12)">Bước 12: Khôi phục</button>
                             </div>
-                            <div class="sim-display" id="simDisplay">
-                                > Chào mừng bạn! Sẵn sàng mô phỏng quá trình quản lý tệp tin của Đỗ Thuỳ Trang...
+                            <div class="sim-display" id="simDisplay1">
+                                <div class="sim-display-line">[Hệ thống sẵn sàng] Click các nút phía trên để bắt đầu giả lập thao tác!</div>
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>Việc thao tác chuẩn chỉ cây thư mục giúp Trang rèn luyện thói quen ngăn nắp khi lưu trữ các bài tập dịch thuật và file âm thanh tiếng Nga phức tạp, đồng thời biết cách bảo toàn dữ liệu khi có sự cố xóa nhầm.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1jrf3H0qSa4tTAqU7TuehqodwSQBk-lH4/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 1
-                        </a>
+                        <p>Quản lý dữ liệu ngăn nắp ngay từ đầu giúp mình giảm thiểu tối đa thời gian tìm kiếm bài học, tránh hiện tượng thất lạc tài liệu thi cử và hỗ trợ giữ cho bộ nhớ máy tính luôn được dọn dẹp tối ưu.</p>
                     </div>
                 `
             },
             2: {
                 subtitle: "Bài 2 - Khai thác dữ liệu và thông tin học thuật",
-                title: "Thám Hiểm 10 Công Trình Khoa Học AI & Tiếng Nga 🔍",
+                title: "Thám Hiểm Đại Dương Tri Thức Học Thuật 🔍",
                 content: `
+                    <a href="https://docs.google.com/document/d/1nB3KGV-J3GIR8X8bI0SVFeGDHQKFQdj8/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 2)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Rèn luyện tư duy tìm kiếm thông tin có chọn lọc trên hệ thống học thuật lớn, học cách thẩm định độ tin cậy của tài liệu nghiên cứu dựa trên các tiêu chí khoa học nghiêm ngặt.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Xây dựng quy trình tìm kiếm thông tin khoa học chuyên nghiệp; nắm vững kỹ thuật sàng lọc tài liệu dựa trên các cơ sở dữ liệu quốc tế lớn và đánh giá độ tin cậy của bài báo theo các tiêu chuẩn học thuật rõ ràng.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">📚 Phương pháp tìm kiếm & Từ khóa của Trang</div>
-                        <p>Mình đã lọc thông tin khoa học trong giai đoạn <b>2022-2025</b> (có bổ sung một số bài 2026 tiên phong và bài nền tảng 2019) sử dụng các toán tử <code>AND</code>, <code>OR</code>, và dấu ngoặc kép <code>""</code> trên các nguồn uy tín: Google Scholar, IEEE Xplore, SpringerLink, ScienceDirect, ACM Digital Library và ERIC.</p>
-                        <p><b>Từ khóa Tiếng Việt:</b> <i>"Ứng dụng AI trong học tiếng Nga", "Trí tuệ nhân tạo trong giáo dục ngoại ngữ", "AI hỗ trợ học ngoại ngữ", "ChatGPT học tiếng Nga".</i></p>
-                        <p><b>Từ khóa Tiếng Anh:</b> <i>"AI in Russian language learning", "Artificial Intelligence in language education", "Generative AI for language learning", "ChatGPT for learning Russian".</i></p>
-                    </div>
-                    <div class="modal-section">
-                        <div class="modal-section-title">📁 Thư viện 10 bài báo khoa học chất lượng cao (Trích xuất đầy đủ từ báo cáo của Trang)</div>
-                        <p>Dưới đây là danh sách toàn bộ 10 tài liệu mình đã đọc, dịch, phân tích kỹ lưỡng. Bạn có thể tìm kiếm nhanh hoặc bấm bộ lọc để khám phá nhanh:</p>
+                        <div class="modal-section-title">📚 Thư viện 10 bài nghiên cứu đã phân tích</div>
+                        <p>Dưới đây là danh sách đầy đủ 10 nguồn tài liệu học thuật được mình sàng lọc kỹ càng về chủ đề <b>"Ứng dụng AI trong học tiếng Nga"</b>. Bạn có thể sử dụng bộ lọc và tìm kiếm nhanh để tra cứu:</p>
                         
                         <div class="interactive-container">
-                            <input type="text" class="paper-search-input" id="paperSearch" placeholder="🔍 Nhập tên tác giả hoặc từ khóa để tìm nhanh..." onkeyup="filterPapers()">
+                            <input type="text" class="paper-search-input" id="paperSearch" onkeyup="filterPapers()" placeholder="Nhập tên bài báo, tác giả để tìm kiếm nhanh...">
                             <div class="paper-filters">
-                                <span class="filter-badge active" onclick="filterBadge('all')">Tất cả</span>
-                                <span class="filter-badge" onclick="filterBadge('Rất cao')">Xếp hạng: Rất cao</span>
-                                <span class="filter-badge" onclick="filterBadge('Cao')">Xếp hạng: Cao</span>
-                                <span class="filter-badge" onclick="filterBadge('Tạp chí')">Tạp chí</span>
+                                <span class="filter-badge active" onclick="setPaperFilter('all')">Tất cả</span>
+                                <span class="filter-badge" onclick="setPaperFilter('Very High')">Độ tin cậy: Rất cao</span>
+                                <span class="filter-badge" onclick="setPaperFilter('High')">Độ tin cậy: Cao</span>
                             </div>
-                            <div class="paper-list" id="paperList">
-                                <!-- Loaded dynamically via JS -->
+                            <div class="paper-list" id="paperListContainer">
+                                <!-- Loaded by Javascript -->
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>Việc trực tiếp thám hiểm 10 tài liệu này đã mở rộng chân trời tri thức cho mình. Bản thân mình nhận thấy muốn khai thác thông tin học thuật chuẩn, không được lấy nguồn trôi nổi trên mạng xã hội mà phải biết sử dụng Google Scholar, kiểm tra các bài báo có bình duyệt (peer-reviewed) và tra cứu chỉ số DOI rõ ràng.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1nB3KGV-J3GIR8X8bI0SVFeGDHQKFQdj8/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 2
-                        </a>
+                        <p>Việc sàng lọc và ghi chép hệ thống giúp mình phân biệt rạch ròi giữa thông tin báo chí thông thường và tri thức khoa học được bình duyệt (peer-reviewed). Từ đó, xây dựng một phông nền lý luận vững chắc, đáng tin cậy cho bài viết nghiên cứu của bản thân.</p>
                     </div>
                 `
             },
             3: {
                 subtitle: "Bài 3 - Viết Prompt hiệu quả cho các tác vụ học tập",
-                title: "Nghệ Thuật Khai Phá Sức Mạnh AI Qua Prompt Lab 💬",
+                title: "Nghệ Thuật Giao Tiếp Sâu Sắc Với Trí Tuệ Nhân Tạo 💬",
                 content: `
+                    <a href="https://docs.google.com/document/d/1BVuANyA9T9uxDt4rqYJzuLgw7AogGrHn/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 3)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Hiểu sâu sắc cơ chế hoạt động của Mô hình ngôn ngữ lớn (LLM), thành thục việc nâng cấp câu lệnh từ cơ bản đến phức tạp thông qua các kỹ thuật tiên tiến.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Tìm hiểu cơ chế hoạt động của kỹ nghệ Prompt (Prompt Engineering); rèn luyện tư duy thiết lập bối cảnh, giới hạn phạm vi nhiệm vụ và so sánh hiệu quả chất lượng câu trả lời giữa các phương pháp viết Prompt khác nhau.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">🧪 So sánh 3 cấp độ Prompt thực nghiệm của Trang</div>
-                        <p>Mình đã thực hiện so sánh đối chiếu hiệu quả phản hồi của ChatGPT qua 3 cấp độ câu lệnh khác nhau. Bấm chọn từng tab để khám phá sự khác biệt bất ngờ nhé:</p>
+                        <div class="modal-section-title">🛠️ Thử nghiệm 3 cấp độ Prompt trong báo cáo của Trang</div>
+                        <p>Hãy chuyển đổi giữa các tab dưới đây để so sánh sự khác biệt vượt trội về chất lượng câu trả lời khi nâng cấp câu lệnh cấu trúc:</p>
                         
                         <div class="interactive-container">
                             <div class="playground-tabs">
-                                <button class="tab-btn active" onclick="switchPromptTab('basic')">Prompt Cơ Bản</button>
-                                <button class="tab-btn" onclick="switchPromptTab('improved')">Prompt Cải Tiến</button>
-                                <button class="tab-btn" onclick="switchPromptTab('advanced')">Prompt Nâng Cao</button>
+                                <button class="tab-btn active" onclick="switchPromptTab('basic')">1. Prompt Cơ Bản</button>
+                                <button class="tab-btn" onclick="switchPromptTab('improved')">2. Prompt Cải Tiến</button>
+                                <button class="tab-btn" onclick="switchPromptTab('advanced')">3. Prompt Nâng Cao</button>
                             </div>
-                            <div class="prompt-content" id="promptContentBox">
-                                <!-- Loaded dynamically via JS -->
+                            <div class="prompt-content" id="promptPlayground">
+                                <!-- Loaded dynamically -->
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">🔑 10 Nguyên tắc vàng viết Prompt hiệu quả (Đúc kết từ thực tế)</div>
-                        <p>Qua quá trình so sánh và học hỏi, mình đã tự tay biên soạn bộ cẩm nang gồm 10 nguyên tắc cốt lõi giúp tối ưu hóa câu lệnh cho bất kỳ mục đích nào:</p>
-                        <ul style="margin-left: 20px; line-height: 1.8;">
-                            <li><b>1. Xác định mục tiêu rõ ràng (Clear Objective):</b> Định vị chính xác điều mình muốn AI thực hiện, tránh diễn đạt mơ hồ. (Ví dụ: <i>"Tìm bài báo..."</i> thay vì <i>"Nói cho tôi về AI"</i>).</li>
-                            <li><b>2. Cung cấp bối cảnh (Provide Context):</b> Đưa thông tin nền để AI thấu hiểu hoàn cảnh. (Ví dụ: <i>"Tôi đang thực hiện khóa luận tốt nghiệp về..."</i>).</li>
-                            <li><b>3. Chỉ định vai trò (Role Prompting):</b> Yêu cầu AI hóa thân vào một vị trí chuyên môn. (Ví dụ: <i>"Hãy đóng vai chuyên gia nghiên cứu công nghệ giáo dục..."</i>).</li>
-                            <li><b>4. Xác định đối tượng và phạm vi (Specify Scope):</b> Giới hạn chủ đề, thời gian, không gian. (Ví dụ: <i>"Ưu tiên các bài báo từ năm 2020 trở lại đây..."</i>).</li>
-                            <li><b>5. Quy định nguồn thông tin (Specify Sources):</b> Chỉ rõ cơ sở dữ liệu tin cậy để nâng tầm chính xác. (Ví dụ: <i>"Tìm tài liệu trên Scopus, Web of Science, Springer..."</i>).</li>
-                            <li><b>6. Quy định định dạng đầu ra (Output Format):</b> Đưa ra định dạng mong muốn như bảng, danh sách, sơ đồ. (Ví dụ: <i>"Trình bày kết quả dưới dạng bảng gồm tác giả, năm, phương pháp..."</i>).</li>
-                            <li><b>7. Nêu tiêu chí đánh giá (Evaluation Criteria):</b> Đưa ra điều kiện lọc chất lượng cao. (Ví dụ: <i>"Ưu tiên bài báo bình duyệt (peer-reviewed), có mã DOI..."</i>).</li>
-                            <li><b>8. Chia nhiệm vụ thành các bước (Step-by-Step Prompting):</b> Sử dụng cấu trúc Chain-of-thought phân tách nhiệm vụ phức tạp. (Ví dụ: <i>"Bước 1: Tìm tài liệu; Bước 2: Tóm tắt..."</i>).</li>
-                            <li><b>9. Chỉ rõ mức độ chi tiết (Level of Detail):</b> Quy định độ dài hoặc chiều sâu câu trả lời. (Ví dụ: <i>"Viết phần tổng quan khoảng 1.000 từ..."</i>).</li>
-                            <li><b>10. Yêu cầu trích dẫn và minh chứng (Citation Requirement):</b> Đòi hỏi tính liêm chính học thuật. (Ví dụ: <i>"Trích dẫn theo định dạng chuẩn Harvard hoặc APA 7 và đính kèm link..."</i>).</li>
-                        </ul>
+                        <div class="modal-section-title">🌟 10 Nguyên tắc vàng viết Prompt hiệu quả</div>
+                        <p><b>1. Xác định mục tiêu rõ ràng (Clear Objective):</b> Nêu chính xác điều muốn AI thực hiện, tránh diễn đạt chung chung.</p>
+                        <p><b>2. Cung cấp bối cảnh (Provide Context):</b> Bổ sung thông tin nền để AI hiểu đúng yêu cầu và phạm vi nhiệm vụ.</p>
+                        <p><b>3. Chỉ định vai trò (Role Prompting):</b> Yêu cầu AI đóng vai một chuyên gia phù hợp với nhiệm vụ.</p>
+                        <p><b>4. Xác định đối tượng và phạm vi (Specify Scope):</b> Giới hạn chủ đề, thời gian, địa điểm hoặc đối tượng nghiên cứu.</p>
+                        <p><b>5. Quy định nguồn thông tin (Specify Sources):</b> Chỉ rõ nguồn dữ liệu hoặc cơ sở dữ liệu mong muốn nhằm tăng độ tin cậy.</p>
+                        <p><b>6. Quy định định dạng đầu ra (Output Format):</b> Yêu cầu AI trình bày kết quả theo bảng, danh sách hoặc đoạn văn.</p>
+                        <p><b>7. Nêu tiêu chí đánh giá (Evaluation Criteria):</b> Xác định các tiêu chuẩn để AI lựa chọn hoặc đánh giá thông tin.</p>
+                        <p><b>8. Chia nhiệm vụ thành các bước (Step-by-Step Prompting):</b> Với nhiệm vụ phức tạp, chia nhỏ các bước để AI xử lý chính xác hơn.</p>
+                        <p><b>9. Chỉ rõ mức độ chi tiết (Level of Detail):</b> Quy định độ dài hoặc chiều sâu của câu trả lời theo nhu cầu.</p>
+                        <p><b>10. Yêu cầu trích dẫn và minh chứng (Citation Requirement):</b> Đối với nội dung học thuật, yêu cầu cung cấp nguồn tham khảo rõ ràng.</p>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>Nhờ việc ứng dụng 10 nguyên tắc này, mình không còn mất nhiều thời gian hỏi đi hỏi lại AI nữa. Kỹ nghệ prompt giúp chúng ta có tư duy hệ thống và cách giao tiếp gãy gọn, khoa học hơn rất nhiều.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1BVuANyA9T9uxDt4rqYJzuLgw7AogGrHn/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 3
-                        </a>
+                        <p>AI phản hồi sắc bén hay hời hợt hoàn toàn phụ thuộc vào tư duy của người đưa lệnh. Nắm chắc 10 nguyên tắc vàng giúp mình biến ChatGPT thành một trợ lý nghiên cứu thực thụ, tiết kiệm hàng chục tiếng đồng hồ mày mò vô hướng.</p>
                     </div>
                 `
             },
             4: {
                 subtitle: "Bài 4 - Sử dụng công cụ hợp tác trực tuyến",
-                title: "Phối Hợp Nhịp Nhàng Dự Án Nhóm Kỷ Nguyên Số 🤝",
+                title: "Khi Chúng Mình Là Một Đội Nhịp Nhàng 🤝",
                 content: `
+                    <a href="https://docs.google.com/document/d/1lxGSpcvKS_sBps77bTbTjELRPNnO_W-T/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 4)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Làm chủ các công cụ chia sẻ đám mây để phối hợp làm việc nhóm thời gian thực, quản lý phân công công việc minh bạch và theo dõi sát sao tiến độ chung.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Nâng cao năng lực làm việc nhóm trên môi trường số; thành thạo các kỹ năng phân phối công việc, quản trị tiến độ đồng bộ và đồng sáng tạo trên các tệp tin lưu trữ chung.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">🌟 Bối cảnh & Vai trò của Trang trong dự án</div>
-                        <p>Trong học phần Tiếng Nga, chúng mình được giao triển khai một dự án nhỏ về văn hóa. Bài nộp này không tập trung vào điểm của cả nhóm mà nhấn mạnh vào vai trò cá nhân của từng thành viên trong việc quản trị, điều hành và liên lạc.</p>
-                        <p>Với vai trò điều phối, mình đã ứng dụng các công cụ trong hệ sinh thái <b>Google Workspace (Drive, Docs, Sheets)</b> kết hợp cùng mô hình quản lý tiến độ kiểu <b>Kanban Board</b> để giúp nhóm hoàn thành xuất sắc mục tiêu.</p>
-                    </div>
-                    <div class="modal-section">
-                        <div class="modal-section-title">⚙️ Quy trình làm việc phối hợp ăn ý (AI + Con Người)</div>
-                        <p>Đây là quy trình 5 bước tinh gọn mình xây dựng để tối ưu hóa sức mạnh của cả nhóm:</p>
-                        <ul style="margin-left: 20px; line-height: 1.8;">
-                            <li><b>Bước 1: Xác định chủ đề & Yêu cầu:</b> Cả nhóm họp thống nhất hướng đi và tạo sơ đồ tư duy phân chia công việc.</li>
-                            <li><b>Bước 2: Tìm tài liệu số:</b> Sử dụng Google Scholar để tìm kiếm đồng bộ tư liệu, cập nhật nhanh chóng trên bảng lưu trữ dữ liệu chung.</li>
-                            <li><b>Bước 3: Biên soạn nội dung (Google Docs):</b> Tất cả thành viên cùng viết nội dung báo cáo trực tuyến, hạn chế việc gửi file qua lại gây nhầm lẫn phiên bản.</li>
-                            <li><b>Bước 4: Sử dụng DeepL dịch thuật:</b> Dùng công cụ dịch thuật chuyên sâu hỗ trợ đọc dịch các tài liệu Nga-Anh phức tạp có tính học thuật cao.</li>
-                            <li><b>Bước 5: Sử dụng ChatGPT tóm tắt & Lên dàn ý:</b> Ứng dụng AI tổng hợp nhanh các ý tưởng của thành viên, hỗ trợ viết nháp báo cáo tổng quan một cách mạch lạc.</li>
-                            <li><b>Bước 6: Tự biên soạn độc lập:</b> Mỗi thành viên tự hoàn thiện phần việc của mình dựa trên dữ liệu đã được cả nhóm kiểm chứng chéo.</li>
-                            <li><b>Bước 7: Kiểm soát chính tả & Ngữ pháp (Grammarly):</b> Chạy rà soát tự động trước khi đóng gói báo cáo và xuất bản.</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <div class="modal-section-title">📋 Trình mô phỏng bảng công việc Kanban (Interactive Workflow)</div>
-                        <p>Dưới đây là mô hình phân chia công việc thực tế của nhóm mình. Bạn thử bấm click vào thẻ công việc để chuyển trạng thái của nó nhé:</p>
-                        
+                        <div class="modal-section-title">⚙️ Quy trình làm việc kết hợp giữa AI và Con người</div>
+                        <p>Trong các nhiệm vụ nhóm, việc phân định rõ ràng các bước thực hiện giúp tối ưu hóa hiệu suất tập thể. Dưới đây là quy trình 7 bước phối hợp nhịp nhàng:</p>
                         <div class="interactive-container">
                             <div class="kanban-board">
                                 <div class="kanban-col">
-                                    <h5>📌 Cần làm (To Do)</h5>
-                                    <div class="kanban-card" id="task1" onclick="moveTask('task1')">📖 Tra cứu tài liệu Nga-Anh (Cách 5, Cách 6)</div>
-                                    <div class="kanban-card" id="task2" onclick="moveTask('task2')">✍️ Viết nháp báo cáo tổng quan trên Docs</div>
+                                    <h5>📌 Giai đoạn chuẩn bị</h5>
+                                    <div class="kanban-card"><b>Bước 1:</b> Xác định chủ đề, mục tiêu và yêu cầu cốt lõi của dự án nhóm.</div>
+                                    <div class="kanban-card"><b>Bước 2:</b> Sử dụng Google Scholar phối hợp ChatGPT để thu thập danh mục tài liệu sơ bộ.</div>
                                 </div>
                                 <div class="kanban-col">
-                                    <h5>⚡ Đang làm (In Progress)</h5>
-                                    <div class="kanban-card" id="task3" onclick="moveTask('task3')">🤖 ChatGPT hỗ trợ lập dàn ý Infographic</div>
-                                    <div class="kanban-card" id="task4" onclick="moveTask('task4')">🌐 Dùng DeepL dịch thuật thuật ngữ du lịch</div>
+                                    <h5>⚡ Giai đoạn thực thi</h5>
+                                    <div class="kanban-card"><b>Bước 3:</b> Đọc chuyên sâu, kiểm chứng tính chính xác và đánh giá độ tin cậy của tài liệu gốc.</div>
+                                    <div class="kanban-card"><b>Bước 4:</b> Sử dụng DeepL dịch các đoạn thuật ngữ tiếng Anh/tiếng Nga hóc búa.</div>
+                                    <div class="kanban-card"><b>Bước 5:</b> Dùng ChatGPT hỗ trợ tóm lược nội dung chính và phác thảo dàn ý tổng quan.</div>
                                 </div>
                                 <div class="kanban-col">
-                                    <h5>✅ Đã xong (Done)</h5>
-                                    <div class="kanban-card" id="task5" onclick="moveTask('task5')">⚙️ Lọc từ khóa tìm kiếm học thuật trên Scholar</div>
+                                    <h5>✅ Giai đoạn hoàn thiện</h5>
+                                    <div class="kanban-card"><b>Bước 6:</b> Thành viên tự viết báo cáo phân đoạn dựa trên tri thức đã qua kiểm chứng chéo.</div>
+                                    <div class="kanban-card"><b>Bước 7:</b> Chạy kiểm tra lỗi chính tả, ngữ pháp và định dạng trích dẫn qua Grammarly.</div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>Sự thành công của dự án không nằm ở việc ai giỏi nhất, mà là việc cả nhóm kết nối với nhau nhịp nhàng ra sao. Việc duy trì tính kỷ luật và chia sẻ tài nguyên minh bạch qua đám mây giúp giảm thiểu 80% thời gian họp không cần thiết.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1lxGSpcvKS_sBps77bTbTjELRPNnO_W-T/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 4
-                        </a>
+                        <p>Trong làm việc nhóm thời đại số, công cụ dù tốt đến đâu cũng không thể thay thế được sự chủ động của từng cá nhân. Sự kết hợp thông minh giữa năng lực định hướng của con người và tốc độ xử lý của AI chính là bí quyết để tạo nên một sản phẩm nhóm xuất sắc.</p>
                     </div>
                 `
             },
             5: {
-                subtitle: "Bài 5 - Sử dụng AI tạo sinh để hỗ trợ sáng tạo nội dung",
-                title: "Chiến Dịch Truyền Thông Xanh Gây Tiếng Vang Về 'Rác Thải Công Nghệ' 🎨",
+                subtitle: "Bài 5 - Sử dụng AI tạo sinh hỗ trợ sáng tạo nội dung",
+                title: "Chiến Dịch Giải Cứu Trái Đất Khỏi Rác Thải Công Nghệ 🎨",
                 content: `
+                    <a href="https://docs.google.com/document/d/1QjwlteRe6WA0qkNtyRK3rpAL_uFluNbX/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 5)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Phân tích, so sánh ưu nhược điểm của các AI tạo sinh lớn nhất hiện nay; học cách ứng dụng AI làm trợ lý lên ý tưởng cho chiến dịch môi trường ý nghĩa.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Trải nghiệm và so sánh khách quan ưu thế của 3 mô hình AI lớn hiện nay; ứng dụng AI vào việc lên ý tưởng, phác thảo dàn ý trực quan và biên tập nội dung truyền thông hướng tới cộng đồng.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">📊 Bảng so sánh 3 "Trợ lý AI tạo sinh" lớn của Trang</div>
-                        <p>Trước khi bắt tay thực hiện chiến dịch <b>"Rác thải công nghệ 2026"</b>, mình đã lập bảng đánh giá chi tiết tính năng của 3 AI nổi tiếng nhất. Hãy click chọn để so sánh:</p>
-                        
-                        <div class="interactive-container">
-                            <table style="width: 100%; border-collapse: collapse; font-size: 13px; text-align: left;">
-                                <thead style="background: var(--primary-pink); color: var(--dark-mocha);">
-                                    <tr>
-                                        <th style="padding: 10px; border: 1px solid var(--primary-pink);">Tiêu chí</th>
-                                        <th style="padding: 10px; border: 1px solid var(--primary-pink);">ChatGPT (OpenAI)</th>
-                                        <th style="padding: 10px; border: 1px solid var(--primary-pink);">Gemini (Google)</th>
-                                        <th style="padding: 10px; border: 1px solid var(--primary-pink);">DeepSeek (AI mới nổi)</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink); font-weight: 700;">Tìm kiếm ý tưởng</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Đề xuất nhiều ý tưởng đột phá, sáng tạo, dàn ý mạch lạc.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Ý tưởng đa dạng nhưng đôi lúc còn phụ thuộc dữ liệu thô.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Ý tưởng đầy đủ nhưng ít mang tính bay bổng, nghệ thuật.</td>
-                                    </tr>
-                                    <tr style="background: #fffdfb;">
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink); font-weight: 700;">Độ chính xác dữ liệu</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Khá cao, tuy nhiên cần kiểm chứng chéo vì dễ có "ảo giác".</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Rất cao cho thông tin mới nhờ tra cứu Google trực tiếp.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Tương đối chính xác, chuyên sâu về số liệu kỹ thuật gốc.</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink); font-weight: 700;">Hỗ trợ viết báo cáo</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Xuất sắc. Hành văn tự nhiên, học thuật và trôi chảy.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Tốt nhưng văn phong đôi lúc chưa thật sự liên kết.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Viết ở mức cơ bản, cần biên tập lại để tự nhiên hơn.</td>
-                                    </tr>
-                                    <tr style="background: #fffdfb;">
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink); font-weight: 700;">Ưu điểm nổi bật nhất</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Dễ sử dụng, văn phong tự nhiên, hỗ trợ lập dàn ý đỉnh cao.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Cập nhật dữ liệu thời gian thực xuất sắc từ Internet.</td>
-                                        <td style="padding: 10px; border: 1px solid var(--primary-pink);">Tốc độ xử lý siêu nhanh, thích hợp nghiên cứu lập trình.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <div class="modal-section-title">⚖️ So sánh 3 công cụ AI (ChatGPT, Gemini, DeepSeek)</div>
+                        <p>Dưới đây là bảng phân tích được rút ra từ quá trình trực tiếp sử dụng của Trang để xây dựng chiến dịch <b>"Rác thải công nghệ 2026"</b>:</p>
+                        <p>• <b>ChatGPT:</b> Đề xuất ý tưởng rất sáng tạo, xây dựng dàn ý tốt. Tổng hợp thông tin nhanh, dễ hiểu. Khả năng viết báo cáo học thuật xuất sắc, câu từ tự nhiên. Hạn chế: Thỉnh thoảng bị ảo giác thông tin nếu không có nguồn đối chiếu.</p>
+                        <p>• <b>Gemini:</b> Cực mạnh về thông tin mới, cập nhật nhờ tích hợp sâu với Google Search. Trả về thông tin chính xác cao. Hạn chế: Câu từ diễn đạt đôi lúc chưa được mượt mà, mạch lạc bằng ChatGPT.</p>
+                        <p>• <b>DeepSeek:</b> Trả lời chi tiết, thiên về khía cạnh kỹ thuật sâu và hoàn toàn miễn phí. Tốc độ phản hồi cực nhanh. Hạn chế: Thường trình bày dài dòng, đôi khi thiếu nguồn tham khảo và chất lượng diễn đạt chưa ổn định.</p>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">🍀 Chi tiết thiết kế Infographic "Rác thải công nghệ" của Trang</div>
-                        <p>Với sự định hướng của mình, các trợ lý AI đã giúp mình gom góp dữ liệu số cực kỳ chấn động để lập bản thiết kế Infographic. Bạn bấm vào từng mục để xem chi tiết bản thiết kế:</p>
+                        <div class="modal-section-title">📊 Bản thảo cấu trúc nội dung Infographic</div>
+                        <p>Hãy click vào từng mục dưới đây để xem chi tiết dữ liệu và thông điệp mà mình đã biên tập cho sản phẩm Infographic truyền thông:</p>
                         
                         <div class="interactive-container">
                             <div class="info-preview-box">
-                                <div style="display: flex; flex-direction: column; gap: 10px;">
-                                    <button class="info-sec-btn active" onclick="showInfoSection('head')">📣 Tiêu đề & Hiện trạng toàn cầu</button>
-                                    <button class="info-sec-btn" onclick="showInfoSection('impact')">⚠️ Tác động nguy hiểm (Y tế & Đất)</button>
-                                    <button class="info-sec-btn" onclick="showInfoSection('action')">⚙️ Hành động xanh của chúng ta</button>
-                                    <button class="info-sec-btn" onclick="showInfoSection('goal')">🎯 Kết quả và Chỉ số tương lai</button>
+                                <div class="info-sec-btn active" id="btnInfo1" onclick="showInfoSec(1)">
+                                    <b>Phần 1: Thực trạng toàn cầu</b><br><small>Quy mô rác thải đáng báo động</small>
                                 </div>
-                                <div class="info-sec-desc" id="infoSecDesc">
-                                    <h5>📣 Tiêu đề & Hiện trạng toàn cầu</h5>
-                                    <p style="font-size: 13px; margin-top: 10px; color: #5c4d42;">
-                                        <b>Tiêu đề:</b> "Chiến dịch nâng cao nhận thức: Rác thải công nghệ năm 2026 - Cuộc khủng hoảng âm thầm".<br>
-                                        <b>Số liệu toàn cầu:</b> Lượng rác thải công nghệ dự kiến đạt mốc kỷ lục <b>82 triệu tấn vào năm 2026</b> (tăng 38% so với năm 2022). Tốc độ gia tăng chóng mặt 5-6% mỗi năm. Ước tính mỗi giây thế giới tạo ra 125kg rác điện tử - tương đương sức nặng của một chiếc xe máy!
-                                    </p>
+                                <div class="info-sec-btn" id="btnInfo2" onclick="showInfoSec(2)">
+                                    <b>Phần 2: Tác động sinh thái</b><br><small>Độc tố ảnh hưởng sức khỏe & đất đai</small>
                                 </div>
+                                <div class="info-sec-btn" id="btnInfo3" onclick="showInfoSec(3)">
+                                    <b>Phần 3: Hành động của chúng ta</b><br><small>Gợi ý xử lý rác thải đúng cách</small>
+                                </div>
+                                <div class="info-sec-btn" id="btnInfo4" onclick="showInfoSec(4)">
+                                    <b>Phần 4: Mục tiêu tương lai</b><br><small>Khát vọng giảm thiểu 60%</small>
+                                </div>
+                            </div>
+                            <div class="info-sec-desc" id="infoSecDescBox">
+                                <h5>Phần 1: Thực trạng toàn cầu (The Shocking Scale)</h5>
+                                <p style="margin-top:10px;"><b>Hình ảnh minh họa gợi ý:</b> Một bãi rác công nghệ khổng lồ đè nặng lên quả địa cầu với chiếc đồng hồ đếm ngược đến năm 2030.</p>
+                                <p><b>Thông điệp cốt lõi:</b> "Mỗi giây trôi qua, thế giới tạo ra 125kg rác thải công nghệ - tương đương trọng lượng một chiếc xe máy."</p>
+                                <p><b>Số liệu đề xuất:</b> Dự báo tổng lượng rác thải điện tử toàn cầu năm 2026 đạt <b>82 triệu tấn</b> (tăng vọt 38% so với năm 2022).</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>AI mang lại nguồn dữ liệu khổng lồ và ý tưởng dồi dào, nhưng việc kiểm tra thực tế dữ liệu gốc bằng báo cáo chính thống (như <i>Global E-waste Monitor</i>) vẫn là điều bắt buộc của một người làm nghiên cứu nghiêm túc để tránh lan truyền tin giả.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1QjwlteRe6WA0qkNtyRK3rpAL_uFluNbX/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 5
-                        </a>
+                        <p>AI là một "kho tàng" số liệu khổng lồ. Tuy nhiên, nếu bê nguyên văn những gì AI viết, bài truyền thông sẽ rất khô khan. Mình đã lọc bớt các thuật ngữ quá trang trọng từ AI, sử dụng các phép so sánh trực quan (như so sánh với tháp Eiffel) để tiếp cận tệp độc giả trẻ một cách gần gũi, hiệu quả nhất.</p>
                     </div>
                 `
             },
             6: {
                 subtitle: "Bài 6 - Sử dụng AI có trách nhiệm trong học tập và nghiên cứu",
-                title: "Chinh Phục Tiếng Nga Văn Minh & Liêm Chính Học Thuật 🇷🇺",
+                title: "Học Tiếng Nga Tử Tế Và Văn Minh Trong Kỷ Nguyên Số 🇷🇺",
                 content: `
+                    <a href="https://docs.google.com/document/d/1yqs0vgghnOoXeZw08Udu7d0pw_Hercio/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank" class="individual-doc-btn">
+                        <i class="fa-solid fa-file-word"></i> Xem Báo Cáo Word (Bài 6)
+                    </a>
                     <div class="modal-section">
-                        <div class="modal-section-title">🎯 Mục tiêu học tập</div>
-                        <p>Nghiên cứu kỹ lưỡng quy định đạo đức sử dụng AI của Đại học Quốc gia Hà Nội (VNU), đối chiếu với chính sách quốc tế và thực hành tự học tiếng Nga một cách văn minh, thực chất.</p>
+                        <div class="modal-section-title">🎯 Mục tiêu bài học</div>
+                        <p>Nghiên cứu sâu sắc các vấn đề đạo đức liên quan đến AI; so sánh các chính sách liêm chính học thuật quốc tế và ứng dụng AI làm trợ lý sửa lỗi ngữ pháp tiếng Nga một cách thông minh.</p>
                     </div>
-                    <div class="modal-section">
-                        <div class="modal-section-title">🏛️ Phân tích chính sách VNU so với Đại học Monash (Úc)</div>
-                        <p>Qua quá trình đọc tài liệu hướng dẫn liêm chính học thuật, mình đúc kết sự khác biệt cơ bản:</p>
-                        <ul style="margin-left: 20px; line-height: 1.8; margin-bottom: 15px;">
-                            <li><b>Chính sách của VNU:</b> Khuyến khích giảng viên, sinh viên khai thác AI để gợi ý dàn ý, tìm tài liệu. Tuy nhiên, sinh viên phải giữ vai trò chủ thể tư duy, tự chịu trách nhiệm về nội dung bài nộp và tuyệt đối không sao chép nguyên văn văn bản AI để gian lận thi cử. Yêu cầu bảo mật cao, không tự ý đưa dữ liệu học thuật chưa công bố lên AI công cộng.</li>
-                            <li><b>Chính sách của Monash:</b> Coi kỹ năng sử dụng AI tạo sinh là năng lực số cốt lõi mà sinh viên bắt buộc phải thành thạo. Quy định sử dụng AI chi tiết theo yêu cầu của từng môn học cụ thể và đòi hỏi sinh viên khai báo minh bạch mức độ sử dụng AI trong bài viết.</li>
-                        </ul>
-                    </div>
-                    <div class="modal-section">
-                        <div class="modal-section-title">🇷🇺 Trải nghiệm tự học Tiếng Nga du lịch cùng "Gia sư AI"</div>
-                        <p>Mình đã tự tay thiết lập quy trình học tiếng Nga kết hợp giữa sự tự lực và hỗ trợ từ AI một cách hiệu quả nhất:</p>
-                        
-                        <div class="interactive-container russian-interact">
-                            <div>
-                                <h5 style="margin-bottom: 8px; color: var(--accent-coral);">📚 Bộ 20 từ vựng chủ đề Du lịch (Click xem phiên âm và nghĩa của Trang):</h5>
-                                <div class="travel-term-grid">
-                                    <div class="term-card" onclick="showTerm('Путешествие', 'pute-shést-vi-ye', 'Chuyến đi, cuộc hành trình')">Путешествие</div>
-                                    <div class="term-card" onclick="showTerm('Туризм', 'tu-rízm', 'Ngành du lịch')">Туризм</div>
-                                    <div class="term-card" onclick="showTerm('Самолёт', 'sa-ma-lyót', 'Máy bay')">Самолёт</div>
-                                    <div class="term-card" onclick="showTerm('Гостиница', 'gas-tí-ni-tsa', 'Khách sạn')">Гостиница</div>
-                                    <div class="term-card" onclick="showTerm('Достопримечательность', 'das-ta-pri-me-chá-tel-nast', 'Danh lam thắng cảnh')">Достопримечательность</div>
-                                </div>
-                                <div id="termDetail" style="margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--accent-coral); text-align: center;">Bấm vào một từ vựng ở trên để xem chi tiết nhé!</div>
-                            </div>
 
+                    <div class="modal-section">
+                        <div class="modal-section-title">🏛️ Phân tích so sánh chính sách sử dụng AI (VNU vs Monash)</div>
+                        <p><b>• Đại học Quốc gia Hà Nội (VNU):</b> Khuyến khích giảng viên và sinh viên chủ động khai thác AI để tìm tài liệu, lên ý tưởng, học ngoại ngữ. Coi AI là công cụ bổ trợ, người học giữ vai trò trung tâm và phải chịu trách nhiệm tuyệt đối cho kết quả. Nhấn mạnh việc kiểm chứng chéo thông tin bằng Google Scholar, SpringerLink... bảo vệ dữ liệu cá nhân nghiêm ngặt.</p>
+                        <p><b>• Đại học Monash (Úc):</b> Khuyến khích sử dụng AI tạo sinh, xem việc làm chủ AI là kỹ năng cốt lõi bắt buộc của thế hệ mới. Quy định rõ ràng mức độ khai báo sử dụng AI theo từng học phần cụ thể. Yêu cầu người học tự đánh giá tính thiên lệch (bias) của AI trước khi tham khảo.</p>
+                    </div>
+
+                    <div class="modal-section">
+                        <div class="modal-section-title">🇷🇺 Trải nghiệm học Tiếng Nga du lịch cùng trợ lý AI</div>
+                        <p>Hãy click vào các thẻ từ vựng du lịch dưới đây để xem cách phiên âm và ý nghĩa tương ứng:</p>
+                        <div class="interactive-container">
+                            <div class="travel-term-grid">
+                                <div class="term-card" onclick="alert('Путешествие [putešéstviye] - Chuyến du lịch, hành trình')">Путешествие</div>
+                                <div class="term-card" onclick="alert('Туризм [turizm] - Du lịch')">Туризм</div>
+                                <div class="term-card" onclick="alert('Турист [turíst] - Khách du lịch')">Турист</div>
+                                <div class="term-card" onclick="alert('Отпуск [ótpusk] - Kỳ nghỉ')">Отпуск</div>
+                                <div class="term-card" onclick="alert('Поездка [poyézdka] - Chuyến đi')">Поездка</div>
+                                <div class="term-card" onclick="alert('Билет [bilét] - Vé')">Билет</div>
+                                <div class="term-card" onclick="alert('Самолет [samalyót] - Máy bay')">Самолет</div>
+                                <div class="term-card" onclick="alert('Поезд [póyezd] - Tàu hỏa')">Поезд</div>
+                            </div>
+                        </div>
+
+                        <p style="margin-top: 15px;">Dưới đây là đoạn văn tiếng Nga mình tự viết và được AI phát hiện lỗi sai ngữ pháp. Di chuột vào các từ có nền đỏ để xem lý do giải thích lỗi sai của giáo viên AI nhé:</p>
+                        <div class="interactive-container">
                             <div class="corrector-demo">
-                                <h5 style="margin-bottom: 8px; color: var(--accent-coral);">✍️ Đoạn văn Trang tự viết (Rê chuột vào các từ có dấu gạch để xem giải thích sửa lỗi của ChatGPT):</h5>
-                                <p style="font-size: 14px; line-height: 2; background: #fffdf9; padding: 15px; border-radius: 10px; border: 1px dashed var(--primary-pink);">
-                                    Я очень люблю путешествовать. Моё любимое путешествие 
-                                    <span class="error-word" data-tip="Lỗi 1: 'путешествие' là danh từ trung tính, nên động từ quá khứ 'быть' phải chia là 'было' chứ không dùng 'был'.">был</span> 
-                                    прошлым летом, когда я 
-                                    <span class="error-word" data-tip="Lỗi 2: Trang là nữ, động từ thì quá khứ 'ездить' phải chia giống cái là 'ездила' thay vì 'ездил'.">ездил</span> 
-                                    в Нячанг с 
-                                    <span class="error-word" data-tip="Lỗi 3: Sau giới từ chỉ sự đồng hành 'с' (với) phải dùng Cách 5 (Instrumental Case). Chia đúng: 'с моей семьёй'.">моя семья</span>. 
-                                    Мы ехали туда на 
-                                    <span class="error-word" data-tip="Lỗi 4: Sau giới từ chỉ phương tiện di chuyển 'на' phải dùng Cách 6 (Prepositional Case). Chia đúng: 'на самолёте'.">самолёт</span>. 
-                                    Нячанг очень красивый город. Мы жили в 
-                                    <span class="error-word" data-tip="Lỗi 5: Sau giới từ chỉ vị trí bên trong 'в' (ở trong) dùng Cách 6. Chia đúng: 'в гостинице'.">гостиница</span> 
-                                    недалеко от 
-                                    <span class="error-word" data-tip="Lỗi 6: Sau giới từ chỉ khoảng cách 'от' (cách xa) dùng Cách 2 (Genitive Case). Chia đúng: 'от моря'.">море</span>. 
-                                    Каждый ngày chúng tôi đi dạo và thử 
-                                    <span class="error-word" data-tip="Lỗi 7: 'еда' là danh từ giống cái, làm tân ngữ trực tiếp Cách 4 (Accusative Case). Cả tính từ bổ nghĩa và danh từ đều phải biến cách. Chia đúng: 'вкусную еду'.">вкусный еда</span>.
-                                </p>
+                                Я очень люблю путешествовать. Моё любимое путешествие был прошлым летом, когда я ездил в Нячанг <span class="error-word" data-tip="Lỗi sai: 'с моей семьей'. Giải thích: Trong tiếng Nga, khi đi du lịch cùng ai đó, ta dùng cấu trúc 'с + Cách 5' (danh từ số ít số nhiều cần biến cách chính xác). Sửa lại: 'с семьёй'">с моей семьей</span>. Мы <span class="error-word" data-tip="Lỗi sai: 'летели'. Giải thích: Động từ 'летать/лететь' cần chia đúng thì quá khứ số nhiều để diễn đạt hành động bay đã hoàn thành trong bối cảnh cụ thể này. Sửa lại: 'полетели'">летели</span> туда на самолёте. Нячанг — очень красивый город. Мы жили <span class="error-word" data-tip="Lỗi sai: 'в гостиница'. Giải thích: Danh từ sau giới từ 'в' chỉ vị trí địa điểm cần phải được chia ở Cách 6 (Giới tử cách). Sửa lại: 'в гостинице'">в гостиница</span> недалеко <span class="error-word" data-tip="Lỗi sai: 'от море'. Giải thích: Danh từ trung tính 'море' đứng sau giới từ 'от' cần được biến cách về Cách 2 (Sinh cách). Sửa lại: 'от моря'">от море</span>. Mỗi ngày chúng tôi đều đi tắm biển và ăn nhiều loại hải sản ngon.
                             </div>
                         </div>
                     </div>
+
                     <div class="modal-section">
-                        <div class="modal-section-title">🛡️ 7 Nguyên tắc đạo đức sử dụng AI của riêng Trang</div>
-                        <p>Để đảm bảo sự tiến bộ thực chất của bản thân, mình luôn tự giác tuân thủ 7 chuẩn mực sau:</p>
-                        <ol style="margin-left: 20px; line-height: 1.8;">
-                            <li><b>1. AI là trợ lý, không phải người viết hộ:</b> Chỉ sử dụng AI để tìm ý tưởng, chỉnh câu và giải thích ngữ pháp.</li>
-                            <li><b>2. Giữ vững tính liêm chính học thuật:</b> Tuyệt đối không copy-paste nguyên văn nội dung AI tạo ra để nộp bài tập.</li>
-                            <li><b>3. Kiểm chứng thông tin đa chiều:</b> Luôn đối chiếu kiến thức AI cung cấp với giáo trình tiếng Nga chính thống hoặc từ điển uy tín.</li>
-                            <li><b>4. Tôn trọng quyền sở hữu trí tuệ:</b> Thực hiện trích dẫn đầy đủ nguồn tham khảo theo chuẩn APA 7 cho mọi dữ liệu học thuật.</li>
-                            <li><b>5. Bảo mật dữ liệu cá nhân:</b> Không đăng tải thông tin cá nhân hoặc các bài nghiên cứu chưa công bố lên AI công cộng.</li>
-                            <li><b>6. Phát triển tư duy phản biện:</b> Luôn chủ động rà soát xem các lỗi ngữ pháp AI bắt lỗi có thực sự chính xác hay không.</li>
-                            <li><b>7. Sử dụng AI có mục đích văn minh:</b> Cam kết không sử dụng AI để gian lận thi cử hoặc tạo ra các thông tin sai lệch có hại.</li>
-                        </ol>
+                        <div class="modal-section-title">🛡️ 7 Nguyên tắc cá nhân khi sử dụng AI của Trang</div>
+                        <p><b>1. Chỉ dùng AI làm công cụ hỗ trợ:</b> Hỗ trợ tìm kiếm thông tin, giải thích kiến thức nền tảng, chỉnh sửa lỗi câu chữ chứ tuyệt đối không chép nguyên văn nộp bài.</p>
+                        <p><b>2. Đảm bảo tính trung thực học thuật:</b> Chịu trách nhiệm 100% cho sản phẩm cuối cùng nộp lên nhà trường, mọi câu từ đều phải được diễn đạt lại bằng sự hiểu biết cá nhân.</p>
+                        <p><b>3. Kiểm chứng chéo thông tin:</b> Luôn đối chiếu thông tin AI trả về với các nguồn sách giáo trình và cơ sở dữ liệu học thuật chính thống.</p>
+                        <p><b>4. Tôn trọng quyền sở hữu trí tuệ:</b> Trích dẫn đầy đủ nguồn tham khảo theo định dạng chuẩn khoa học (APA hoặc Harvard).</p>
+                        <p><b>5. Bảo vệ dữ liệu cá nhân:</b> Tuyệt đối không tải lên các thông tin riêng tư nhạy cảm hay dữ liệu chưa công bố lên AI công cộng.</p>
+                        <p><b>6. Không ngừng phát triển tư duy phản biện:</b> Luôn nghi ngờ một cách khoa học trước mọi câu trả lời của AI, không đồng tình vô điều kiện.</p>
+                        <p><b>7. Sử dụng AI an toàn, trách nhiệm:</b> Hướng AI phục vụ các mục tiêu học tập, phát triển bản thân lành mạnh.</p>
                     </div>
+
                     <div class="modal-section">
                         <div class="modal-section-title">💡 Bài học kinh nghiệm</div>
-                        <p>Trải nghiệm tự học này giúp Trang nhận ra: AI là một người thầy gia sư bản xứ kiên nhẫn nhất thế giới, nhưng nếu chúng ta lười biếng giao phó bài viết cho nó làm thay, phản xạ ngôn ngữ và tư duy của chúng ta sẽ bị bào mòn. Tự học một cách có đạo đức mới là chìa khóa để tiến bộ lâu dài.</p>
-                    </div>
-                    <div class="doc-link-container">
-                        <a class="doc-link-btn" href="https://docs.google.com/document/d/1yqs0vgghnOoXeZw08Udu7d0pw_Hercio/edit?usp=drive_link&ouid=101735809748558350213&rtpof=true&sd=true" target="_blank">
-                            <i class="fa-solid fa-file-word"></i> Xem báo cáo gốc của Bài 6
-                        </a>
+                        <p>Việc phụ thuộc quá mức vào AI sẽ dần làm mòn đi khả năng viết lách độc lập. Khi mình chủ động viết đoạn văn trước rồi dùng AI sửa lỗi sai, mình vừa bảo toàn được phong cách cá nhân vừa ghi nhớ sâu sắc các kiến thức ngữ pháp phức tạp của tiếng Nga.</p>
                     </div>
                 `
             }
         };
 
-        /* --- 10 Papers Database for Assignment 2 --- */
-        const papersDatabase = [
-            { author: "Sysoyev, P.V. & Filatov, E.M. (2024)", title: "Artificial Intelligence in Teaching Russian as a Foreign Language", source: "Russian Language Studies, 22(2), pp.300-317", type: "Tạp chí", rating: "Rất cao", desc: "Tác giả từ Đại học Tổng hợp Tambov (Nga). PPNC: Phân tích lý thuyết kết hợp nghiên cứu ứng dụng thực tế dạt học tiếng Nga. Điểm mạnh: Phân tích trực diện ứng dụng AI trong giảng dạy tiếng Nga thực tế. Điểm yếu: Chưa khảo sát quy mô rộng lượng lớn người học." },
-            { author: "Goncharova, O.V. (2026)", title: "Artificial Intelligence in Contemporary Language Education Research: A Corpus and Network Analysis", source: "Russian Language Studies, 24(1), pp.7-24", type: "Tạp chí", rating: "Rất cao", desc: "Tác giả từ Đại học Hữu nghị các Dân tộc Nga (RUDN). PPNC: Phân tích thư mục học thuật và mạng lưới nghiên cứu khoa học. Điểm mạnh: Khái quát toàn diện xu hướng nghiên cứu AI ngôn ngữ quốc tế. Điểm yếu: Ít tập trung sâu vào người học tiếng Nga ở trình độ sơ cấp." },
-            { author: "Togumbetova, Z. (2024)", title: "Evaluation of the Effectiveness of Artificial Intelligence in Pedagogical Approaches to Teaching Russian as a Foreign Language", source: "Eurasian Science Review, 2(2), pp.182-188", type: "Tạp chí", rating: "Cao", desc: "Tác giả từ Kazakhstan. PPNC: Phân tích định tính kết hợp nghiên cứu tình huống điển hình. Điểm mạnh: Đánh giá rất sát hiệu quả thực tiễn sư phạm của AI. Điểm yếu: Quy mô mẫu khảo sát thực nghiệm còn tương đối nhỏ." },
-            { author: "Rahman, A. et al. (2024)", title: "A Comprehensive Bibliometric and Content Analysis of Artificial Intelligence in Language Learning", source: "Artificial Intelligence Review, 57(107)", type: "Tạp chí", rating: "Rất cao", desc: "Được công bố bởi Nhà xuất bản Springer Nature danh giá. PPNC: Phân tích thư mục hơn 600 công trình. Điểm mạnh: Tổng quan bức tranh toàn cảnh về ứng dụng AI học ngoại ngữ toàn cầu. Điểm yếu: Chưa đi sâu chuyên biệt vào đặc thù cấu trúc tiếng Nga." },
-            { author: "Kim, T.J. (2026)", title: "Developing an AI Chatbot Learning Tool for Russian Language Learners", source: "Knowledge and Liberal Arts, 20, pp.199-223", type: "Tạp chí", rating: "Cao", desc: "Tác giả thuộc Đại học Pai Chai (Hàn Quốc). PPNC: Thiết kế đề xuất mô hình tương tác chatbot AI. Điểm mạnh: Tập trung thẳng vào người học tiếng Nga. Điểm yếu: Công trình mới ở mức đề xuất mô hình lý thuyết." },
-            { author: "Kasneci, E. et al. (2023)", title: "ChatGPT for Good? On Opportunities and Challenges of Large Language Models for Education", source: "Learning and Individual Differences, 103", type: "Tạp chí", rating: "Rất cao", desc: "Do nhóm nghiên cứu đa quốc gia uy tín thực hiện. PPNC: Phân tích đánh giá tổng quan của chuyên gia. Điểm mạnh: Phân tích đa chiều, sâu sắc về LLM trong giáo dục. Điểm yếu: Không đi sâu chuyên biệt vào mảng sư phạm ngoại ngữ." },
-            { author: "OpenAI (2024)", title: "GPT-4 Technical Report", source: "OpenAI Research", type: "Báo cáo", rating: "Cao", desc: "Báo cáo kỹ thuật gốc từ nhà phát triển OpenAI. PPNC: Thực nghiệm phát triển mô hình lớn. Điểm mạnh: Cung cấp tham chiếu kỹ thuật cốt lõi về công nghệ LLM. Điểm yếu: Thiên về kỹ thuật máy tính hơn khoa học giáo dục." },
-            { author: "Kohnke, L. et al. (2023)", title: "ChatGPT for Language Teaching and Learning", source: "RELC Journal, 54(2)", type: "Tạp chí", rating: "Rất cao", desc: "Các nhà ngôn ngữ học ứng dụng thực hiện. PPNC: Tổng quan và phân tích tình huống thực tế. Điểm mạnh: Liên hệ trực tiếp phương pháp dạy học ngôn ngữ thông minh. Điểm yếu: Chưa có các khảo sát dọc dài hạn." },
-            { author: "Holmes, W. et al. (2022)", title: "Ethics of AI in Education", source: "UNESCO Publishing", type: "Sách", rating: "Cao", desc: "Sách chuyên khảo của tổ chức UNESCO danh tiếng. PPNC: Nghiên cứu chính sách và phân tích đạo đức học thuật. Điểm mạnh: Chuẩn mực đạo đức toàn diện. Điểm yếu: Ít ví dụ ứng dụng trực tiếp cho tiếng Nga." },
-            { author: "Zawacki-Richter, O. et al. (2019)", title: "Systematic Review of Research on Artificial Intelligence Applications in Higher Education", source: "International Journal of Educational Technology in Higher Education, 16(39)", type: "Tạp chí", rating: "Rất cao", desc: "Tác giả từ Đại học Carl von Ossietzky Oldenburg. PPNC: Hệ thống hóa 146 công trình. Điểm mạnh: Lý luận nền tảng siêu vững chắc về AI giáo dục. Điểm yếu: Xuất bản trước làn sóng bùng nổ ChatGPT 2022." }
-        ];
+        /* --- Global variables for simulators --- */
+        let sim1State = [];
 
-        /* --- Dynamic paper list rendering --- */
-        function loadPapers(filterType = 'all') {
-            const listEl = document.getElementById('paperList');
-            if(!listEl) return;
-            listEl.innerHTML = '';
+        /* --- Interactive Widgets Controllers --- */
+        
+        // Bài 1 Simulator Logic
+        function runSim1(step) {
+            const display = document.getElementById('simDisplay1');
+            const btns = document.querySelectorAll('.sim-step-btn');
             
-            const filtered = papersDatabase.filter(p => {
-                if(filterType === 'all') return true;
-                if(filterType === 'Rất cao' || filterType === 'Cao') return p.rating === filterType;
-                if(filterType === 'Tạp chí') return p.type === 'Tạp chí';
-                return true;
-            });
+            // Highlight active button
+            btns.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-            filtered.forEach((p, idx) => {
-                listEl.innerHTML += `
-                    <div class="paper-item">
-                        <span class="badge" style="background: rgba(255, 139, 113, 0.1); color: var(--accent-coral); font-size: 11px;">STT: ${idx+1} | Đánh giá: ${p.rating}</span>
-                        <h4 style="margin: 5px 0; font-size: 14px; font-weight:700; color:var(--dark-mocha);">${p.author}</h4>
-                        <p style="font-size: 13px; font-style: italic; color:#6d5b5a; margin-bottom: 5px;">"${p.title}". ${p.source}.</p>
-                        <p style="font-size: 12px; line-height:1.5; color:#5c4d42;"><b>Mô tả:</b> ${p.desc}</p>
-                    </div>
-                `;
-            });
+            let output = "";
+            switch(step) {
+                case 3:
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/"];
+                    output = `C:\\Users\\Trang> mkdir ThucHanh_DoThuyTrang\n[Hệ thống] Tạo thư mục gốc thành công!\n\nCấu trúc thư mục hiện tại:\n${sim1State.join('\n')}`;
+                    break;
+                case 5:
+                    if(sim1State.length === 0) { alert('Vui lòng tạo thư mục gốc trước!'); return; }
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📄 GhiChu.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang> touch GhiChu.txt\n[Hệ thống] Đã tạo tệp tin văn bản văn phòng trống GhiChu.txt!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 6:
+                    if(sim1State.length < 2) { alert('Vui lòng tạo tệp tin GhiChu.txt trước!'); return; }
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📄 GhiChuQuanTrong.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang> rename GhiChu.txt GhiChuQuanTrong.txt\n[Hệ thống] Đổi tên thành công!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 7:
+                    if(sim1State.length === 0) { alert('Vui lòng khởi động các bước trước!'); return; }
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📁 TaiLieu/", "   📄 GhiChuQuanTrong.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang> mkdir TaiLieu\n[Hệ thống] Tạo thư mục con TaiLieu thành công!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 8:
+                    if(!sim1State.includes("   📁 TaiLieu/")) { alert('Vui lòng tạo thư mục con trước!'); return; }
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📁 TaiLieu/", "      📄 GhiChuQuanTrong.txt", "   📄 GhiChuQuanTrong.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang> copy GhiChuQuanTrong.txt TaiLieu\\\n[Hệ thống] Đã sao chép 1 bản sao vào thư mục con TaiLieu!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 9:
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📁 TaiLieu/", "      📄 GhiChuQuanTrong.txt", "      📄 DiChuyen.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang> move DiChuyen.txt TaiLieu\\\n[Hệ thống] Đã thực hiện lệnh Cut & Paste di chuyển tệp DiChuyen.txt vào trong TaiLieu!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 10:
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📁 TaiLieu/", "      📄 DiChuyen.txt"];
+                    output = `C:\\ThucHanh_DoThuyTrang\\TaiLieu> del GhiChuQuanTrong.txt\n[Hệ thống] Tệp GhiChuQuanTrong.txt đã được xóa và chuyển vào Recycle Bin.\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+                case 12:
+                    sim1State = ["📁 ThucHanh_DoThuyTrang/", "   📁 TaiLieu/", "      📄 GhiChuQuanTrong.txt", "      📄 DiChuyen.txt"];
+                    output = `[Recycle Bin] Restore -> GhiChuQuanTrong.txt\n[Hệ thống] Đã khôi phục thành công tệp tin về vị trí cũ!\n\nCấu trúc:\n${sim1State.join('\n')}`;
+                    break;
+            }
+            display.innerHTML = `<div class="sim-display-line">${output.replace(/\n/g, '<br>')}</div>`;
         }
 
-        function filterBadge(type) {
-            document.querySelectorAll('.filter-badge').forEach(b => b.classList.remove('active'));
+        // Bài 2 Interactive Library
+        const papers = [
+            { id: 1, text: "Sysoyev, P.V. & Filatov, E.M. (2024). Artificial Intelligence in Teaching Russian as a Foreign Language. Russian Language Studies, 22(2), pp.300-317.", type: "Tạp chí khoa học", author: "Đại học Tổng hợp Tambov, Nga", method: "Phân tích lý thuyết kết hợp nghiên cứu ứng dụng AI trong giảng dạy tiếng Nga.", citations: "Được xuất bản trên tạp chí chuyên ngành có phản biện.", date: "2024", strength: "Phân tích trực tiếp việc ứng dụng AI trong dạy và học tiếng Nga.", weakness: "Chưa khảo sát số lượng lớn người học.", trust: "Very High" },
+            { id: 2, text: "Goncharova, O.V. (2026). Artificial Intelligence in Contemporary Language Education Research: A Corpus and Network Analysis. Russian Language Studies, 24(1), pp.7-24.", type: "Tạp chí khoa học", author: "Đại học Hữu nghị các Dân tộc Nga (RUDN)", method: "Phân tích thư mục học thuật và mạng lưới nghiên cứu.", citations: "Có hệ thống trích dẫn đầy đủ và DOI.", date: "2026", strength: "Tổng hợp xu hướng nghiên cứu AI trong giáo dục ngôn ngữ một cách toàn diện.", weakness: "Không tập trung riêng vào người học tiếng Nga trình độ cơ bản.", trust: "Very High" },
+            { id: 3, text: "Togumbetova, Z. (2024). Evaluation of the Effectiveness of Artificial Intelligence in Pedagogical Approaches to Teaching Russian as a Foreign Language. Eurasian Science Review, 2(2), pp.182-188.", type: "Tạp chí khoa học", author: "Nhà nghiên cứu giáo dục Kazakhstan", method: "Đánh giá định tính và phân tích trường hợp.", citations: "Có tài liệu tham khảo đầy đủ.", date: "2024", strength: "Đánh giá hiệu quả thực tiễn trực tiếp của AI.", weakness: "Mẫu nghiên cứu chưa đủ lớn.", trust: "High" },
+            { id: 4, text: "Rahman, A. et al. (2024). A Comprehensive Bibliometric and Content Analysis of Artificial Intelligence in Language Learning. Artificial Intelligence Review, 57(107).", type: "Tạp chí khoa học quốc tế", author: "Springer Nature", method: "Phân tích thư mục hơn 600 công trình nghiên cứu.", citations: "Rất nhiều trích dẫn trong cộng đồng khoa học học thuật.", date: "2024", strength: "Tổng quan toàn diện về AI trong học ngoại ngữ nói chung.", weakness: "Không đi sâu chuyên sâu vào tiếng Nga.", trust: "Very High" },
+            { id: 5, text: "Kim, T.J. (2026). Developing an AI Chatbot Learning Tool for Russian Language Learners. Knowledge and Liberal Arts, 20, pp.199-223.", type: "Tạp chí khoa học", author: "Đại học Pai Chai (Hàn Quốc)", method: "Thiết kế và đề xuất mô hình chatbot AI.", citations: "Có phản biện học thuật rõ ràng.", date: "2026", strength: "Tập trung trực tiếp vào nhu cầu của người học tiếng Nga.", weakness: "Chủ yếu ở mức đề xuất mô hình, chưa có thử nghiệm thực chứng dài hạn.", trust: "High" },
+            { id: 6, text: "Kasneci, E. et al. (2023). ChatGPT for Good? On Opportunities and Challenges of Large Language Models for Education. Learning and Individual Differences, 103.", type: "Tạp chí khoa học quốc tế", author: "Nhóm nghiên cứu đa quốc gia", method: "Tổng quan tài liệu và phân tích chuyên gia.", citations: "Được trích dẫn vô cùng rộng rãi trong cộng đồng nghiên cứu giáo dục.", date: "2023", strength: "Phân tích sâu sắc tác động đa chiều của ChatGPT đối với giáo dục.", weakness: "Không tập trung riêng biệt vào việc học ngoại ngữ.", trust: "Very High" },
+            { id: 7, text: "OpenAI (2024). GPT-4 Technical Report. OpenAI Research.", type: "Báo cáo nghiên cứu", author: "OpenAI", method: "Nghiên cứu phát triển mô hình ngôn ngữ lớn.", citations: "Là nguồn gốc nền tảng của công nghệ ChatGPT.", date: "2024", strength: "Cung cấp nền tảng lý thuyết cho ứng dụng AI trong xử lý ngôn ngữ.", weakness: "Thiên về công nghệ, ít phân tích phương pháp sư phạm giáo dục.", trust: "High" },
+            { id: 8, text: "Kohnke, L., Moorhouse, B. & Zou, D. (2023). ChatGPT for Language Teaching and Learning. RELC Journal, 54(2).", type: "Tạp chí khoa học", author: "Các nhà nghiên cứu giáo dục ngôn ngữ", method: "Tổng quan và đánh giá thực tiễn ứng dụng.", citations: "Đăng trên tạp chí uy tín hàng đầu về giảng dạy ngôn ngữ.", date: "2023", strength: "Liên hệ trực tiếp, thực tế đến hoạt động dạy và học ngoại ngữ.", weakness: "Chưa có nghiên cứu định lượng dài hạn.", trust: "Very High" },
+            { id: 9, text: "Holmes, W. et al. (2022). Ethics of AI in Education. UNESCO Publishing.", type: "Sách chuyên khảo", author: "UNESCO", method: "Nghiên cứu chính sách và phân tích chuyên gia.", citations: "Được sử dụng rộng rãi làm nền tảng hoạch định chính sách giáo dục.", date: "2022", strength: "Phân tích sâu sắc các khía cạnh đạo đức khi ứng dụng AI.", weakness: "Ít ví dụ thực tế liên quan đến tiếng Nga.", trust: "High" },
+            { id: 10, text: "Zawacki-Richter, O. et al. (2019). Systematic Review of Research on Artificial Intelligence Applications in Higher Education. International Journal of Educational Technology in Higher Education, 16(39).", type: "Tạp chí khoa học", author: "Đại học Carl von Ossietzky Oldenburg", method: "Tổng quan hệ thống 146 công trình nghiên cứu.", citations: "Là một trong những nghiên cứu được trích dẫn nhiều nhất về AI giáo dục.", date: "2019", strength: "Cơ sở lý luận vô cùng vững chắc về AI trong đại học.", weakness: "Chưa phản ánh được sự bùng nổ của ChatGPT sau năm 2022.", trust: "Very High" }
+        ];
+
+        let currentPaperFilter = 'all';
+
+        function setPaperFilter(filter) {
+            currentPaperFilter = filter;
+            const badges = document.querySelectorAll('.filter-badge');
+            badges.forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            loadPapers(type);
+            filterPapers();
         }
 
         function filterPapers() {
-            const query = document.getElementById('paperSearch').value.toLowerCase();
-            const listEl = document.getElementById('paperList');
-            listEl.innerHTML = '';
-            
-            papersDatabase.forEach((p, idx) => {
-                if(p.author.toLowerCase().includes(query) || p.title.toLowerCase().includes(query)) {
-                    listEl.innerHTML += `
-                        <div class="paper-item">
-                            <span class="badge" style="background: rgba(255, 139, 113, 0.1); color: var(--accent-coral); font-size: 11px;">STT: ${idx+1} | Đánh giá: ${p.rating}</span>
-                            <h4 style="margin: 5px 0; font-size: 14px; font-weight:700; color:var(--dark-mocha);">${p.author}</h4>
-                            <p style="font-size: 13px; font-style: italic; color:#6d5b5a; margin-bottom: 5px;">"${p.title}". ${p.source}.</p>
-                            <p style="font-size: 12px; line-height:1.5; color:#5c4d42;"><b>Mô tả:</b> ${p.desc}</p>
-                        </div>
-                    `;
-                }
+            const searchVal = document.getElementById('paperSearch').value.toLowerCase();
+            const container = document.getElementById('paperListContainer');
+            container.innerHTML = "";
+
+            const filtered = papers.filter(p => {
+                const matchesSearch = p.text.toLowerCase().includes(searchVal) || p.author.toLowerCase().includes(searchVal);
+                const matchesFilter = (currentPaperFilter === 'all') || (p.trust === currentPaperFilter);
+                return matchesSearch && matchesFilter;
+            });
+
+            filtered.forEach(p => {
+                const item = document.createElement('div');
+                item.classList.add('paper-item');
+                item.innerHTML = `
+                    <p style="font-weight: 700; font-size: 14px; margin-bottom: 5px;">${p.id}. ${p.text}</p>
+                    <p style="font-size: 12px; color: #555;"><b>Phân loại:</b> ${p.type} | <b>Đơn vị:</b> ${p.author} | <b>Năm:</b> ${p.date}</p>
+                    <p style="font-size: 12px; color: #555; margin-top: 5px;"><b>Điểm mạnh:</b> ${p.strength}</p>
+                    <p style="font-size: 12px; color: #555;"><b>Điểm yếu:</b> ${p.weakness}</p>
+                    <span style="display:inline-block; margin-top: 5px; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 700; background: ${p.trust === 'Very High' ? '#e2f9e4; color: #2e7d32;' : '#fff3e0; color: #ef6c00;'};">Độ tin cậy: ${p.trust}</span>
+                `;
+                container.appendChild(item);
             });
         }
 
-        /* --- Prompt Lab Playgrounds for Assignment 3 --- */
-        const promptLevels = {
+        // Bài 3 Prompt Lab tabs
+        const promptDetails = {
             basic: {
-                prompt: "Tìm cho tôi bài báo khoa học về ứng dụng AI trong học tiếng Nga.",
-                output: "<b>ChatGPT phản hồi:</b> Chào bạn, dưới đây là một số tạp chí và nguồn bạn có thể tìm kiếm: 1. Russian Language Studies, 2. SpringerLink, 3. Google Scholar. Bạn có thể gõ từ khóa để tìm nhé.",
-                analysis: "❌ <b>Nhược điểm:</b> Cực kỳ sơ sài. AI chỉ nêu tên chung chung của nhà xuất bản và tạp chí lớn chứ không lọc được tên bài báo hay nội dung cụ thể. Không quy định mốc thời gian, dễ dính tài liệu cũ hoặc lạc đề."
+                prompt: `"Tìm cho tôi tìm cho tôi bài báo khoa học về ứng dụng AI trong học tiếng Nga."`,
+                evaluation: "⭐⭐ (2/5 Sao - Mức độ cụ thể: Thấp)",
+                response: `<b>ChatGPT:</b><br>Chào bạn! Dưới đây là một số tạp chí và nguồn bạn có thể tìm kiếm:<br>1. Tạp chí Russian Language Studies.<br>2. Các xuất bản phẩm trên hệ thống Springer.<br>3. Google Scholar (bạn gõ từ khóa AI tiếng Nga để tìm kiếm thêm).`,
+                analysis: "<b>Nguyên tắc thiếu sót:</b> Thiếu bối cảnh, chưa giới hạn phạm vi thời gian, không chỉ định vai trò chuyên gia, không quy định định dạng đầu ra chi tiết."
             },
             improved: {
-                prompt: "Hãy tìm cho tôi các bài báo khoa học về ứng dụng trí tuệ nhân tạo (AI) trong học và giảng dạy tiếng Nga như một ngoại ngữ. Ưu tiên các bài báo được xuất bản từ năm 2020.",
-                output: "<b>ChatGPT phản hồi:</b> Chào bạn, dưới đây là danh sách một số bài báo tiêu biểu từ năm 2020: <br>1. Sysoyev & Filatov (2024) - 'Artificial Intelligence in Teaching Russian as a Foreign Language' (Russian Language Studies).<br>2. Dziuba (2024) - 'Russian Lessons for Foreigners: Tools of AI' (Russian Language Studies).<br>3. Sysoyev (2024) - 'Method of Teaching Students' Foreign Language Creative Writing...'",
-                analysis: "✔️ <b>Ưu điểm:</b> Độ chính xác cao hơn rõ rệt nhờ Trang đã giới hạn bối cảnh (học tiếng Nga như một ngoại ngữ RFL) và giới hạn mốc thời gian (từ 2020 trở lại đây). AI trả về đúng tên bài báo cụ thể."
+                prompt: `"Hãy tìm cho tôi các bài báo khoa học về ứng dụng trí tuệ nhân tạo (AI) trong học và giảng dạy tiếng Nga như một ngoại ngữ. Ưu tiên các bài báo được xuất bản từ năm 2020"`,
+                evaluation: "⭐⭐⭐⭐ (4/5 Sao - Mức độ cụ thể: Trung bình)",
+                response: `<b>ChatGPT:</b><br>Chào bạn! Dưới đây là các bài báo nổi bật từ năm 2020:<br>1. <b>Sysoyev & Filatov (2024):</b> Phân tích vai trò AI trong giảng dạy tiếng Nga RFL.<br>2. <b>Togumbetova (2024):</b> Đánh giá phương pháp sư phạm ứng dụng AI.<br>3. <b>Kim (2026):</b> Đề xuất mô hình chatbot tương tác cho người học tiếng Nga.`,
+                analysis: "<b>Nguyên tắc áp dụng thành công:</b> Xác định mục tiêu cụ thể, giới hạn thời gian (từ 2020) và đối tượng nghiên cứu (ngoại ngữ tiếng Nga)."
             },
             advanced: {
-                prompt: "Đóng vai là một chuyên gia nghiên cứu trong lĩnh vực Công nghệ Giáo dục và Ngôn ngữ học ứng dụng, có kinh nghiệm tìm kiếm tài liệu trên các cơ sở dữ liệu học thuật quốc tế như Google Scholar, Scopus, Web of Science, Springer, IEEE Xplore và ERIC... Tìm kiếm, phân tích và trình bày kết quả dưới dạng bảng...",
-                output: "<b>ChatGPT phản hồi:</b> Với tư cách là một chuyên gia nghiên cứu, tôi đã thiết lập quy trình tìm kiếm chuẩn học thuật trên các cơ sở dữ liệu Scopus, Web of Science... Dưới đây là bảng tổng hợp các công trình chất lượng hàng đầu đáp ứng tiêu chí bình duyệt và có chỉ số DOI cụ thể: <br><table style='font-size:11px; width:100%; border:1px solid #ccc; margin-top:8px;'><tr><th>Tác giả</th><th>Năm</th><th>Tên bài báo</th><th>Tạp chí</th></tr><tr><td>Sysoyev, P.V.</td><td>2024</td><td>Artificial Intelligence in Teaching Russian...</td><td>Russian Language Studies</td></tr><tr><td>Goncharova, O.V.</td><td>2026</td><td>Artificial Intelligence in Contemporary...</td><td>Russian Language Studies</td></tr></table>",
-                analysis: "⭐ <b>Đánh giá:</b> Đạt điểm xuất sắc tối đa! Bằng cách kết hợp Role Playing (Đóng vai chuyên gia), chỉ định nguồn dữ liệu khắt khe (Scopus, WoS...) và quy định định dạng đầu ra dạng bảng, Trang đã nhận về một kết quả có giá trị học thuật cực kỳ cao, tiết kiệm 95% thời gian tổng hợp thủ công."
+                prompt: `"Đóng vai là một chuyên gia nghiên cứu trong lĩnh vực Công nghệ Giáo dục và Ngôn ngữ học ứng dụng, có kinh nghiệm tìm kiếm tài liệu trên các cơ sở dữ liệu học thuật quốc tế như Google Scholar, Scopus, Web of Science, Springer, IEEE Xplore và ERIC..."`,
+                evaluation: "⭐⭐⭐⭐⭐ (5/5 Sao - Mức độ cụ thể: Rất cao)",
+                response: `<b>ChatGPT (Vai trò Chuyên gia):</b><br>Kính chào đồng nghiệp! Dưới đây là cấu trúc báo cáo thư mục học thuật chuẩn hóa:<br><table style="width:100%; font-size:11px; margin-top:8px; border-collapse:collapse;" border="1"><tr><th>Năm</th><th>Tác giả</th><th>Tên bài báo</th><th>Kết quả chính</th></tr><tr><td>2024</td><td>Sysoyev, P.V.</td><td>Artificial Intelligence in Teaching...</td><td>Tổng quan phương pháp AI hỗ trợ dạy tiếng Nga.</td></tr><tr><td>2026</td><td>Goncharova, O.V.</td><td>Contemporary Language Education...</td><td>Phân tích hệ thống mạng lưới nghiên cứu AI.</td></tr></table>`,
+                analysis: "<b>Nguyên tắc áp dụng thành công:</b> Kết hợp trọn vẹn cả 10 nguyên tắc vàng (Role Play, Chain of thought, chỉ rõ định dạng bảng đầu ra, giới hạn dữ liệu từ nguồn uy tín Scopus/ERIC)."
             }
         };
 
-        function switchPromptTab(level) {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        function switchPromptTab(tabName) {
+            const btns = document.querySelectorAll('.playground-tabs .tab-btn');
+            btns.forEach(b => b.classList.remove('active'));
             event.target.classList.add('active');
-            
-            const data = promptLevels[level];
-            document.getElementById('promptContentBox').innerHTML = `
-                <p style="font-size:13px; color:var(--accent-coral); font-weight:700;">📝 Câu lệnh Trang gửi AI:</p>
-                <p style="font-size:13px; background:#fcf9f5; padding:10px; border-radius:10px; font-style:italic; margin-bottom:12px; border-left:4px solid var(--accent-coral);">"${data.prompt}"</p>
-                <p style="font-size:13px; color:var(--dark-mocha); margin-bottom:12px;">${data.output}</p>
-                <p style="font-size:13px; padding:10px; background:#f0f7f4; border-radius:10px;">${data.analysis}</p>
+
+            const playground = document.getElementById('promptPlayground');
+            const data = promptDetails[tabName];
+            playground.innerHTML = `
+                <p style="font-size:13px; color:#ef6c00; font-weight:700;">Đánh giá: ${data.evaluation}</p>
+                <p style="margin-top: 8px;"><b>Prompt đã nhập:</b> <code style="background:#fff3e0; padding:2px 6px; border-radius:4px;">${data.prompt}</code></p>
+                <div style="background:#f5f5f5; padding:12px; border-radius:10px; font-size:12px; margin-top:10px; font-family: monospace; border:1px solid #ddd;">${data.response}</div>
+                <p style="margin-top: 10px; font-size:13px; color:#555;"><b>Phân tích sâu:</b> ${data.analysis}</p>
             `;
         }
 
-        /* --- Assignment 1 File Operations Simulator --- */
-        const fileSimSteps = {
-            1: "> Đang thực hiện mở File Explorer (Windows + E)... Đang điều hướng đến ổ đĩa New Volume (F:)...",
-            3: "> Đã tạo thành công thư mục gốc: F:\\ThucHanh_DoThuyTrang... Đã tiến vào bên trong thư mục.",
-            5: "> Đang click chuột phải chọn New -> Text Document... Đã khởi tạo tệp tin: GhiChu.txt",
-            7: "> Click Rename... Đã đổi tên thành công tệp thành: GhiChuQuanTrong.txt",
-            8: "> Click New -> Folder... Đã tạo thư mục con thành công: F:\\ThucHanh_DoThuyTrang\\TaiLieu",
-            9: "> Click GhiChuQuanTrong.txt -> nhấn Copy (Ctrl + C)... Mở thư mục TaiLieu -> nhấn Paste (Ctrl + V)... Đã dán bản sao tệp thành công vào mục con.",
-            11: "> Tại thư mục cha, tạo tệp DiChuyen.txt... Nhấn Cut (Ctrl + X)... Mở TaiLieu -> nhấn Paste (Ctrl + V)... Tệp DiChuyen.txt đã rời thư mục cha, nằm gọn trong TaiLieu.",
-            12: "> Click GhiChuQuanTrong.txt trong TaiLieu -> ấn Delete (Đã vào Recycle Bin)... Chọn DiChuyen.txt -> nhấn Shift + Delete (Xóa vĩnh viễn khỏi máy)... Truy cập Recycle Bin ngoài Desktop -> Click chuột phải vào GhiChuQuanTrong.txt -> Restore... Tệp đã quay lại thư mục TaiLieu an toàn!"
+        // Bài 5 Infographic Section Switcher
+        const infoSections = {
+            1: {
+                title: "Phần 1: Thực trạng toàn cầu (The Shocking Scale)",
+                img: "Một bãi rác công nghệ khổng lồ đè nặng lên quả địa cầu với chiếc đồng hồ đếm ngược đến năm 2030.",
+                message: '"Mỗi giây trôi qua, thế giới tạo ra 125kg rác thải công nghệ - tương đương trọng lượng một chiếc xe máy."',
+                data: "Dự báo tổng lượng rác thải điện tử toàn cầu năm 2026 đạt <b>82 triệu tấn</b> (tăng vọt 38% so với năm 2022)."
+            },
+            2: {
+                title: "Phần 2: Tác động sinh thái & Sức khỏe",
+                img: "Dòng sông ô nhiễm xám xịt chạy qua cánh đồng lúa, bên cạnh là sơ đồ cơ thể người bị tích tụ kim loại nặng.",
+                message: '"Độc tố lặng câm hủy hoại đất mẹ và tàn phá hệ thần kinh con người."',
+                data: "Chứa các kim loại cực độc: chì, thủy ngân, cadimi... thẩm thấu trực tiếp vào nguồn nước ngầm."
+            },
+            3: {
+                title: "Phần 3: Hành động của chúng ta (Our Green Action)",
+                img: "Sơ đồ 3 nhánh hành động cụ thể với các biểu tượng sinh động: Laptop bền vững, cờ lê sửa chữa và thùng rác gom đồ công nghệ.",
+                message: '"Sử dụng bền vững - Sửa chữa tái dùng - Thu gom đúng điểm."',
+                data: "Cam kết thiết lập <b>14 điểm thu gom</b> rác thải điện tử cục bộ trên địa bàn dân cư học đường."
+            },
+            4: {
+                title: "Phần 4: Mục tiêu tương lai",
+                img: "Biểu đồ mũi tên hướng lên xanh lục biểu thị khát vọng chuyển đổi số xanh.",
+                message: '"Giảm thiểu 60% lượng thiết bị thải ra môi trường."',
+                data: "Nâng cao nhận thức cho ít nhất <b>3.000 học sinh sinh viên</b> tham gia chiến dịch trực tiếp."
+            }
         };
 
-        function runSimStep(step) {
-            document.querySelectorAll('.sim-step-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('simDisplay').innerHTML = fileSimSteps[step];
+        function showInfoSec(id) {
+            const btns = document.querySelectorAll('.info-sec-btn');
+            btns.forEach(b => b.classList.remove('active'));
+            document.getElementById('btnInfo' + id).classList.add('active');
+
+            const descBox = document.getElementById('infoSecDescBox');
+            const data = infoSections[id];
+            descBox.innerHTML = `
+                <h5>${data.title}</h5>
+                <p style="margin-top:10px;"><b>Hình ảnh minh họa gợi ý:</b> ${data.img}</p>
+                <p><b>Thông điệp cốt lõi:</b> <i>${data.message}</i></p>
+                <p><b>Số liệu đề xuất:</b> ${data.data}</p>
+            `;
         }
 
-        /* --- Assignment 4 Kanban Board Simulator --- */
-        function moveTask(id) {
-            const el = document.getElementById(id);
-            const cols = document.querySelectorAll('.kanban-col');
-            let parent = el.parentElement;
-            
-            // Tìm cột tiếp theo
-            let currentIdx = Array.from(cols).indexOf(parent);
-            let nextIdx = (currentIdx + 1) % cols.length;
-            
-            cols[nextIdx].appendChild(el);
-        }
-
-        /* --- Assignment 5 Infographic Section Switcher --- */
-        const infographicSections = {
-            head: "<h5>📣 Tiêu đề & Hiện trạng toàn cầu</h5><p style='font-size: 13px; margin-top: 10px; color: #5c4d42;'><b>Tiêu đề gây chấn động:</b> 'Rác thải công nghệ 2026 - Cuộc khủng hoảng âm thầm'.<br><b>Dữ liệu toàn cầu:</b> Dự báo thế giới thải ra <b>82 triệu tấn rác thải công nghệ vào năm 2026</b> (tăng 38% so với 2022). Mỗi giây trôi qua tạo ra 125kg rác thải - bằng trọng lượng một chiếc xe máy.</p>",
-            impact: "<h5>⚠️ Tác động nguy hiểm (Y tế & Đất)</h5><p style='font-size: 13px; margin-top: 10px; color: #5c4d42;'><b>Tác hại môi trường:</b> Các kim loại nặng rò rỉ bồi diện trực tiếp nguồn đất và mạch nước ngầm gây ô nhiễm nghiêm trọng.<br><b>Ảnh hưởng sức khỏe:</b> Kim loại độc hại tích tụ như chì, thủy ngân, cadmium tàn phá hệ thần kinh trung ương và gây ung thư cho con người.</p>",
-            action: "<h5>⚙️ Hành động xanh của chúng ta</h5><p style='font-size: 13px; margin-top: 10px; color: #5c4d42;'><b>Giải pháp 3 bước thiết thực của Trang:</b><br>1. Sử dụng bền vững: Tránh mua sắm thiết bị thừa thãi.<br>2. Sửa chữa & Tái sử dụng: Kéo dài tuổi thọ đồ cũ.<br>3. Quyên góp/Tái chế đúng cách tại điểm thu gom chính quy.</p>",
-            goal: "<h5>🎯 Kết quả và Chỉ số tương lai</h5><p style='font-size: 13px; margin-top: 10px; color: #5c4d42;'><b>Mục tiêu chiến dịch:</b> Tiếp cận hơn 10.000 lượt chia sẻ truyền thông trực tuyến. Thúc đẩy 1.000 người tham gia cam kết giảm thiểu rác thải cá nhân. Hướng tới mục tiêu giảm 60% rác điện tử thải trực tiếp ra môi trường.</p>"
-        };
-
-        function showInfoSection(sec) {
-            document.querySelectorAll('.info-sec-btn').forEach(b => b.classList.remove('active'));
-            event.target.classList.add('active');
-            document.getElementById('infoSecDesc').innerHTML = infographicSections[sec];
-        }
-
-        /* --- Assignment 6 Russian Dictionary --- */
-        function showTerm(rus, ipa, vie) {
-            document.getElementById('termDetail').innerHTML = `🍀 <b>${rus}</b> [${ipa}]: ${vie}`;
-        }
-
-        /* --- Modal Popup Logic --- */
+        /* --- Modal general triggers --- */
         function openModal(id) {
             const data = assignmentData[id];
             if (data) {
@@ -1746,13 +1710,14 @@
                 document.getElementById('mTitle').innerText = data.title;
                 document.getElementById('mContent').innerHTML = data.content;
                 
-                // Load sub-modules inside modal dynamically if needed
-                if (id === 2) loadPapers('all');
-                if (id === 3) switchPromptTab('basic');
-                
                 const modal = document.getElementById('projectModal');
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+
+                // Post-load specific scripts for simulators inside modals
+                if (id === 1) runSim1(3);
+                if (id === 2) filterPapers();
+                if (id === 3) switchPromptTab('basic');
             }
         }
 
