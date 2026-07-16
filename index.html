@@ -461,16 +461,17 @@
         .pdf-card-btn {
             background: rgba(255, 139, 113, 0.1);
             border: 1px solid var(--accent-coral);
-            padding: 6px 12px;
+            padding: 8px 16px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 700;
             color: var(--accent-coral);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 5px;
+            cursor: pointer;
             transition: all 0.3s;
+            border-style: solid;
         }
 
         .pdf-card-btn:hover {
@@ -1195,86 +1196,99 @@
 
         <div class="grid-container">
             <!-- BÀI 1 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(1, 'diary')">
                 <div class="project-card-num">01</div>
-                <div onclick="openModal(1)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-folder-open"></i></div>
                     <h3 class="project-title">Thao Tác Tệp & Thư Mục</h3>
                     <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="1.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 1.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(1)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <!-- Tương tác xịn: Nhấp trực tiếp nút PDF trên card sẽ gọi thẳng Modal tab PDF, không sang tab mới -->
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(1, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 1.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(1, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- BÀI 2 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(2, 'diary')">
                 <div class="project-card-num">02</div>
-                <div onclick="openModal(2)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <h3 class="project-title">Tìm Kiếm Thông Tin Học Thuật</h3>
                     <p class="project-desc">Khai thác và phân tích chi tiết mức độ tin cậy của 10 công trình khoa học ứng dụng AI trong học tiếng Nga.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="2.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 2.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(2)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(2, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 2.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(2, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- BÀI 3 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(3, 'diary')">
                 <div class="project-card-num">03</div>
-                <div onclick="openModal(3)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-comment-dots"></i></div>
                     <h3 class="project-title">Viết Prompt Hiệu Quả</h3>
                     <p class="project-desc">Khám phá sức mạnh của nghệ thuật viết Prompt qua 10 nguyên tắc vàng và thực hành so sánh 3 cấp độ.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="3.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 3.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(3)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(3, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 3.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(3, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- BÀI 4 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(4, 'diary')">
                 <div class="project-card-num">04</div>
-                <div onclick="openModal(4)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-users"></i></div>
                     <h3 class="project-title">Hợp Tác Trực Tuyến Dự Án</h3>
                     <p class="project-desc">Xây dựng quy trình phối hợp nhịp nhàng thông qua bộ công cụ Google Workspace cho dự án nhóm.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="4.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 4.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(4)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(4, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 4.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(4, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- BÀI 5 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(5, 'diary')">
                 <div class="project-card-num">05</div>
-                <div onclick="openModal(5)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-lightbulb"></i></div>
                     <h3 class="project-title">Sáng Tạo Nội Dung Cùng AI</h3>
                     <p class="project-desc">So sánh ChatGPT, Gemini, DeepSeek và lên ý tưởng thiết kế Infographic "Rác thải công nghệ".</p>
                 </div>
                 <div class="card-actions">
-                    <a href="5.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 5.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(5)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(5, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 5.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(5, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
 
             <!-- BÀI 6 -->
-            <div class="project-card">
+            <div class="project-card" onclick="openModal(6, 'diary')">
                 <div class="project-card-num">06</div>
-                <div onclick="openModal(6)">
+                <div>
                     <div class="project-icon"><i class="fa-solid fa-shield-halved"></i></div>
                     <h3 class="project-title">Sử Dụng AI Có Trách Nhiệm</h3>
                     <p class="project-desc">Tìm hiểu chính sách liêm chính học thuật VNU và thực hành viết tiếng Nga du lịch cùng AI gia sư.</p>
                 </div>
                 <div class="card-actions">
-                    <a href="6.pdf" target="_blank" class="pdf-card-btn" onclick="event.stopPropagation();"><i class="fa-solid fa-file-pdf"></i> Xem 6.pdf</a>
-                    <button class="learn-more-btn" onclick="openModal(6)">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(6, 'pdf');">
+                        <i class="fa-solid fa-file-pdf"></i> Xem 6.pdf trực tiếp
+                    </button>
+                    <button class="learn-more-btn" onclick="event.stopPropagation(); openModal(6, 'diary');">Khám phá <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
@@ -1335,8 +1349,10 @@
             <div class="close-modal" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></div>
             
             <div class="modal-header">
-                <div class="modal-subtitle" id="mSubtitle">Bài tập nhỏ</div>
-                <div class="modal-title" id="mTitle">Tiêu đề chi tiết</div>
+                <div class="modal-title-area">
+                    <div class="modal-subtitle" id="mSubtitle">Bài tập nhỏ</div>
+                    <div class="modal-title" id="mTitle">Tiêu đề chi tiết</div>
+                </div>
             </div>
 
             <!-- CÁC TAB CHUYỂN ĐỔI CHẾ ĐỘ XEM TRONG MODAL -->
@@ -1345,7 +1361,7 @@
                     <i class="fa-solid fa-book-open"></i> 1. Nhật ký & Tương tác
                 </button>
                 <button class="m-view-btn" id="modalTabPdf" onclick="switchModalTab('pdf')">
-                    <i class="fa-solid fa-file-pdf"></i> 2. Xem PDF trực tiếp
+                    <i class="fa-solid fa-file-pdf"></i> 2. Xem PDF trực tiếp tại đây
                 </button>
             </div>
 
@@ -1707,7 +1723,7 @@
                             <li><b>4. Tôn trọng bản quyền:</b> Trích dẫn nguồn tài liệu theo tiêu chuẩn APA/Harvard rõ ràng.</li>
                             <li><b>5. Bảo mật dữ liệu cá nhân:</b> Không tải dữ liệu cá nhân, thông tin nội bộ trường lên AI công cộng.</li>
                             <li><b>6. Phát triển tư duy phản biện:</b> Luôn đặt câu hỏi nghi vấn, phân tích kỹ lưỡng câu trả lời của AI.</li>
-                            <li><b>7. Sử dụng AI có trách nhiệm:</b> Không sử dụng AI vào mục đích gian lận thi cử hoặc tạo tin sai lệch.</li>
+                            <li><b>7. Sử dụng AI có trách nhiệm:</b> Không sử dụng AI để gian lận thi cử hoặc tạo thông tin sai lệch.</li>
                         </ul>
                     </div>
 
@@ -1769,7 +1785,8 @@
         /* --- Hiện và đóng Modal điều khiển cốt lõi --- */
         let currentPdfUrl = "";
 
-        function openModal(id) {
+        // openModal giờ có thêm tham số thứ 2 là defaultTab ('diary' hoặc 'pdf')
+        function openModal(id, defaultTab = 'diary') {
             const data = assignmentData[id];
             if (data) {
                 // Thiết lập văn bản tiêu đề
@@ -1784,8 +1801,8 @@
                 document.getElementById('pdfIframe').src = data.pdf;
                 document.getElementById('pdfFallbackBtn').href = data.pdf;
 
-                // Reset về Tab 1 mặc định khi mới mở Modal
-                switchModalTab('diary');
+                // Chọn tab hiển thị dựa theo nút nhấp từ ngoài
+                switchModalTab(defaultTab);
 
                 const modal = document.getElementById('projectModal');
                 modal.classList.add('active');
