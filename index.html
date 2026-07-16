@@ -1,20 +1,3 @@
-Dưới đây là mã nguồn toàn diện của tệp index.html đã được phối màu lại một cách
-tỉ mỉ theo đúng yêu cầu chi tiết của bạn.
-
-Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
-
-  - Tiêu đề chính (Main Titles): Được chuyển sang màu Trắng tinh khiết
-    (#ffffff), đảm bảo độ hiển thị nổi bật, rõ nét trên nền tối tinh tú.
-  - Tiêu đề phụ/Tiêu đề bài phụ (Subtitles & Minor Headers): Được đổi sang màu
-    Hồng nhạt Pastel ngọt ngào (#ffccd5) (áp dụng cho các mục tiêu đề thẻ kỹ
-    năng, tiêu đề phụ trong modal, số thứ tự thẻ và badge chào mừng) [9].
-  - Viền của các hộp (Box Borders): Được thiết lập bằng màu Xanh dương nhạt
-    Pastel mờ ảo (rgba(184, 203, 216, 0.45)) để tạo hiệu ứng các khung băng kính
-    mờ mộng mơ [9].
-  - Nút "Khám phá" & các hành động bài tập: Toàn bộ nút "Khám phá", "Xem PDF
-    trực tiếp" và nút chuyển tab trong modal được chuyển sang màu Xanh dương
-    nhạt Pastel (#b8cbd8), tương tác phát sáng nhẹ khi rê chuột [9].
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -219,20 +202,22 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
             color: var(--box-blue);
         }
 
+        /* Tinh chỉnh nút Kho bài viết Gradient nổi bật dễ nhìn hơn */
         .drive-btn {
-            background: linear-gradient(135deg, var(--box-blue), var(--pastel-orange));
-            border: 1px solid var(--glass-border);
-            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--box-blue), var(--sub-pink)) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+            padding: 10px 22px;
             border-radius: 25px;
-            color: var(--dark-mocha) !important;
+            color: var(--dark-mocha) !important; /* Chữ sẫm để đọc rõ trên nền sáng */
             font-weight: 700 !important;
             box-shadow: 0 4px 15px rgba(184, 203, 216, 0.4);
-            transition: transform 0.3s, box-shadow 0.3s !important;
+            transition: transform 0.3s, box-shadow 0.3s, filter 0.3s !important;
         }
 
         .drive-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(184, 203, 216, 0.6);
+            box-shadow: 0 6px 20px rgba(255, 204, 213, 0.6);
+            filter: brightness(1.05);
         }
 
         .drive-btn::after {
@@ -485,9 +470,11 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
             font-weight: 700;
         }
 
+        /* Tinh chỉnh nút Drive chính Gradient đồng điệu rực rỡ */
         .big-drive-btn {
-            background: linear-gradient(135deg, var(--accent-coral), var(--box-blue));
-            color: #fff;
+            background: linear-gradient(135deg, var(--box-blue), var(--sub-pink)) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
+            color: var(--dark-mocha) !important;
             padding: 15px 35px;
             border-radius: 30px;
             text-decoration: none;
@@ -496,13 +483,14 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 8px 25px rgba(123, 148, 168, 0.4);
+            box-shadow: 0 8px 25px rgba(184, 203, 216, 0.3);
             transition: all 0.3s ease;
         }
 
         .big-drive-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(123, 148, 168, 0.6);
+            box-shadow: 0 12px 30px rgba(184, 203, 216, 0.5);
+            filter: brightness(1.05);
         }
 
         /* --- PROJECTS SECTION --- */
@@ -1352,7 +1340,7 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
                 <div class="objectives-box">
                     <h4>✨ Mục Tiêu Portfolio Sâu Sắc Của Trang</h4>
                     <ul>
-                        <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lũy tự học nghiêm túc của bản thân qua mỗi tuần.</li>
+                        <li><b>Hệ thống hóa tri thức học thuật bài bản:</b> Lưu giữ từng tệp nhật ký điện tử, kịch bản so sánh prompt, và các bản báo cáo thiết kế. Đây không chỉ là tuyển tập bài tập, mà là biểu đồ phản ánh quá trình nỗ lực, tích lai tự học nghiêm túc của bản thân qua mỗi tuần.</li>
                         <li><b>Thực hành kỹ năng số hóa ngôn ngữ ứng dụng:</b> Kết hợp nhịp nhàng giữa lý thuyết ngôn ngữ Nga và các phương pháp công nghệ tương tác, biến các cấu trúc ngữ pháp khô khan thành các trò chơi lật thẻ, bộ phân tích ngữ pháp trực quan và sơ đồ phân cấp tệp tin khoa học.</li>
                         <li><b>Cam kết liêm chính số và tư duy phản biện vững vàng:</b> Thiết lập các ranh giới đạo đức số rõ ràng, định nghĩa rạch ròi giữa việc tham khảo thông minh và lạm dụng thụ động để bảo tồn giá trị trung thực và liêm chính trong học thuật.</li>
                     </ul>
@@ -1429,7 +1417,6 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
                     <p class="project-desc">Làm chủ 12 bước quản lý tệp tin nền tảng, thiết lập cấu trúc lưu trữ gọn gàng và khoa học.</p>
                 </div>
                 <div class="card-actions">
-                    <!-- Tương tác xịn: Nhấp trực tiếp nút PDF trên card sẽ gọi thẳng Modal tab PDF, không sang tab mới -->
                     <button class="pdf-card-btn" onclick="event.stopPropagation(); openModal(1, 'pdf');">
                         <i class="fa-solid fa-file-pdf"></i> Xem 1.pdf trực tiếp
                     </button>
@@ -1580,7 +1567,7 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
                 </div>
             </div>
 
-            <!-- CÁC TAB CHUYỂY ĐỔI CHẾ ĐỘ XEM TRONG MODAL -->
+            <!-- CÁC TAB CHUYỂN ĐỔI CHẾ ĐỘ XEM TRONG MODAL -->
             <div class="modal-view-tabs">
                 <button class="m-view-btn active" id="modalTabDiary" onclick="switchModalTab('diary')">
                     <i class="fa-solid fa-book-open"></i> 1. Nhật ký & Tương tác
@@ -2167,7 +2154,7 @@ Sơ đồ phối màu "Cổ Tích Mùa Đông" mới:
                 item.className = `paper-item ${paper.rating}`;
                 item.innerHTML = `
                     <h5>${paper.title}</h5>
-                    <div class="paper-meta">✍️ Tác giả: ${paper.author} | Tạp chí: ${paper.journal}</div>
+                    <div class="paper-meta">✍️ Tạp chí: ${paper.journal} | Tác giả: ${paper.author}</div>
                     <div class="paper-details-text">${paper.detail}</div>
                 `;
                 listContainer.appendChild(item);
