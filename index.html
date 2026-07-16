@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đỗ Thùy Trang Portfolio</title>
+    <title>Trang's Digital Portfolio ✨</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Chủ đề Cổ Tích Mùa Đông) --- */
+        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Đồng bộ Đêm Sao Cocoa & Xanh Kem) --- */
         :root {
             --sub-pink: #ffccd5; /* Hồng nhạt Pastel cho tiêu đề bài phụ */
-            --box-blue: #b8cbd8; /* Xanh dương nhạt Pastel cho viền box và nút khám phá */
-            --warm-cream: #eef4f8; /* Trắng xanh kem nhạt cho văn bản mô tả */
-            --dark-mocha: #131b22; /* Chữ sẫm màu slate khi cần độ tương phản cao */
-            --glass-bg: rgba(15, 22, 28, 0.15); /* Kính mờ siêu trong suốt để lộ rõ nền tinh tú */
-            --glass-border: rgba(184, 203, 216, 0.45); /* Viền mờ Xanh dương nhạt Pastel */
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(184, 203, 216, 0.15);
+            --box-blue: #b8cbd8; /* Xanh băng tuyết nhạt (trùng màu sao của hình nền mới) */
+            --warm-cream: #fdf6ee; /* Trắng kem sữa ấm áp cho văn bản mô tả */
+            --dark-mocha: #1a1010; /* Chữ tối sẫm màu hạt dẻ */
+            --glass-bg: rgba(38, 26, 25, 0.35); /* Kính mờ siêu trong suốt ngả màu sẫm Cocoa */
+            --glass-border: rgba(184, 203, 216, 0.45); /* Viền màu xanh băng tuyết nhạt pastel */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(184, 203, 216, 0.15);
             --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.05);
         }
 
@@ -30,17 +30,17 @@
             scroll-behavior: smooth;
         }
 
-        /* Tinh chỉnh thanh cuộn siêu dễ thương màu xanh tuyết pastel */
+        /* Tinh chỉnh thanh cuộn đám mây tuyết pastel dễ thương */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #131b22;
+            background: #1a1010;
         }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--box-blue), var(--sub-pink));
             border-radius: 10px;
-            border: 2px solid #131b22;
+            border: 2px solid #1a1010;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: var(--box-blue);
@@ -48,13 +48,13 @@
 
         body {
             color: var(--warm-cream); /* Chữ sáng trên nền tối */
-            background: url('back.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: url('back.jpg') repeat; /* Chuyển sang repeat để hoa văn sao lặp vô tận */
+            background-size: 500px; /* Định cỡ hoa văn sao đáng yêu và cân đối */
             overflow-x: hidden;
             position: relative;
         }
 
-        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG PHÁS SÁNG --- */
+        /* --- HIỆU ỨNG TRANG TRÍ NỀN BONG BÓNG ĐỘNG XANH KEM --- */
         #bubbles-container {
             position: fixed;
             top: 0;
@@ -141,7 +141,7 @@
         }
 
         nav {
-            background: rgba(20, 28, 36, 0.3); /* Cực kỳ trong suốt */
+            background: rgba(38, 26, 25, 0.5); /* Trong suốt cực đại tiệp màu nền tối mới */
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
             border: 1px solid var(--glass-border);
@@ -163,7 +163,7 @@
         }
 
         .logo i {
-            color: var(--box-blue); /* Biểu tượng xanh dương nhạt pastel */
+            color: var(--box-blue); /* Biểu tượng bông tuyết xanh tuyết nhạt */
         }
 
         .nav-links {
@@ -2156,7 +2156,7 @@
                 item.className = `paper-item ${paper.rating}`;
                 item.innerHTML = `
                     <h5>${paper.title}</h5>
-                    <div class="paper-meta">✍️ Tác giả: ${paper.author} | Tạp chí: ${paper.journal}</div>
+                    <div class="paper-meta">✍️ Tạp chí: ${paper.journal} | Tác giả: ${paper.author}</div>
                     <div class="paper-details-text">${paper.detail}</div>
                 `;
                 listContainer.appendChild(item);
@@ -2210,7 +2210,7 @@
                 display.innerHTML = `
                     <h5>📝 Nội dung câu lệnh Trang gửi AI:</h5>
                     <div class="prompt-box">${data.box}</div>
-                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--sub-pink); font-weight:700;">${data.score}</span></p>
+                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--primary-pink); font-weight:700;">${data.score}</span></p>
                     <p style="font-size:13px; color:#cce3f0; margin-top:5px;"><i>${data.desc}</i></p>
                     <hr style="margin:12px 0; border:0; border-top:1px dashed rgba(162, 186, 203, 0.3);">
                     <h5>📊 Phân tích hiệu quả:</h5>
