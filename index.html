@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đỗ Thùy Trang Portfolio</title>
+    <title>Trang's Digital Portfolio ✨</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Đồng bộ Đêm Sao Mộng Mơ Sáng Rõ) --- */
+        /* --- ĐỊNH NGHĨA BIẾN MÀU SẮC CHỦ ĐẠO (Đồng bộ Đêm Sao Cổ Tích Rực Sáng) --- */
         :root {
-            --sub-pink: #ffe5ec; /* Hồng nhạt Pastel siêu sáng cho bài phụ */
-            --box-blue: #cce7f5; /* Xanh dương nhạt Pastel sáng rực rỡ từ sao của back.jpg */
-            --warm-cream: #eaf4fc; /* Chữ mô tả màu kem tuyết xanh pastel cực kỳ sáng rõ */
-            --dark-mocha: #0d0a0a; /* Sô-cô-la thẫm cực tối */
-            --glass-bg: rgba(18, 14, 14, 0.8); /* Tối thêm 20% (Alpha 0.8) giúp cực kỳ rõ chữ */
-            --glass-border: rgba(204, 231, 245, 0.55); /* Viền màu xanh dương nhạt pastel sáng rõ */
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(204, 231, 245, 0.2);
+            --sub-pink: #ffe5ec; /* Hồng nhạt Pastel rực sáng cho bài phụ */
+            --box-blue: #a9d4ee; /* Xanh dương nhạt Pastel lấy chính xác từ màu sao của back.jpg */
+            --warm-cream: #cfe2f0; /* Nội dung chữ xanh dương pastel dịu mắt rực rõ */
+            --dark-mocha: #100b0a; /* Sô-cô-la thẫm cực tối */
+            --glass-bg: rgba(18, 14, 14, 0.8); /* Tối thêm 20% (Alpha 0.8) nhìn xuyên thấu rõ chữ */
+            --glass-border: rgba(169, 212, 238, 0.55); /* Viền màu xanh dương nhạt pastel sáng rõ */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(169, 212, 238, 0.2);
             --inner-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.08);
         }
 
@@ -30,17 +30,17 @@
             scroll-behavior: smooth;
         }
 
-        /* Tinh chỉnh thanh cuộn sô-cô-la pastel mềm mại */
+        /* Tinh chỉnh thanh cuộn tuyết sô-cô-la pastel mềm mại */
         ::-webkit-scrollbar {
             width: 10px;
         }
         ::-webkit-scrollbar-track {
-            background: #0d0a0a;
+            background: #100b0a;
         }
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(180deg, var(--box-blue), var(--sub-pink));
             border-radius: 10px;
-            border: 2px solid #0d0a0a;
+            border: 2px solid #100b0a;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: var(--box-blue);
@@ -69,10 +69,10 @@
         .bubble {
             position: absolute;
             bottom: -100px;
-            background: rgba(204, 231, 245, 0.12);
+            background: rgba(169, 212, 238, 0.12);
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 50%;
-            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(204, 231, 245, 0.2);
+            box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(169, 212, 238, 0.2);
             pointer-events: none;
             animation: floatUp 15s linear infinite;
         }
@@ -141,7 +141,7 @@
         }
 
         nav {
-            background: rgba(18, 14, 14, 0.8); /* Tối thêm 20% cho đồng bộ */
+            background: rgba(18, 14, 14, 0.8); /* Tối thêm 20% nhìn xuyên thấu rõ chữ */
             border: 1px solid var(--glass-border);
             padding: 12px 30px;
             border-radius: 50px;
@@ -154,15 +154,15 @@
         .logo {
             font-size: 20px;
             font-weight: 700;
-            color: #ffffff; /* Tiêu đề chính chữ trắng */
+            color: #ffffff; /* Tiêu đề lớn chữ trắng */
             display: flex;
             align-items: center;
             gap: 8px;
-            text-shadow: 0 0 10px rgba(255,255,255,0.25);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.6); /* Tăng 20% độ sáng */
         }
 
         .logo i {
-            color: var(--box-blue); /* Biểu tượng ngôi sao tuyết màu xanh dương nhạt pastel sáng rõ */
+            color: var(--box-blue); /* Biểu tượng xanh dương nhạt pastel */
         }
 
         .nav-links {
@@ -201,15 +201,15 @@
             color: var(--box-blue);
         }
 
-        /* Nút Kho bài viết Gradient nổi bật rất dễ nhìn */
+        /* Nút Kho bài viết Gradient nổi bật dễ nhìn hơn */
         .drive-btn {
             background: linear-gradient(135deg, var(--box-blue), var(--sub-pink)) !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+            border: 1.5px solid rgba(255, 255, 255, 0.5) !important;
             padding: 10px 22px;
             border-radius: 25px;
-            color: var(--dark-mocha) !important; /* Chữ tối để cực kỳ dễ đọc trên nền pastel sáng */
+            color: var(--dark-mocha) !important; /* Chữ sẫm màu để đọc rõ trên nền sáng */
             font-weight: 700 !important;
-            box-shadow: 0 4px 15px rgba(204, 231, 245, 0.4);
+            box-shadow: 0 4px 15px rgba(169, 212, 238, 0.4);
             transition: transform 0.3s, box-shadow 0.3s, filter 0.3s !important;
         }
 
@@ -235,10 +235,8 @@
         }
 
         .hero-container {
-            width: 90%;
-            max-width: 1100px;
             background: var(--glass-bg); /* Tối thêm 20% nhìn xuyên thấu rõ chữ */
-            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel sáng hơn */
+            border: 1px solid var(--glass-border); /* Viền màu xanh dương nhạt pastel sáng rõ */
             border-radius: 40px;
             padding: 50px;
             box-shadow: var(--card-shadow);
@@ -247,6 +245,8 @@
             gap: 50px;
             position: relative;
             overflow: hidden;
+            width: 90%;
+            max-width: 1100px;
         }
 
         .avatar-wrapper {
@@ -259,8 +259,8 @@
             height: 250px;
             object-fit: cover;
             border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
-            border: 6px solid rgba(204, 231, 245, 0.6);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.65);
+            border: 6px solid rgba(169, 212, 238, 0.5);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
             animation: cloudFloat 6s ease-in-out infinite;
         }
 
@@ -276,7 +276,7 @@
 
         .badge {
             background: rgba(255, 229, 236, 0.15);
-            color: var(--sub-pink); /* Hồng nhạt pastel siêu sáng */
+            color: var(--sub-pink) !important; /* Các số và tiêu đề nhỏ màu hồng pastel */
             padding: 6px 16px;
             border-radius: 20px;
             font-size: 13px;
@@ -286,6 +286,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             border: 1px solid rgba(255, 229, 236, 0.25);
+            text-shadow: 0 0 12px rgba(255, 229, 236, 0.5); /* Tăng 20% độ sáng */
         }
 
         .hero-title {
@@ -293,12 +294,13 @@
             font-weight: 700;
             margin-bottom: 15px;
             line-height: 1.2;
-            color: #ffffff !important; /* Tiêu đề chính chữ trắng rực rỡ */
-            text-shadow: 0 2px 10px rgba(255,255,255,0.2);
+            color: #ffffff !important; /* Tiêu đề lớn chữ trắng */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.6); /* Tăng 20% độ sáng */
         }
 
         .hero-title span {
             color: #ffffff !important;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.6); /* Tăng 20% độ sáng */
         }
 
         .student-info-grid {
@@ -309,7 +311,7 @@
         }
 
         .info-tag {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.05);
             padding: 10px 15px;
             border-radius: 15px;
             font-size: 14px;
@@ -317,7 +319,7 @@
             align-items: center;
             gap: 10px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--warm-cream);
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         .info-tag i {
@@ -328,7 +330,7 @@
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 15px;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         .objectives-box {
@@ -346,17 +348,18 @@
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--sub-pink); /* Tiêu đề phụ hồng nhạt pastel siêu sáng */
+            color: var(--sub-pink); /* Các số và tiêu đề nhỏ màu hồng pastel */
             display: flex;
             align-items: center;
             gap: 8px;
+            text-shadow: 0 0 12px rgba(255, 229, 236, 0.5); /* Tăng 20% độ sáng */
         }
 
         .objectives-box ul {
             list-style: none;
             font-size: 14.5px;
             line-height: 1.6;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         .objectives-box ul li {
@@ -403,18 +406,19 @@
 
         .skill-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 25px rgba(204, 231, 245, 0.25);
+            box-shadow: 0 12px 25px rgba(169, 212, 238, 0.25);
             border-color: var(--box-blue);
         }
 
         .skill-card h4 {
             font-size: 16px;
             font-weight: 700;
-            color: var(--sub-pink); /* Tiêu đề bài phụ hồng nhạt pastel sáng rực */
+            color: var(--sub-pink); /* Các số và tiêu đề nhỏ màu hồng pastel */
             margin-bottom: 10px;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-shadow: 0 0 12px rgba(255, 229, 236, 0.5); /* Tăng 20% độ sáng */
         }
 
         .skill-card h4 i {
@@ -424,7 +428,7 @@
         .skill-card p {
             font-size: 13.5px;
             line-height: 1.6;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         /* --- DRIVER CTA SECTION --- */
@@ -454,14 +458,11 @@
             transition: transform 0.3s;
         }
 
-        .driver-box:hover {
-            transform: scale(1.01);
-        }
-
         .driver-box h3 {
             font-size: 20px;
-            color: var(--warm-cream);
+            color: #ffffff; /* Tiêu đề lớn chữ trắng */
             font-weight: 700;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45); /* Tăng 20% độ sáng */
         }
 
         /* Tinh chỉnh nút Drive chính Gradient rực rỡ và cực rõ nét */
@@ -477,13 +478,13 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 8px 25px rgba(204, 231, 245, 0.4);
+            box-shadow: 0 8px 25px rgba(169, 212, 238, 0.3);
             transition: all 0.3s ease;
         }
 
         .big-drive-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(204, 231, 245, 0.5);
+            box-shadow: 0 12px 30px rgba(169, 212, 238, 0.5);
             filter: brightness(1.05);
         }
 
@@ -506,10 +507,10 @@
         .section-header h2 {
             font-size: 32px;
             font-weight: 700;
-            color: #ffffff; /* Tiêu đề chính chữ trắng rực rỡ */
+            color: #ffffff; /* Tiêu đề lớn chữ trắng */
             display: inline-block;
             position: relative;
-            text-shadow: 0 2px 10px rgba(255,255,255,0.15);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.6); /* Tăng 20% độ sáng */
         }
 
         .section-header h2::before { content: '❄️'; position: absolute; left: -40px; top: -2px; font-size: 24px; color: var(--box-blue); }
@@ -517,7 +518,7 @@
 
         .section-header p {
             font-size: 16px;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
             margin-top: 10px;
         }
 
@@ -544,22 +545,22 @@
 
         .project-card:hover {
             transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(204, 231, 245, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(169, 212, 238, 0.3);
             border-color: var(--box-blue);
         }
 
-        /* Thiết lập chữ đánh số sáng rõ nét cực kỳ đẹp đẽ giống như text */
+        /* Các số màu hồng pastel và tăng 20% độ sáng */
         .project-card-num {
             position: absolute;
             top: 15px;
             right: 25px;
             font-size: 55px;
             font-weight: 800;
-            color: var(--sub-pink); /* Đổi sang màu hồng nhạt pastel sáng rực */
-            opacity: 0.75; /* Sáng rõ rực rỡ như chữ thường, không bị chìm mờ nữa */
+            color: var(--sub-pink); /* Các số màu hồng pastel */
+            opacity: 0.85; 
             pointer-events: none;
             user-select: none;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+            text-shadow: 0 0 15px rgba(255, 229, 236, 0.6), 0 2px 8px rgba(0, 0, 0, 0.8); /* Tăng 20% độ sáng */
         }
 
         .project-icon {
@@ -581,15 +582,15 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #ffffff; /* Tiêu đề chính chữ trắng rực rỡ */
+            color: #ffffff; /* Tiêu đề lớn chữ trắng */
             line-height: 1.3;
-            text-shadow: 0 1px 5px rgba(0,0,0,0.4);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45); /* Tăng 20% độ sáng */
         }
 
         .project-desc {
             font-size: 14px;
             line-height: 1.6;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
             margin-bottom: 20px;
         }
 
@@ -601,7 +602,7 @@
         }
 
         .pdf-card-btn {
-            background: rgba(204, 231, 245, 0.1);
+            background: rgba(169, 212, 238, 0.1);
             border: 1px solid var(--box-blue); /* Viền màu xanh dương nhạt pastel sáng rõ */
             padding: 8px 16px;
             border-radius: 12px;
@@ -618,7 +619,7 @@
         .pdf-card-btn:hover {
             background: var(--box-blue);
             color: var(--dark-mocha);
-            box-shadow: 0 0 15px rgba(204, 231, 245, 0.5);
+            box-shadow: 0 0 15px rgba(169, 212, 238, 0.4);
         }
 
         .learn-more-btn {
@@ -685,9 +686,9 @@
         .modal-title {
             font-size: 24px;
             font-weight: 700;
-            color: #ffffff; /* Tiêu đề chính chữ trắng rực rỡ */
+            color: #ffffff; /* Tiêu đề lớn chữ trắng */
             margin-top: 5px;
-            text-shadow: 0 2px 10px rgba(255,255,255,0.1);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45), 0 2px 4px rgba(0, 0, 0, 0.6); /* Tăng 20% độ sáng */
         }
 
         /* --- CÁC TAB CHUYỂN ĐỔI TRONG MODAL --- */
@@ -717,7 +718,7 @@
             background: var(--box-blue);
             color: var(--dark-mocha);
             border-color: var(--box-blue);
-            box-shadow: 0 4px 12px rgba(204, 231, 245, 0.4);
+            box-shadow: 0 4px 12px rgba(204, 231, 245, 0.3);
         }
 
         .modal-body-scroll {
@@ -732,7 +733,7 @@
             right: 25px;
             width: 40px;
             height: 40px;
-            background: rgba(18, 14, 14, 0.95);
+            background: rgba(32, 40, 48, 0.9);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -789,7 +790,7 @@
             border-radius: 10px;
             text-decoration: none;
             font-weight: 700;
-            box-shadow: 0 0 10px rgba(204, 231, 245, 0.3);
+            box-shadow: 0 0 10px rgba(169, 212, 238, 0.3);
         }
 
         .modal-section {
@@ -800,23 +801,24 @@
             font-size: 17px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--sub-pink); /* Tiêu đề phụ hồng nhạt pastel siêu sáng */
+            color: var(--sub-pink); /* Các số và tiêu đề nhỏ màu hồng pastel */
             display: flex;
             align-items: center;
             gap: 8px;
             border-bottom: 1px solid rgba(204, 231, 245, 0.25);
             padding-bottom: 5px;
+            text-shadow: 0 0 12px rgba(255, 229, 236, 0.5); /* Tăng 20% độ sáng */
         }
 
         .modal-section p {
             margin-bottom: 10px;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         /* --- STYLE CHO CÁC MỤC TƯƠNG TÁC (INTERACTIVE WIDGETS) --- */
         .interactive-container {
             background: rgba(255, 255, 255, 0.03);
-            border: 2px solid rgba(204, 231, 245, 0.35);
+            border: 2px solid rgba(169, 212, 238, 0.3);
             border-radius: 20px;
             padding: 20px;
             margin: 20px 0;
@@ -833,7 +835,7 @@
 
         .sim-step-btn {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(204, 231, 245, 0.2);
+            border: 1px solid rgba(169, 212, 238, 0.2);
             color: var(--warm-cream);
             padding: 6px 12px;
             border-radius: 12px;
@@ -850,7 +852,7 @@
         }
 
         .sim-display {
-            background: #090e14;
+            background: #0f151c;
             color: #ffd29d;
             border-radius: 15px;
             padding: 20px;
@@ -860,7 +862,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            box-shadow: inset 0 3px 10px rgba(0,0,0,0.6);
+            box-shadow: inset 0 3px 10px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.03);
         }
 
@@ -882,7 +884,7 @@
             width: 100%;
             padding: 10px 15px;
             border-radius: 15px;
-            border: 1.5px solid rgba(204, 231, 245, 0.35);
+            border: 1.5px solid rgba(169, 212, 238, 0.3);
             background: rgba(255, 255, 255, 0.03);
             color: var(--warm-cream);
             margin-bottom: 15px;
@@ -899,7 +901,7 @@
 
         .filter-badge {
             background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(204, 231, 245, 0.2);
+            border: 1px solid rgba(169, 212, 238, 0.2);
             color: var(--warm-cream);
             padding: 5px 12px;
             border-radius: 12px;
@@ -938,7 +940,8 @@
             font-size: 15px;
             font-weight: 700;
             margin-bottom: 5px;
-            color: var(--warm-cream);
+            color: #ffffff; /* Tiêu đề lớn chữ trắng rực rỡ */
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.45); /* Tăng 20% độ sáng */
         }
 
         .paper-meta {
@@ -950,7 +953,7 @@
 
         .paper-details-text {
             font-size: 13px;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
             line-height: 1.5;
         }
 
@@ -965,7 +968,7 @@
             flex: 1;
             padding: 12px;
             border-radius: 15px;
-            border: 1px solid rgba(204, 231, 245, 0.35);
+            border: 1px solid rgba(169, 212, 238, 0.2);
             background: rgba(255, 255, 255, 0.03);
             color: var(--warm-cream);
             font-weight: 700;
@@ -984,7 +987,7 @@
             background: rgba(255, 255, 255, 0.02);
             border-radius: 15px;
             padding: 20px;
-            border: 1px dashed rgba(204, 231, 245, 0.35);
+            border: 1px dashed rgba(169, 212, 238, 0.3);
         }
 
         .prompt-box {
@@ -1010,7 +1013,7 @@
             border-radius: 15px;
             padding: 12px;
             min-height: 200px;
-            border: 1px dashed rgba(204, 231, 245, 0.35);
+            border: 1px dashed rgba(169, 212, 238, 0.2);
         }
 
         .kanban-col h5 {
@@ -1032,7 +1035,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.2s;
             border-left: 3px solid var(--box-blue);
-            color: var(--warm-cream);
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         .kanban-card:hover {
@@ -1054,7 +1057,7 @@
 
         .info-sec-btn {
             background: rgba(255, 255, 255, 0.02);
-            border: 1.5px solid rgba(204, 231, 245, 0.35);
+            border: 1.5px solid rgba(169, 212, 238, 0.2);
             color: var(--warm-cream);
             border-radius: 15px;
             padding: 15px;
@@ -1065,7 +1068,7 @@
 
         .info-sec-btn:hover, .info-sec-btn.active {
             border-color: var(--box-blue);
-            background: rgba(204, 231, 245, 0.1);
+            background: rgba(169, 212, 238, 0.1);
             transform: translateY(-2px);
         }
 
@@ -1078,10 +1081,10 @@
 
         .info-sec-desc {
             background: rgba(255, 255, 255, 0.02);
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
             border-radius: 15px;
             padding: 20px;
-            border: 1.5px solid rgba(204, 231, 245, 0.35);
+            border: 1.5px solid rgba(169, 212, 238, 0.2);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -1107,7 +1110,7 @@
             border-radius: 10px;
             padding: 10px;
             text-align: center;
-            border: 1px solid rgba(204, 231, 245, 0.35);
+            border: 1px solid rgba(169, 212, 238, 0.2);
             cursor: pointer;
             transition: transform 0.2s;
             font-size: 13px;
@@ -1123,7 +1126,7 @@
             background: rgba(255, 255, 255, 0.01);
             border-radius: 15px;
             padding: 20px;
-            border: 1px solid rgba(204, 231, 245, 0.35);
+            border: 1px solid rgba(169, 212, 238, 0.2);
         }
 
         .error-word {
@@ -1191,24 +1194,25 @@
 
         .reflection-col:hover {
             transform: translateY(-5px);
-            border-color: rgba(204, 231, 245, 0.2);
+            border-color: rgba(169, 212, 238, 0.2);
         }
 
         .reflection-col h4 {
             font-size: 17px;
             font-weight: 700;
-            color: var(--sub-pink); /* Tiêu đề hồng nhạt pastel sáng rực */
+            color: var(--sub-pink); /* Các số và tiêu đề nhỏ màu hồng pastel */
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 8px;
+            text-shadow: 0 0 12px rgba(255, 229, 236, 0.5); /* Tăng 20% độ sáng */
         }
 
         .reflection-col ul {
             list-style: none;
             font-size: 14px;
             line-height: 1.6;
-            color: #b5cbd8;
+            color: var(--warm-cream); /* Nội dung chữ xanh dương pastel */
         }
 
         .reflection-col ul li {
@@ -1593,7 +1597,7 @@
     <script>
         /* --- Sparkling Mouse Trail Effect --- */
         const sparklesContainer = document.getElementById('sparkles-container');
-        const colors = ['#ffccd5', '#a9d4ee', '#ffffff', '#7b94a8', '#90aabf'];
+        const colors = ['#ffe5ec', '#a9d4ee', '#ffffff', '#7b94a8', '#90aabf'];
         const shapes = ['★', '❄️', '✨', '✦', '✧'];
 
         document.addEventListener('mousemove', function(e) {
@@ -2202,7 +2206,7 @@
                 display.innerHTML = `
                     <h5>📝 Nội dung câu lệnh Trang gửi AI:</h5>
                     <div class="prompt-box">${data.box}</div>
-                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--sub-pink); font-weight:700;">${data.score}</span></p>
+                    <p style="margin-top:10px;"><b>🎯 Đánh giá điểm liêm chính học thuật VNU:</b> <span style="color:var(--primary-pink); font-weight:700;">${data.score}</span></p>
                     <p style="font-size:13px; color:#cce3f0; margin-top:5px;"><i>${data.desc}</i></p>
                     <hr style="margin:12px 0; border:0; border-top:1px dashed rgba(162, 186, 203, 0.3);">
                     <h5>📊 Phân tích hiệu quả:</h5>
